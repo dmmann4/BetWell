@@ -18,6 +18,8 @@
 		1E8C55C22974BAB20061498C /* BetWellUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C55C12974BAB20061498C /* BetWellUITestsLaunchTests.swift */; };
 		1E8C55CF297635870061498C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C55CE297635870061498C /* DetailView.swift */; };
 		1E8C55D1297636460061498C /* MatchupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C55D0297636460061498C /* MatchupView.swift */; };
+		1E8E7A9F298C786900CE485F /* SlideOverCard in Frameworks */ = {isa = PBXBuildFile; productRef = 1E8E7A9E298C786900CE485F /* SlideOverCard */; };
+		1EFC4576298DCC0C00AD5C44 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4575298DCC0C00AD5C44 /* Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,7 @@
 		1E8C55C12974BAB20061498C /* BetWellUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetWellUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1E8C55CE297635870061498C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		1E8C55D0297636460061498C /* MatchupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchupView.swift; sourceTree = "<group>"; };
+		1EFC4575298DCC0C00AD5C44 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E8E7A9F298C786900CE485F /* SlideOverCard in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +114,7 @@
 				1E8C55AA2974BAB20061498C /* BetWell.xcdatamodeld */,
 				1E8C55A52974BAB20061498C /* Preview Content */,
 				1E8C55D0297636460061498C /* MatchupView.swift */,
+				1EFC4575298DCC0C00AD5C44 /* Networking.swift */,
 			);
 			path = BetWell;
 			sourceTree = "<group>";
@@ -155,6 +160,9 @@
 			dependencies = (
 			);
 			name = BetWell;
+			packageProductDependencies = (
+				1E8E7A9E298C786900CE485F /* SlideOverCard */,
+			);
 			productName = BetWell;
 			productReference = 1E8C559C2974BAAE0061498C /* BetWell.app */;
 			productType = "com.apple.product-type.application";
@@ -227,6 +235,9 @@
 				Base,
 			);
 			mainGroup = 1E8C55932974BAAE0061498C;
+			packageReferences = (
+				1E8E7A9D298C786900CE485F /* XCRemoteSwiftPackageReference "swiftUI-slide-over-card" */,
+			);
 			productRefGroup = 1E8C559D2974BAAE0061498C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -275,6 +286,7 @@
 				1E8C55D1297636460061498C /* MatchupView.swift in Sources */,
 				1E8C55CF297635870061498C /* DetailView.swift in Sources */,
 				1E8C55AC2974BAB20061498C /* BetWell.xcdatamodeld in Sources */,
+				1EFC4576298DCC0C00AD5C44 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +611,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1E8E7A9D298C786900CE485F /* XCRemoteSwiftPackageReference "swiftUI-slide-over-card" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/moifort/swiftUI-slide-over-card.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1E8E7A9E298C786900CE485F /* SlideOverCard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E8E7A9D298C786900CE485F /* XCRemoteSwiftPackageReference "swiftUI-slide-over-card" */;
+			productName = SlideOverCard;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		1E8C55AA2974BAB20061498C /* BetWell.xcdatamodeld */ = {

@@ -6,21 +6,23 @@
 //
 
 import SwiftUI
+import SlideOverCard
 
-enum ProfileSection : String, CaseIterable {
-    case tweets = "Tweets"
-    case media = "Media"
-    case likes = "Likes"
+enum MatchupDataSelection : String, CaseIterable {
+    case last5 = "Last 5 Games"
+    case vsMatchup = "Vs Matchup"
 }
 
 struct MatchupView: View {
-    @State var segmentationSelection : ProfileSection = .tweets
+    let game: Games
+    @State var showModal =  false
+    @State var showingCredits = true
     var body: some View {
         VStack {
             HStack {
                 VStack {
                     Image(systemName: "basketball")
-                    Text("home team")
+                    Text(game.homeTeam)
                 }
                 .padding()
                 Spacer()
@@ -31,25 +33,48 @@ struct MatchupView: View {
                 Spacer()
                 VStack {
                     Image(systemName: "basketball")
-                    Text("away team")
+                    Text(game.awayTeam)
                 }
                 .padding()
+                
             }
-            Picker("", selection: $segmentationSelection) {
-                ForEach(ProfileSection.allCases, id: \.self) { option in
-                    Text(option.rawValue)
-                }
+            Button(action: { showModal = true }) {
+                Text("My Button")
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding()
             Spacer()
-            
         }
+        .sheet(isPresented: $showingCredits) {
+            MatchupDetailView()
+                .presentationDetents([.fraction(0.40)])
+                .fullScreenCover(isPresented: $showModal) {
+                    MatchupDetailView()
+                }
+        }
+        .navigationBarTitle(Text(""), displayMode: .inline)
     }
 }
 
 struct MatchupView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchupView()
+        MatchupView(game: Games(homeTeam: "CIN", awayTeam: "BAL", overUnder: "45.6"))
+    }
+}
+
+struct MatchupDetailView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @State var segmentationSelection: MatchupDataSelection = .last5
+    var body: some View {
+        Picker("", selection: $segmentationSelection) {
+            ForEach(MatchupDataSelection.allCases, id: \.self) { option in
+                Text(option.rawValue)
+            }
+        }
+        .pickerStyle(SegmentedPickerStyle())
+        .padding()
+        Spacer()
+        .padding()
+        .onTapGesture {
+            presentationMode.wrappedValue.dismiss()
+        }
     }
 }
