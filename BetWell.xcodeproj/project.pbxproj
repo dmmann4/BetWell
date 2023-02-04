@@ -20,6 +20,7 @@
 		1E8C55D1297636460061498C /* MatchupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C55D0297636460061498C /* MatchupView.swift */; };
 		1E8E7A9F298C786900CE485F /* SlideOverCard in Frameworks */ = {isa = PBXBuildFile; productRef = 1E8E7A9E298C786900CE485F /* SlideOverCard */; };
 		1EFC4576298DCC0C00AD5C44 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4575298DCC0C00AD5C44 /* Networking.swift */; };
+		1EFC4578298DCF9100AD5C44 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4577298DCF9100AD5C44 /* Games.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		1E8C55CE297635870061498C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		1E8C55D0297636460061498C /* MatchupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchupView.swift; sourceTree = "<group>"; };
 		1EFC4575298DCC0C00AD5C44 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		1EFC4577298DCF9100AD5C44 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				1E8C55A52974BAB20061498C /* Preview Content */,
 				1E8C55D0297636460061498C /* MatchupView.swift */,
 				1EFC4575298DCC0C00AD5C44 /* Networking.swift */,
+				1EFC4577298DCF9100AD5C44 /* Games.swift */,
 			);
 			path = BetWell;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				1E8C55A92974BAB20061498C /* Persistence.swift in Sources */,
 				1E8C55A22974BAAE0061498C /* ContentView.swift in Sources */,
 				1E8C55A02974BAAE0061498C /* BetWellApp.swift in Sources */,
+				1EFC4578298DCF9100AD5C44 /* Games.swift in Sources */,
 				1E8C55D1297636460061498C /* MatchupView.swift in Sources */,
 				1E8C55CF297635870061498C /* DetailView.swift in Sources */,
 				1E8C55AC2974BAB20061498C /* BetWell.xcdatamodeld in Sources */,

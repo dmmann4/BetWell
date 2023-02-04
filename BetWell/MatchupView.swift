@@ -14,15 +14,24 @@ enum MatchupDataSelection : String, CaseIterable {
 }
 
 struct MatchupView: View {
-    let game: Games
+    var game: Teams
     @State var showModal =  false
     @State var showingCredits = true
     var body: some View {
         VStack {
             HStack {
                 VStack {
-                    Image(systemName: "basketball")
-                    Text(game.homeTeam)
+                    AsyncImage(url: URL(string: game.home.logo)) { image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .frame(width: 44, height: 44)
+                        .background(Color.gray)
+                        .clipShape(Circle())
+                    Text(game.home.name)
                 }
                 .padding()
                 Spacer()
@@ -32,8 +41,17 @@ struct MatchupView: View {
                 }
                 Spacer()
                 VStack {
-                    Image(systemName: "basketball")
-                    Text(game.awayTeam)
+                    AsyncImage(url: URL(string: game.visitors.logo)) { image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .frame(width: 44, height: 44)
+                        .background(Color.gray)
+                        .clipShape(Circle())
+                    Text(game.visitors.name)
                 }
                 .padding()
                 
@@ -53,12 +71,12 @@ struct MatchupView: View {
         .navigationBarTitle(Text(""), displayMode: .inline)
     }
 }
-
-struct MatchupView_Previews: PreviewProvider {
-    static var previews: some View {
-        MatchupView(game: Games(homeTeam: "CIN", awayTeam: "BAL", overUnder: "45.6"))
-    }
-}
+//
+//struct MatchupView_Previews: PreviewProvider {
+//    static var previews: some View {
+//       MatchupView(game: Games(homeTeam: "CIN", awayTeam: "BAL", overUnder: "45.6"))
+//    }
+//}
 
 struct MatchupDetailView: View {
     @Environment(\.presentationMode) var presentationMode

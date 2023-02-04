@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import Combine
 
 struct Games: Identifiable {
     let id = UUID()
@@ -22,128 +23,73 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-    
-    let todaysGames: [Games] = [
-        Games(homeTeam: "Cin", awayTeam: "BAL", overUnder: "78.5"),
-        Games(homeTeam: "JAX", awayTeam: "DAL", overUnder: "38.5"),
-        Games(homeTeam: "MIA", awayTeam: "PHL", overUnder: "54.5"),
-        Games(homeTeam: "CAL", awayTeam: "HOU", overUnder: "100.5"),
-        Games(homeTeam: "TEN", awayTeam: "BOS", overUnder: "29.5"),
-        Games(homeTeam: "KAC", awayTeam: "PIT", overUnder: "59.5"),
-        Games(homeTeam: "DEN", awayTeam: "CLE", overUnder: "86.5"),
-        Games(homeTeam: "SEA", awayTeam: "CHI", overUnder: "75.5"),
-        Games(homeTeam: "LAV", awayTeam: "LAC", overUnder: "43.5"),
-        Games(homeTeam: "ARZ", awayTeam: "LAR", overUnder: "90.5")
-    ]
-    let networking = Networking()
-    
+    @State private var  networking = Networking()
+    @State var todaysGames: [Response] = []
     @State private var userdata = [User]()
     var body: some View {
         NavigationView {
             ScrollView {
-//                VStack {
-//                    VStack(alignment: .leading) {
-//                        Text("My Teams")
-//                            .font(.headline)
-//                            .fontWeight(.heavy)
-//                        ScrollView(.horizontal,showsIndicators: false) {
-//                            HStack(spacing: 15) {
-//                                ForEach(userdata,id: \.id) { user in
-//                                    UserView(user: user)
-//                                }
-//                            }
-//                            .padding(.top, 10)
-//                        }
-//                        .frame(height: 80)
-//                    }
-//                    .padding()
-//                    VStack(alignment: .leading) {
-//                        Text("My Players")
-//                            .font(.headline)
-//                            .fontWeight(.heavy)
-//                        ScrollView(.horizontal,showsIndicators: false) {
-//                            HStack(spacing: 15) {
-//                                ForEach(userdata,id: \.id) { user in
-//                                    UserView(user: user)
-//                                }
-//                            }
-//                            .padding(.top, 10)
-//                        }
-//                        .frame(height: 80)
-//                    }
-//                    .padding()
-                    VStack(alignment: .leading) {
-                        Text("Who is playing tonight?")
-                        ForEach(todaysGames) { game in
-                            NavigationLink {
-                                MatchupView(game: game)
-                            } label: {
-                                PlayingTodayView(game: game)
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                            .frame(maxWidth: .infinity)
+                VStack(alignment: .leading) {
+                    Text("Who is playing tonight?")
+                        .padding()
+                    ForEach($todaysGames, id: \.id) { game in
+                        NavigationLink {
+                            MatchupView(game: game.teams.wrappedValue)
+                        } label: {
+                            PlayingTodayView(game: game.wrappedValue)
                         }
+                        .buttonStyle(PlainButtonStyle())
                         .frame(maxWidth: .infinity)
                     }
-                    .edgesIgnoringSafeArea(.all)
-                    .navigationBarTitle("BetWell", displayMode: .large)
-                    .onAppear(perform: getUsers)
+                    .frame(maxWidth: .infinity)
                 }
-//            }
-        }
-    }
-        
-        func getUsers() {
-            guard let url = URL(string: "https://reqres.in/api/users")
-            else {  return }
-            
-            var request = URLRequest(url: url)
-            request.httpMethod = "GET"
-            
-            URLSession.shared.dataTask(with: request) { data, response,
-                error in
-                if let data = data {
-                    if let response_obj = try?
-                        JSONDecoder().decode(UserDetail.self, from: data) {
-                        DispatchQueue.main.async {
-                            self.userdata = response_obj.data
-                        }
+                .edgesIgnoringSafeArea(.all)
+                .navigationBarTitle("BetWell", displayMode: .large)
+                .onAppear() {
+                    networking.fetchTodaysGames { games in
+                        switch games {
+                            case .success(let count):
+                               todaysGames = count
+                            case .failure(let error):
+                                print(error.localizedDescription)
+                            }
                     }
                 }
-            }.resume()
+            }.frame(maxWidth: .infinity, alignment: .leading)
         }
-        
-        private func addItem() {
-            withAnimation {
-                let newItem = Item(context: viewContext)
-                newItem.timestamp = Date()
-                
-                do {
-                    try viewContext.save()
-                } catch {
-                    // Replace this implementation with code to handle the error appropriately.
-                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                    let nsError = error as NSError
-                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-                }
-            }
-        }
-        
-        private func deleteItems(offsets: IndexSet) {
-            withAnimation {
-                offsets.map { items[$0] }.forEach(viewContext.delete)
-                
-                do {
-                    try viewContext.save()
-                } catch {
-                    // Replace this implementation with code to handle the error appropriately.
-                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                    let nsError = error as NSError
-                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-                }
+    }
+    
+    private func addItem() {
+        withAnimation {
+            let newItem = Item(context: viewContext)
+            newItem.timestamp = Date()
+            
+            do {
+                try viewContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
+    
+    private func deleteItems(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { items[$0] }.forEach(viewContext.delete)
+            
+            do {
+                try viewContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
+    }
+}
 
 private let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()
@@ -191,17 +137,72 @@ struct UserView: View {
 }
 
 struct PlayingTodayView: View {
-    let game: Games
+    var game: Response
     var body: some View {
-        HStack(spacing: 20.0) {
-            Text(game.homeTeam)
+        HStack(spacing: 15.0) {
+            VStack(alignment: .center) {
+                Text(parseName(game.teams.home.name))
+    //                .frame(width: 100, height: 100)  // <--- here
+                    .allowsTightening(true)
+                    .lineLimit(2)
+                    .scaledToFit()
+                    .minimumScaleFactor(0.4)
+                AsyncImage(url: URL(string: game.teams.home.logo)) { image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .frame(width: 44, height: 44)
+                    .background(Color.gray)
+                    .clipShape(Circle())
+            }
+            
+            Spacer()
             Text("vs")
-            Text(game.awayTeam)
-            Text("O/U: \(game.overUnder)")
+            Spacer()
+            VStack(alignment: .center) {
+                Text(parseName(game.teams.visitors.name))
+    //                .frame(width: 100, height: 100)  // <--- here
+                    .allowsTightening(true)
+                    .lineLimit(2)
+                    .scaledToFit()
+                    .minimumScaleFactor(0.4)
+                AsyncImage(url: URL(string: game.teams.visitors.logo)) { image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .frame(width: 44, height: 44)
+                    .background(Color.gray)
+                    .clipShape(Circle())
+            }
+            Spacer()
+            Text(game.league)
+//                .frame(width: 100, height: 100)  // <--- here
+//                .allowsTightening(true)
+                .lineLimit(2)
+                .scaledToFit()
+                .minimumScaleFactor(0.4)
+            Spacer()
         }
         .padding(10)
         .frame(maxWidth: .infinity, minHeight: 70)
         .background(Color.init(uiColor: .systemGray5))
+    }
+    
+    func parseName(_ string: String) -> String {
+        let parsed = string.components(separatedBy: " ")
+        if parsed.count >= 2 {
+            let count = parsed.count
+            print("\(parsed[count - 1])")
+            return parsed[parsed.count - 1]
+        } else {
+            return string
+        }
     }
 }
 
@@ -210,25 +211,35 @@ struct UserDetail: Decodable {
     var data: [User]
 }
 
-struct User: Decodable {
-    var id:Int
-    var email: String
-    var first_name: String
-    var last_name:String
-    var avatar:String
-}
 
-struct ListHeader: View {
-    var body: some View {
-        HStack {
-            Image(systemName: "map")
-            Text("Who is playing today")
-        }
-    }
-}
-
-struct ListFooter: View {
-    var body: some View {
-        Text("Remember to pack plenty of water and bring sunscreen.")
-    }
-}
+//                VStack {
+//                    VStack(alignment: .leading) {
+//                        Text("My Teams")
+//                            .font(.headline)
+//                            .fontWeight(.heavy)
+//                        ScrollView(.horizontal,showsIndicators: false) {
+//                            HStack(spacing: 15) {
+//                                ForEach(userdata,id: \.id) { user in
+//                                    UserView(user: user)
+//                                }
+//                            }
+//                            .padding(.top, 10)
+//                        }
+//                        .frame(height: 80)
+//                    }
+//                    .padding()
+//                    VStack(alignment: .leading) {
+//                        Text("My Players")
+//                            .font(.headline)
+//                            .fontWeight(.heavy)
+//                        ScrollView(.horizontal,showsIndicators: false) {
+//                            HStack(spacing: 15) {
+//                                ForEach(userdata,id: \.id) { user in
+//                                    UserView(user: user)
+//                                }
+//                            }
+//                            .padding(.top, 10)
+//                        }
+//                        .frame(height: 80)
+//                    }
+//                    .padding()

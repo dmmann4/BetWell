@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct BetWellApp: App {
     let persistenceController = PersistenceController.shared
-
+    let networking = Networking()
     var body: some Scene {
         WindowGroup {
             ContentView()
