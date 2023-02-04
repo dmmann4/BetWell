@@ -18,7 +18,6 @@
 		1E8C55C22974BAB20061498C /* BetWellUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C55C12974BAB20061498C /* BetWellUITestsLaunchTests.swift */; };
 		1E8C55CF297635870061498C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C55CE297635870061498C /* DetailView.swift */; };
 		1E8C55D1297636460061498C /* MatchupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C55D0297636460061498C /* MatchupView.swift */; };
-		1E8E7A9F298C786900CE485F /* SlideOverCard in Frameworks */ = {isa = PBXBuildFile; productRef = 1E8E7A9E298C786900CE485F /* SlideOverCard */; };
 		1EFC4576298DCC0C00AD5C44 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4575298DCC0C00AD5C44 /* Networking.swift */; };
 		1EFC4578298DCF9100AD5C44 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4577298DCF9100AD5C44 /* Games.swift */; };
 /* End PBXBuildFile section */
@@ -64,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E8E7A9F298C786900CE485F /* SlideOverCard in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +162,6 @@
 			);
 			name = BetWell;
 			packageProductDependencies = (
-				1E8E7A9E298C786900CE485F /* SlideOverCard */,
 			);
 			productName = BetWell;
 			productReference = 1E8C559C2974BAAE0061498C /* BetWell.app */;
@@ -626,14 +623,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		1E8E7A9E298C786900CE485F /* SlideOverCard */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1E8E7A9D298C786900CE485F /* XCRemoteSwiftPackageReference "swiftUI-slide-over-card" */;
-			productName = SlideOverCard;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		1E8C55AA2974BAB20061498C /* BetWell.xcdatamodeld */ = {

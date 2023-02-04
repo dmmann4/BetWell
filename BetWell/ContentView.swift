@@ -25,7 +25,6 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
     @State private var  networking = Networking()
     @State var todaysGames: [Response] = []
-    @State private var userdata = [User]()
     var body: some View {
         NavigationView {
             ScrollView {
@@ -104,45 +103,12 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-
-struct UserView: View {
-    let user: User
-    @State var initialImage = UIImage()
-    var body: some View {
-        
-        VStack {
-            Image(uiImage: self.initialImage)
-                .resizable()
-                .cornerRadius(50)
-                .aspectRatio(contentMode: .fit)
-                .frame(minWidth: 60, maxWidth: .infinity, minHeight: 60, maxHeight: 60, alignment: .center)
-                .onAppear {
-                    guard let url = URL(string: self.user.avatar) else { return }
-                    URLSession.shared.dataTask(with: url) { (data, response, error) in
-                        guard let data = data else { return }
-                        guard let image = UIImage(data: data) else { return }
-                        
-                        DispatchQueue.main.async {
-                            self.initialImage = image
-                        }
-                        
-                    }.resume()
-            }
-            
-            Text(user.first_name + " " + user.last_name)
-                .font(.subheadline)
-                .multilineTextAlignment(.center)
-        }
-    }
-}
-
 struct PlayingTodayView: View {
     var game: Response
     var body: some View {
         HStack(spacing: 15.0) {
             VStack(alignment: .center) {
                 Text(parseName(game.teams.home.name))
-    //                .frame(width: 100, height: 100)  // <--- here
                     .allowsTightening(true)
                     .lineLimit(2)
                     .scaledToFit()
@@ -164,7 +130,6 @@ struct PlayingTodayView: View {
             Spacer()
             VStack(alignment: .center) {
                 Text(parseName(game.teams.visitors.name))
-    //                .frame(width: 100, height: 100)  // <--- here
                     .allowsTightening(true)
                     .lineLimit(2)
                     .scaledToFit()
@@ -204,11 +169,6 @@ struct PlayingTodayView: View {
             return string
         }
     }
-}
-
-struct UserDetail: Decodable {
-    var page: Int
-    var data: [User]
 }
 
 

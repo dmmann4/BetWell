@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SlideOverCard
 
 enum MatchupDataSelection : String, CaseIterable {
     case last5 = "Last 5 Games"
@@ -20,6 +19,7 @@ struct MatchupView: View {
     var body: some View {
         VStack {
             HStack {
+                Spacer()
                 VStack {
                     AsyncImage(url: URL(string: game.home.logo)) { image in
                             image
@@ -32,6 +32,10 @@ struct MatchupView: View {
                         .background(Color.gray)
                         .clipShape(Circle())
                     Text(game.home.name)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .scaledToFit()
+                        .minimumScaleFactor(0.4)
+                        .frame(maxWidth: 120)
                 }
                 .padding()
                 Spacer()
@@ -52,47 +56,42 @@ struct MatchupView: View {
                         .background(Color.gray)
                         .clipShape(Circle())
                     Text(game.visitors.name)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .scaledToFit()
+                        .minimumScaleFactor(0.4)
                 }
-                .padding()
-                
+                Spacer()
             }
-            Button(action: { showModal = true }) {
-                Text("My Button")
-            }
-            Spacer()
+          MatchupDetailView()
+                .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height / 4.5)
+          Spacer()
         }
-        .sheet(isPresented: $showingCredits) {
-            MatchupDetailView()
-                .presentationDetents([.fraction(0.40)])
-                .fullScreenCover(isPresented: $showModal) {
-                    MatchupDetailView()
-                }
-        }
+        
         .navigationBarTitle(Text(""), displayMode: .inline)
     }
 }
 //
-//struct MatchupView_Previews: PreviewProvider {
-//    static var previews: some View {
-//       MatchupView(game: Games(homeTeam: "CIN", awayTeam: "BAL", overUnder: "45.6"))
-//    }
-//}
+struct MatchupView_Previews: PreviewProvider {
+    static var previews: some View {
+       MatchupView(game: Teams(visitors: TeamsHome(id: 1, name: "Boston Celtics", nickname: "Celtics", code: "BOS", logo: "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"), home: TeamsHome(id: 1, name: "San Antonio Spurs", nickname: "Spurs", code: "SAS", logo: "https://upload.wikimedia.org/wikipedia/fr/0/0e/San_Antonio_Spurs_2018.png")))
+    }
+}
 
 struct MatchupDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var segmentationSelection: MatchupDataSelection = .last5
     var body: some View {
-        Picker("", selection: $segmentationSelection) {
-            ForEach(MatchupDataSelection.allCases, id: \.self) { option in
-                Text(option.rawValue)
+        ZStack(alignment: .top) {
+            Rectangle()
+                .fill(.blue)
+            Picker("", selection: $segmentationSelection) {
+                ForEach(MatchupDataSelection.allCases, id: \.self) { option in
+                    Text(option.rawValue)
+                }
             }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding()
         }
-        .pickerStyle(SegmentedPickerStyle())
-        .padding()
-        Spacer()
-        .padding()
-        .onTapGesture {
-            presentationMode.wrappedValue.dismiss()
-        }
+        
     }
 }
