@@ -84,7 +84,7 @@ struct Team: Codable {
 // MARK: - Standings
 struct Standings: Codable {
     let conference, division: Conference
-    let win, loss: Loss
+    let win, loss: Record
     let gamesBack: String?
     let streak: Int
     let winStreak: Bool
@@ -98,7 +98,7 @@ struct Conference: Codable {
 }
 
 // MARK: - Loss
-struct Loss: Codable {
+struct Record: Codable {
     let home, away, total: Int
     let percentage: String
     let lastTen: Int
@@ -108,7 +108,7 @@ struct Loss: Codable {
 struct Bookmaker: Codable {
     let key: BookmakerKey
     let title: Title
-    let lastUpdate: Date
+    let lastUpdate: String
     let markets: [Market]
 
     enum CodingKeys: String, CodingKey {
@@ -126,7 +126,7 @@ enum BookmakerKey: String, Codable {
 // MARK: - Market
 struct Market: Codable {
     let key: MarketKey
-    let lastUpdate: Date
+    let lastUpdate: String
     let outcomes: [Outcome]
 
     enum CodingKeys: String, CodingKey {

@@ -24,45 +24,46 @@ struct MatchupDetailView: View {
         LastFiveGames(date: "12/26", opponent: "BRK", score: "98-94", result: "W")
     ]
     @State var segmentationSelection: MatchupDataSelection = .h2h
-    let odds: [PlayerPropOdds]
+    let game: UpcomingGame
+    @State var havePlayed: Bool = true
     var body: some View {
-        ZStack(alignment: .top) {
-            Rectangle()
-                .fill(.clear)
-            VStack {
-                Picker("", selection: $segmentationSelection) {
-                    ForEach(MatchupDataSelection.allCases, id: \.self) { option in
-                        Text(option.rawValue)
+        VStack {
+            Picker("", selection: $segmentationSelection) {
+                ForEach(MatchupDataSelection.allCases, id: \.self) { option in
+                    Text(option.rawValue)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding()
+            if segmentationSelection == .h2h {
+                if havePlayed {
+                    VStack {
+                        Text("12/17 @Home 123(BOS)-115(PHI)")
+                        Text("Home: Assists: 32 Rebounds: 45 Total 3's: 14")
+                        Text("Away: Assists: 21 Rebounds: 34 Total 3's: 16")
+                        Text("Officials: G. Brady, H. Smith, L. Jones")
                     }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                if segmentationSelection == .h2h {
-                    Last5View(last5GamesHome: last5GamesHome, last5GamesVisitor: last5GamesVisitor)
                 } else {
-                    VersusMatchupView()
+                    Text("No previous matchups this season!")
                 }
-            }
-            
-        }
-        .cornerRadius(20, corners: [.topLeft, .topRight])
-        .background(.teal)
-        if !odds.isEmpty {
-            List(odds[0].players, id: \.name) { player in
-                HStack {
-                    Text(player.name)
-    //                Text(player.assists)
-    //                Text("Line: \(player.assists.line) - O: \(player.assists.over) / U: \(player.assists.under)")
+                ForEach(game.bookmakers!, id:\.key.rawValue) { bets in
+                    Text("\(bets.title.rawValue) \(bets.markets[0].key == .h2H ? "Moneyline" : "Spread")")
+                    Text(bets.markets[0].outcomes[0].name)
+                    Text("\(bets.markets[0].outcomes[0].price)")
+                    Text(bets.markets[0].outcomes[1].name)
+                    Text("\(bets.markets[0].outcomes[1].price)")
                 }
+//                    Last5View(last5GamesHome: last5GamesHome, last5GamesVisitor: last5GamesVisitor)
+            } else {
+                VersusMatchupView()
             }
         }
-        
     }
 }
 
 
-struct MatchupDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        MatchupDetailView(odds: [PlayerPropOdds(sportsbook: "FanDuel", players: [NBAPlayers(name: "Russell Westbrook", assists: [Lines(line: 135.5, over: -200, under: 105)])])])
-    }
-}
+//struct MatchupDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MatchupDetailView(odds: [PlayerPropOdds(sportsbook: "FanDuel", players: [NBAPlayers(name: "Russell Westbrook", assists: [Lines(line: 135.5, over: -200, under: 105)])])])
+//    }
+//}

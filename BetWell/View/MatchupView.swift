@@ -30,10 +30,10 @@ struct MatchupView: View {
                 TeamHeaderView(game: game.away, whichTeam: .visitor)
                 Spacer()
             }
-            MatchupDetailView(odds: playerProps)
-                .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height)
+//            MatchupDetailView(odds: playerProps)
+//                .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height)
             Button {
-                networking.fetchPlayerPropsGames(game.oddsEventId!) { result in
+                networking.fetchPlayerPropsGames(game.oddsEventID!) { result in
                     switch result {
                     case .success(let success):
                         playerProps = success
@@ -54,7 +54,7 @@ struct MatchupView: View {
 
 struct MatchupView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchupView(game: MyOwnGamesModel(statsGameId: 1432, home: Teams(id: 13, name: "San Antonio Spurs", nickname: "Spurs", code: "SAS", logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1c/Miami_Heat_-_Logo.svg/1200px-Miami_Heat_-_Logo.svg.png"), away: Teams(id: 13, name: "San Antonio Spurs", nickname: "Spurs", code: "SAS", logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1c/Miami_Heat_-_Logo.svg/1200px-Miami_Heat_-_Logo.svg.png"), oddsEventId: nil, bookmakers: nil))
+        MatchupView(game: UpcomingGame(statsGameID: 1432, home: Team(id: 13, name: "San Antonio Spurs", nickname: "Spurs", code: "SAS", logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1c/Miami_Heat_-_Logo.svg/1200px-Miami_Heat_-_Logo.svg.png", standings: Standings(conference: Conference(name: "West", rank: 3, win: 4, loss: 6, gamesBehind: "none"), division: Conference(name: "Central", rank: 3, win: 2, loss: 5, gamesBehind: "Second"), win: Record(home: 9, away: 2, total: 11, percentage: "34%", lastTen: 20), loss: Record(home: 9, away: 2, total: 11, percentage: "34%", lastTen: 20), gamesBack: "none", streak: 3, winStreak: true)), away: Team(id: 13, name: "San Antonio Spurs", nickname: "Spurs", code: "SAS", logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1c/Miami_Heat_-_Logo.svg/1200px-Miami_Heat_-_Logo.svg.png", standings:  Standings(conference: Conference(name: "West", rank: 3, win: 4, loss: 6, gamesBehind: "none"), division: Conference(name: "Central", rank: 3, win: 2, loss: 5, gamesBehind: "Second"), win: Record(home: 9, away: 2, total: 11, percentage: "34%", lastTen: 20), loss: Record(home: 9, away: 2, total: 11, percentage: "34%", lastTen: 20), gamesBack: "none", streak: 3, winStreak: true)), oddsEventID: nil, bookmakers: nil))
     }
 }
 
@@ -92,7 +92,7 @@ enum LastViewType {
 
 struct TeamHeaderView: View {
     
-    let game: Teams
+    let game: Team
     let whichTeam: WhichTeam
 
     var body: some View {

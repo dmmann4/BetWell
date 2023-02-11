@@ -32,7 +32,7 @@ struct ContentView: View {
                 VStack(alignment: .leading) {
                     ForEach($todaysGames, id: \.statsGameID) { game in
                         NavigationLink {
-                            MatchupView(game: game.wrappedValue)
+                            TeamDataListView(teams: game.wrappedValue)
                         } label: {
                             PlayingTodayView(game: game.wrappedValue)
                         }
@@ -45,7 +45,7 @@ struct ContentView: View {
                 .navigationBarTitle("BetWell", displayMode: .large)
                 .onAppear() {
                     searchText = ""
-                    todaysGamesLocal = loadData()!
+                    todaysGamesLocal = loadData() ?? []
                     todaysGames = todaysGamesLocal
 //                    networking.fetchTodaysGames { games in
 //                        switch games {
