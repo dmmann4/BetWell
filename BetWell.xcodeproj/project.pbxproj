@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E8290B22997050800C48A14 /* TeamDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8290B12997050800C48A14 /* TeamDataListView.swift */; };
+		1E8290B42997F65600C48A14 /* MatchupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8290B32997F65600C48A14 /* MatchupDetailView.swift */; };
+		1E8290B62997F69E00C48A14 /* Last5View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8290B52997F69E00C48A14 /* Last5View.swift */; };
+		1E8290B82997FA1D00C48A14 /* UpcomingGames.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E8290B72997FA1D00C48A14 /* UpcomingGames.json */; };
 		1E8C55A02974BAAE0061498C /* BetWellApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C559F2974BAAE0061498C /* BetWellApp.swift */; };
 		1E8C55A22974BAAE0061498C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C55A12974BAAE0061498C /* ContentView.swift */; };
 		1E8C55A42974BAB20061498C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E8C55A32974BAB20061498C /* Assets.xcassets */; };
@@ -18,6 +22,8 @@
 		1E8C55C22974BAB20061498C /* BetWellUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C55C12974BAB20061498C /* BetWellUITestsLaunchTests.swift */; };
 		1E8C55CF297635870061498C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C55CE297635870061498C /* DetailView.swift */; };
 		1E8C55D1297636460061498C /* MatchupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C55D0297636460061498C /* MatchupView.swift */; };
+		1E96920F29933B970085AF0E /* SampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E96920E29933B970085AF0E /* SampleData.json */; };
+		1E9692122993466C0085AF0E /* SamplePlayerOdds.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E9692112993466C0085AF0E /* SamplePlayerOdds.json */; };
 		1EFC4576298DCC0C00AD5C44 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4575298DCC0C00AD5C44 /* Networking.swift */; };
 		1EFC4578298DCF9100AD5C44 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4577298DCF9100AD5C44 /* Games.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E8290B12997050800C48A14 /* TeamDataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDataListView.swift; sourceTree = "<group>"; };
+		1E8290B32997F65600C48A14 /* MatchupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchupDetailView.swift; sourceTree = "<group>"; };
+		1E8290B52997F69E00C48A14 /* Last5View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Last5View.swift; sourceTree = "<group>"; };
+		1E8290B72997FA1D00C48A14 /* UpcomingGames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UpcomingGames.json; sourceTree = "<group>"; };
 		1E8C559C2974BAAE0061498C /* BetWell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetWell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E8C559F2974BAAE0061498C /* BetWellApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetWellApp.swift; sourceTree = "<group>"; };
 		1E8C55A12974BAAE0061498C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +64,8 @@
 		1E8C55C12974BAB20061498C /* BetWellUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetWellUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1E8C55CE297635870061498C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		1E8C55D0297636460061498C /* MatchupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchupView.swift; sourceTree = "<group>"; };
+		1E96920E29933B970085AF0E /* SampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleData.json; sourceTree = "<group>"; };
+		1E9692112993466C0085AF0E /* SamplePlayerOdds.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SamplePlayerOdds.json; sourceTree = "<group>"; };
 		1EFC4575298DCC0C00AD5C44 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		1EFC4577298DCF9100AD5C44 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +95,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E8290B92997FC5B00C48A14 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E8290B32997F65600C48A14 /* MatchupDetailView.swift */,
+				1E8C55CE297635870061498C /* DetailView.swift */,
+				1E8C55D0297636460061498C /* MatchupView.swift */,
+				1E8C55A12974BAAE0061498C /* ContentView.swift */,
+				1E8290B52997F69E00C48A14 /* Last5View.swift */,
+				1E8290B12997050800C48A14 /* TeamDataListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E8290BA2997FC6400C48A14 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1E8290BB2997FC6B00C48A14 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1EFC4577298DCF9100AD5C44 /* Games.swift */,
+				1EFC4575298DCC0C00AD5C44 /* Networking.swift */,
+				1E8C55A82974BAB20061498C /* Persistence.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1E8290BC2997FC9900C48A14 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1E8C559F2974BAAE0061498C /* BetWellApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		1E8C55932974BAAE0061498C = {
 			isa = PBXGroup;
 			children = (
@@ -106,16 +156,14 @@
 		1E8C559E2974BAAE0061498C /* BetWell */ = {
 			isa = PBXGroup;
 			children = (
-				1E8C559F2974BAAE0061498C /* BetWellApp.swift */,
-				1E8C55A12974BAAE0061498C /* ContentView.swift */,
-				1E8C55CE297635870061498C /* DetailView.swift */,
+				1E8290BC2997FC9900C48A14 /* App */,
+				1E8290BB2997FC6B00C48A14 /* Model */,
+				1E8290BA2997FC6400C48A14 /* ViewModel */,
+				1E8290B92997FC5B00C48A14 /* View */,
+				1E969210299346500085AF0E /* SampleJSON */,
 				1E8C55A32974BAB20061498C /* Assets.xcassets */,
-				1E8C55A82974BAB20061498C /* Persistence.swift */,
 				1E8C55AA2974BAB20061498C /* BetWell.xcdatamodeld */,
 				1E8C55A52974BAB20061498C /* Preview Content */,
-				1E8C55D0297636460061498C /* MatchupView.swift */,
-				1EFC4575298DCC0C00AD5C44 /* Networking.swift */,
-				1EFC4577298DCF9100AD5C44 /* Games.swift */,
 			);
 			path = BetWell;
 			sourceTree = "<group>";
@@ -143,6 +191,16 @@
 				1E8C55C12974BAB20061498C /* BetWellUITestsLaunchTests.swift */,
 			);
 			path = BetWellUITests;
+			sourceTree = "<group>";
+		};
+		1E969210299346500085AF0E /* SampleJSON */ = {
+			isa = PBXGroup;
+			children = (
+				1E96920E29933B970085AF0E /* SampleData.json */,
+				1E9692112993466C0085AF0E /* SamplePlayerOdds.json */,
+				1E8290B72997FA1D00C48A14 /* UpcomingGames.json */,
+			);
+			path = SampleJSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +294,6 @@
 			);
 			mainGroup = 1E8C55932974BAAE0061498C;
 			packageReferences = (
-				1E8E7A9D298C786900CE485F /* XCRemoteSwiftPackageReference "swiftUI-slide-over-card" */,
 			);
 			productRefGroup = 1E8C559D2974BAAE0061498C /* Products */;
 			projectDirPath = "";
@@ -255,6 +312,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E8C55A72974BAB20061498C /* Preview Assets.xcassets in Resources */,
+				1E8290B82997FA1D00C48A14 /* UpcomingGames.json in Resources */,
+				1E96920F29933B970085AF0E /* SampleData.json in Resources */,
+				1E9692122993466C0085AF0E /* SamplePlayerOdds.json in Resources */,
 				1E8C55A42974BAB20061498C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,9 +342,12 @@
 			files = (
 				1E8C55A92974BAB20061498C /* Persistence.swift in Sources */,
 				1E8C55A22974BAAE0061498C /* ContentView.swift in Sources */,
+				1E8290B42997F65600C48A14 /* MatchupDetailView.swift in Sources */,
 				1E8C55A02974BAAE0061498C /* BetWellApp.swift in Sources */,
+				1E8290B62997F69E00C48A14 /* Last5View.swift in Sources */,
 				1EFC4578298DCF9100AD5C44 /* Games.swift in Sources */,
 				1E8C55D1297636460061498C /* MatchupView.swift in Sources */,
+				1E8290B22997050800C48A14 /* TeamDataListView.swift in Sources */,
 				1E8C55CF297635870061498C /* DetailView.swift in Sources */,
 				1E8C55AC2974BAB20061498C /* BetWell.xcdatamodeld in Sources */,
 				1EFC4576298DCC0C00AD5C44 /* Networking.swift in Sources */,
@@ -612,17 +675,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		1E8E7A9D298C786900CE485F /* XCRemoteSwiftPackageReference "swiftUI-slide-over-card" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/moifort/swiftUI-slide-over-card.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		1E8C55AA2974BAB20061498C /* BetWell.xcdatamodeld */ = {

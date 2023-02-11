@@ -1,0 +1,149 @@
+[
+    {
+        "sportsbook": "DraftKings",
+        "players": [
+            {
+                "name": "Alperen Sengun",
+                "assists": {
+                    "line": 5.5,
+                    "over": 105,
+                    "under": -135
+                },
+                "points": {
+                    "line": 16.5,
+                    "over": -115,
+                    "under": -115
+                },
+                "rebounds": {
+                    "line": 8.5,
+                    "over": -130,
+                    "under": 100
+                }
+            },
+            {
+                "name": "De'Aaron Fox",
+                "assists": {
+                    "line": 6.5,
+                    "over": -115,
+                    "under": -115
+                },
+                "points": {
+                    "line": 23.5,
+                    "over": -120,
+                    "under": -110
+                },
+                "rebounds": {
+                    "line": 3.5,
+                    "over": -145,
+                    "under": 115
+                }
+            },
+            {
+                "name": "Domantas Sabonis",
+                "assists": {
+                    "line": 7.5,
+                    "over": 110,
+                    "under": -140
+                },
+                "points": {
+                    "line": 19.5,
+                    "over": -110,
+                    "under": -120
+                },
+                "rebounds": {
+                    "line": 12.5,
+                    "over": -115,
+                    "under": -115
+                }
+            },
+            {
+                "name": "Jalen Green",
+                "assists": {
+                    "line": 3.5,
+                    "over": -135,
+                    "under": 105
+                },
+                "points": {
+                    "line": 22.5,
+                    "over": -120,
+                    "under": -110
+                },
+                "rebounds": {
+                    "line": 3.5,
+                    "over": -120,
+                    "under": -110
+                }
+            },
+            {
+                "name": "Kevin Huerter",
+                "assists": {
+                    "line": 2.5,
+                    "over": -145,
+                    "under": 115
+                },
+                "points": {
+                    "line": 13.5,
+                    "over": -120,
+                    "under": -110
+                },
+                "rebounds": {
+                    "line": 3.5,
+                    "over": -115,
+                    "under": -115
+                }
+            },
+            {
+                "name": "Harrison Barnes",
+                "points": {
+                    "line": 14.5,
+                    "over": -125,
+                    "under": -105
+                },
+                "rebounds": {
+                    "line": 4.5,
+                    "over": 110,
+                    "under": -140
+                }
+            },
+            {
+                "name": "Jabari Smith",
+                "points": {
+                    "line": 12.5,
+                    "over": -130,
+                    "under": 100
+                },
+                "rebounds": {
+                    "line": 6.5,
+                    "over": -115,
+                    "under": -115
+                }
+            },
+            {
+                "name": "Keegan Murray",
+                "points": {
+                    "line": 12.5,
+                    "over": -105,
+                    "under": -125
+                },
+                "rebounds": {
+                    "line": 5.5,
+                    "over": 120,
+                    "under": -150
+                }
+            },
+            {
+                "name": "Kenyon Martin Jr.",
+                "points": {
+                    "line": 13.5,
+                    "over": -105,
+                    "under": -125
+                },
+                "rebounds": {
+                    "line": 6.5,
+                    "over": -110,
+                    "under": -120
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,404 @@
+[
+    {
+        "statsGameId": 11871,
+        "home": {
+            "id": 7,
+            "name": "Cleveland Cavaliers",
+            "nickname": "Cavaliers",
+            "code": "CLE",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/0/06/Cavs_de_Cleveland_logo_2017.png/150px-Cavs_de_Cleveland_logo_2017.png"
+        },
+        "away": {
+            "id": 10,
+            "name": "Detroit Pistons",
+            "nickname": "Pistons",
+            "code": "DET",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Detroit_Pistons_primary_logo_2017.png/150px-Detroit_Pistons_primary_logo_2017.png"
+        },
+        "oddsEventId": "12617f1160e9ef2e3444253105e1110e",
+        "bookmakers": [
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2023-02-08T01:18:02Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-08T01:18:02Z",
+                        "outcomes": [
+                            {
+                                "name": "Cleveland Cavaliers",
+                                "price": -800
+                            },
+                            {
+                                "name": "Detroit Pistons",
+                                "price": 575
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2023-02-08T01:17:57Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-08T01:17:57Z",
+                        "outcomes": [
+                            {
+                                "name": "Cleveland Cavaliers",
+                                "price": -900
+                            },
+                            {
+                                "name": "Detroit Pistons",
+                                "price": 610
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "statsGameId": 11872,
+        "home": {
+            "id": 41,
+            "name": "Washington Wizards",
+            "nickname": "Wizards",
+            "code": "WAS",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/archive/d/d6/20161212034849%21Wizards2015.png"
+        },
+        "away": {
+            "id": 5,
+            "name": "Charlotte Hornets",
+            "nickname": "Hornets",
+            "code": "CHA",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/f/f3/Hornets_de_Charlotte_logo.svg/1200px-Hornets_de_Charlotte_logo.svg.png"
+        }
+    },
+    {
+        "statsGameId": 11873,
+        "home": {
+            "id": 2,
+            "name": "Boston Celtics",
+            "nickname": "Celtics",
+            "code": "BOS",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/6/65/Celtics_de_Boston_logo.svg/1024px-Celtics_de_Boston_logo.svg.png"
+        },
+        "away": {
+            "id": 27,
+            "name": "Philadelphia 76ers",
+            "nickname": "76ers",
+            "code": "PHI",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/4/48/76ers_2016.png"
+        },
+        "oddsEventId": "deddc7d55e3d0c74506c5905921b28df",
+        "bookmakers": [
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2023-02-08T01:17:57Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-08T01:17:57Z",
+                        "outcomes": [
+                            {
+                                "name": "Boston Celtics",
+                                "price": -190
+                            },
+                            {
+                                "name": "Philadelphia 76ers",
+                                "price": 160
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "statsGameId": 11874,
+        "home": {
+            "id": 20,
+            "name": "Miami Heat",
+            "nickname": "Heat",
+            "code": "MIA",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1c/Miami_Heat_-_Logo.svg/1200px-Miami_Heat_-_Logo.svg.png"
+        },
+        "away": {
+            "id": 15,
+            "name": "Indiana Pacers",
+            "nickname": "Pacers",
+            "code": "IND",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/c/cf/Pacers_de_l%27Indiana_logo.svg/1180px-Pacers_de_l%27Indiana_logo.svg.png"
+        },
+        "oddsEventId": "e00ac7ae323f06582b7ffc185dbaa02c",
+        "bookmakers": [
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2023-02-08T01:18:02Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-08T01:18:02Z",
+                        "outcomes": [
+                            {
+                                "name": "Indiana Pacers",
+                                "price": 210
+                            },
+                            {
+                                "name": "Miami Heat",
+                                "price": -250
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2023-02-08T01:17:57Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-08T01:17:57Z",
+                        "outcomes": [
+                            {
+                                "name": "Indiana Pacers",
+                                "price": 220
+                            },
+                            {
+                                "name": "Miami Heat",
+                                "price": -270
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "statsGameId": 11875,
+        "home": {
+            "id": 38,
+            "name": "Toronto Raptors",
+            "nickname": "Raptors",
+            "code": "TOR",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/8/89/Raptors2015.png"
+        },
+        "away": {
+            "id": 31,
+            "name": "San Antonio Spurs",
+            "nickname": "Spurs",
+            "code": "SAS",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/0/0e/San_Antonio_Spurs_2018.png"
+        },
+        "oddsEventId": "681988b7186d8b4f8e5445c7fca0e562",
+        "bookmakers": [
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2023-02-08T01:18:02Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-08T01:18:02Z",
+                        "outcomes": [
+                            {
+                                "name": "San Antonio Spurs",
+                                "price": 410
+                            },
+                            {
+                                "name": "Toronto Raptors",
+                                "price": -520
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2023-02-08T01:17:57Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-08T01:17:57Z",
+                        "outcomes": [
+                            {
+                                "name": "San Antonio Spurs",
+                                "price": 420
+                            },
+                            {
+                                "name": "Toronto Raptors",
+                                "price": -560
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "statsGameId": 11876,
+        "home": {
+            "id": 14,
+            "name": "Houston Rockets",
+            "nickname": "Rockets",
+            "code": "HOU",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/d/de/Houston_Rockets_logo_2003.png/330px-Houston_Rockets_logo_2003.png"
+        },
+        "away": {
+            "id": 30,
+            "name": "Sacramento Kings",
+            "nickname": "Kings",
+            "code": "SAC",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/9/95/Kings_de_Sacramento_logo.svg/1200px-Kings_de_Sacramento_logo.svg.png"
+        },
+        "oddsEventId": "f515747110fa506d51356b4f44e56838",
+        "bookmakers": [
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2023-02-08T01:18:02Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-08T01:18:02Z",
+                        "outcomes": [
+                            {
+                                "name": "Houston Rockets",
+                                "price": 245
+                            },
+                            {
+                                "name": "Sacramento Kings",
+                                "price": -295
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2023-02-08T01:17:57Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-08T01:17:57Z",
+                        "outcomes": [
+                            {
+                                "name": "Houston Rockets",
+                                "price": 245
+                            },
+                            {
+                                "name": "Sacramento Kings",
+                                "price": -300
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "statsGameId": 11877,
+        "home": {
+            "id": 40,
+            "name": "Utah Jazz",
+            "nickname": "Jazz",
+            "code": "UTA",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/3/3b/Jazz_de_l%27Utah_logo.png"
+        },
+        "away": {
+            "id": 22,
+            "name": "Minnesota Timberwolves",
+            "nickname": "Timberwolves",
+            "code": "MIN",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/d/d9/Timberwolves_du_Minnesota_logo_2017.png/200px-Timberwolves_du_Minnesota_logo_2017.png"
+        }
+    },
+    {
+        "statsGameId": 11878,
+        "home": {
+            "id": 16,
+            "name": "LA Clippers",
+            "nickname": "Clippers",
+            "code": "LAC",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/d/d6/Los_Angeles_Clippers_logo_2010.png"
+        },
+        "away": {
+            "id": 8,
+            "name": "Dallas Mavericks",
+            "nickname": "Mavericks",
+            "code": "DAL",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/b/b8/Mavericks_de_Dallas_logo.svg/150px-Mavericks_de_Dallas_logo.svg.png"
+        }
+    },
+    {
+        "statsGameId": 11879,
+        "home": {
+            "id": 29,
+            "name": "Portland Trail Blazers",
+            "nickname": "Trail Blazers",
+            "code": "POR",
+            "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Portland_Trail_Blazers_logo.svg/1200px-Portland_Trail_Blazers_logo.svg.png"
+        },
+        "away": {
+            "id": 11,
+            "name": "Golden State Warriors",
+            "nickname": "Warriors",
+            "code": "GSW",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/d/de/Warriors_de_Golden_State_logo.svg/1200px-Warriors_de_Golden_State_logo.svg.png"
+        },
+        "oddsEventId": "94184ef5aa8c77c0d597382a3df19fee",
+        "bookmakers": [
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2023-02-08T01:18:02Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-08T01:18:02Z",
+                        "outcomes": [
+                            {
+                                "name": "Golden State Warriors",
+                                "price": 135
+                            },
+                            {
+                                "name": "Portland Trail Blazers",
+                                "price": -155
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2023-02-08T01:17:57Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-08T01:17:57Z",
+                        "outcomes": [
+                            {
+                                "name": "Golden State Warriors",
+                                "price": 134
+                            },
+                            {
+                                "name": "Portland Trail Blazers",
+                                "price": -158
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

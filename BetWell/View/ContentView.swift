@@ -18,22 +18,21 @@ struct Games: Identifiable {
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
     @State private var  networking = Networking()
-    @State var todaysGames: [Response] = []
+    @State var todaysGamesLocal: [UpcomingGame] = []
+    @State var todaysGames: [UpcomingGame] = []
+    @State private var searchText = ""
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
-                    Text("Who is playing tonight?")
-                        .padding()
-                    ForEach($todaysGames, id: \.id) { game in
+                    ForEach($todaysGames, id: \.statsGameID) { game in
                         NavigationLink {
-                            MatchupView(game: game.teams.wrappedValue)
+                            MatchupView(game: game.wrappedValue)
                         } label: {
                             PlayingTodayView(game: game.wrappedValue)
                         }
@@ -45,18 +44,39 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
                 .navigationBarTitle("BetWell", displayMode: .large)
                 .onAppear() {
-                    networking.fetchTodaysGames { games in
-                        switch games {
-                            case .success(let count):
-                               todaysGames = count
-                            case .failure(let error):
-                                print(error.localizedDescription)
-                            }
-                    }
+                    searchText = ""
+                    todaysGamesLocal = loadData()!
+                    todaysGames = todaysGamesLocal
+//                    networking.fetchTodaysGames { games in
+//                        switch games {
+//                            case .success(let count):
+//                            todaysGamesLocal = count
+//                            todaysGames =  todaysGamesLocal
+//                            case .failure(let error):
+//                                print(error.localizedDescription)
+//                            }
+//                    }
                 }
-            }.frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .searchable(text: $searchText, prompt: "Who is playing tonight?")
+        .onChange(of: searchText) { index in
+            if !index.isEmpty {
+                todaysGames = todaysGamesLocal.filter { $0.home.name.contains(searchText) ||  $0.away.name.contains(searchText)}
+            } else {
+                todaysGames = todaysGamesLocal
+            }
         }
     }
+    
+    var searchResults: [UpcomingGame] {
+            if searchText.isEmpty {
+                return todaysGames
+            } else {
+                return todaysGames.filter { $0.away.name.contains(searchText) ||  $0.home.name.contains(searchText)}
+            }
+        }
     
     private func addItem() {
         withAnimation {
@@ -72,6 +92,19 @@ struct ContentView: View {
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
+    }
+    
+    func loadData() -> [UpcomingGame]? {
+        guard let url = Bundle.main.url(forResource: "UpcomingGames", withExtension: "json")
+            else {
+                print("Json file not found")
+                return []
+            }
+        
+        let data = try? Data(contentsOf: url)
+        let users = try? JSONDecoder().decode([UpcomingGame].self, from: data!)
+        return users
+        
     }
     
     private func deleteItems(offsets: IndexSet) {
@@ -104,51 +137,49 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct PlayingTodayView: View {
-    var game: Response
+    var game: UpcomingGame
     var body: some View {
         HStack(spacing: 15.0) {
             VStack(alignment: .center) {
-                Text(parseName(game.teams.home.name))
+                Text(parseName(game.home.nickname))
                     .allowsTightening(true)
                     .lineLimit(2)
                     .scaledToFit()
                     .minimumScaleFactor(0.4)
-                AsyncImage(url: URL(string: game.teams.home.logo)) { image in
+                AsyncImage(url: URL(string: game.home.logo)) { image in
                         image
                             .resizable()
                             .scaledToFill()
                     } placeholder: {
                         ProgressView()
                     }
-                    .frame(width: 44, height: 44)
+                    .frame(width: 50, height: 50)
                     .background(Color.gray)
                     .clipShape(Circle())
             }
-            
+            .padding(.leading, 10)
             Spacer()
             Text("vs")
             Spacer()
             VStack(alignment: .center) {
-                Text(parseName(game.teams.visitors.name))
+                Text(parseName(game.away.nickname))
                     .allowsTightening(true)
                     .lineLimit(2)
                     .scaledToFit()
                     .minimumScaleFactor(0.4)
-                AsyncImage(url: URL(string: game.teams.visitors.logo)) { image in
+                AsyncImage(url: URL(string: game.away.logo)) { image in
                         image
                             .resizable()
                             .scaledToFill()
                     } placeholder: {
                         ProgressView()
                     }
-                    .frame(width: 44, height: 44)
+                    .frame(width: 50, height: 50)
                     .background(Color.gray)
                     .clipShape(Circle())
             }
             Spacer()
-            Text(game.league)
-//                .frame(width: 100, height: 100)  // <--- here
-//                .allowsTightening(true)
+            Text(game.oddsEventID ?? "No Odds")
                 .lineLimit(2)
                 .scaledToFit()
                 .minimumScaleFactor(0.4)

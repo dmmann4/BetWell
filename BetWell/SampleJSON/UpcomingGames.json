@@ -1,0 +1,1172 @@
+[
+    {
+        "statsGameId": 11896,
+        "home": {
+            "id": 5,
+            "name": "Charlotte Hornets",
+            "nickname": "Hornets",
+            "code": "CHA",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/f/f3/Hornets_de_Charlotte_logo.svg/1200px-Hornets_de_Charlotte_logo.svg.png",
+            "standings": {
+                "conference": {
+                    "name": "east",
+                    "rank": 14,
+                    "win": 15,
+                    "loss": 42
+                },
+                "division": {
+                    "name": "southeast",
+                    "rank": 5,
+                    "win": 15,
+                    "loss": 42,
+                    "gamesBehind": "16.5"
+                },
+                "win": {
+                    "home": 7,
+                    "away": 8,
+                    "total": 15,
+                    "percentage": "0.263",
+                    "lastTen": 2
+                },
+                "loss": {
+                    "home": 17,
+                    "away": 25,
+                    "total": 42,
+                    "percentage": "0.737",
+                    "lastTen": 8
+                },
+                "gamesBack": "16.5",
+                "streak": 6,
+                "winStreak": false
+            }
+        },
+        "away": {
+            "id": 9,
+            "name": "Denver Nuggets",
+            "nickname": "Nuggets",
+            "code": "DEN",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/3/35/Nuggets_de_Denver_2018.png/180px-Nuggets_de_Denver_2018.png",
+            "standings": {
+                "conference": {
+                    "name": "west",
+                    "rank": 1,
+                    "win": 38,
+                    "loss": 18
+                },
+                "division": {
+                    "name": "northwest",
+                    "rank": 1,
+                    "win": 38,
+                    "loss": 18,
+                    "gamesBehind": null
+                },
+                "win": {
+                    "home": 26,
+                    "away": 12,
+                    "total": 38,
+                    "percentage": "0.679",
+                    "lastTen": 5
+                },
+                "loss": {
+                    "home": 4,
+                    "away": 14,
+                    "total": 18,
+                    "percentage": "0.321",
+                    "lastTen": 5
+                },
+                "gamesBack": null,
+                "streak": 1,
+                "winStreak": false
+            }
+        },
+        "oddsEventId": "a153aca61099adea7dffc626dab63b64",
+        "bookmakers": [
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2023-02-11T16:22:24Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-11T16:22:24Z",
+                        "outcomes": [
+                            {
+                                "name": "Charlotte Hornets",
+                                "price": 285
+                            },
+                            {
+                                "name": "Denver Nuggets",
+                                "price": -345
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2023-02-11T16:22:23Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-11T16:22:23Z",
+                        "outcomes": [
+                            {
+                                "name": "Charlotte Hornets",
+                                "price": 280
+                            },
+                            {
+                                "name": "Denver Nuggets",
+                                "price": -350
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "statsGameId": 11897,
+        "home": {
+            "id": 26,
+            "name": "Orlando Magic",
+            "nickname": "Magic",
+            "code": "ORL",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png",
+            "standings": {
+                "conference": {
+                    "name": "east",
+                    "rank": 13,
+                    "win": 23,
+                    "loss": 33
+                },
+                "division": {
+                    "name": "southeast",
+                    "rank": 4,
+                    "win": 23,
+                    "loss": 33,
+                    "gamesBehind": "8"
+                },
+                "win": {
+                    "home": 14,
+                    "away": 9,
+                    "total": 23,
+                    "percentage": "0.411",
+                    "lastTen": 6
+                },
+                "loss": {
+                    "home": 14,
+                    "away": 19,
+                    "total": 33,
+                    "percentage": "0.589",
+                    "lastTen": 4
+                },
+                "gamesBack": "8",
+                "streak": 1,
+                "winStreak": true
+            }
+        },
+        "away": {
+            "id": 20,
+            "name": "Miami Heat",
+            "nickname": "Heat",
+            "code": "MIA",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1c/Miami_Heat_-_Logo.svg/1200px-Miami_Heat_-_Logo.svg.png",
+            "standings": {
+                "conference": {
+                    "name": "east",
+                    "rank": 6,
+                    "win": 31,
+                    "loss": 25
+                },
+                "division": {
+                    "name": "southeast",
+                    "rank": 1,
+                    "win": 31,
+                    "loss": 25,
+                    "gamesBehind": null
+                },
+                "win": {
+                    "home": 19,
+                    "away": 12,
+                    "total": 31,
+                    "percentage": "0.554",
+                    "lastTen": 6
+                },
+                "loss": {
+                    "home": 9,
+                    "away": 16,
+                    "total": 25,
+                    "percentage": "0.446",
+                    "lastTen": 4
+                },
+                "gamesBack": null,
+                "streak": 2,
+                "winStreak": true
+            }
+        },
+        "oddsEventId": "9999ef2618927f350d7c2aab6d49a998",
+        "bookmakers": [
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2023-02-11T16:22:24Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-11T16:22:24Z",
+                        "outcomes": [
+                            {
+                                "name": "Miami Heat",
+                                "price": -110
+                            },
+                            {
+                                "name": "Orlando Magic",
+                                "price": -110
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2023-02-11T16:22:23Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-11T16:22:23Z",
+                        "outcomes": [
+                            {
+                                "name": "Miami Heat",
+                                "price": -104
+                            },
+                            {
+                                "name": "Orlando Magic",
+                                "price": -112
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "statsGameId": 11898,
+        "home": {
+            "id": 41,
+            "name": "Washington Wizards",
+            "nickname": "Wizards",
+            "code": "WAS",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/archive/d/d6/20161212034849%21Wizards2015.png",
+            "standings": {
+                "conference": {
+                    "name": "east",
+                    "rank": 10,
+                    "win": 25,
+                    "loss": 29
+                },
+                "division": {
+                    "name": "southeast",
+                    "rank": 3,
+                    "win": 25,
+                    "loss": 29,
+                    "gamesBehind": "5"
+                },
+                "win": {
+                    "home": 13,
+                    "away": 12,
+                    "total": 25,
+                    "percentage": "0.463",
+                    "lastTen": 7
+                },
+                "loss": {
+                    "home": 12,
+                    "away": 17,
+                    "total": 29,
+                    "percentage": "0.537",
+                    "lastTen": 3
+                },
+                "gamesBack": "5",
+                "streak": 1,
+                "winStreak": true
+            }
+        },
+        "away": {
+            "id": 15,
+            "name": "Indiana Pacers",
+            "nickname": "Pacers",
+            "code": "IND",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/c/cf/Pacers_de_l%27Indiana_logo.svg/1180px-Pacers_de_l%27Indiana_logo.svg.png",
+            "standings": {
+                "conference": {
+                    "name": "east",
+                    "rank": 12,
+                    "win": 25,
+                    "loss": 32
+                },
+                "division": {
+                    "name": "central",
+                    "rank": 4,
+                    "win": 25,
+                    "loss": 32,
+                    "gamesBehind": "14.5"
+                },
+                "win": {
+                    "home": 17,
+                    "away": 8,
+                    "total": 25,
+                    "percentage": "0.439",
+                    "lastTen": 2
+                },
+                "loss": {
+                    "home": 13,
+                    "away": 19,
+                    "total": 32,
+                    "percentage": "0.561",
+                    "lastTen": 8
+                },
+                "gamesBack": "14.5",
+                "streak": 3,
+                "winStreak": false
+            }
+        },
+        "oddsEventId": "067c32623840620a791d94bfaf3dc61c",
+        "bookmakers": [
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2023-02-11T16:22:24Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-11T16:22:24Z",
+                        "outcomes": [
+                            {
+                                "name": "Indiana Pacers",
+                                "price": 185
+                            },
+                            {
+                                "name": "Washington Wizards",
+                                "price": -215
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2023-02-11T16:22:23Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-11T16:22:23Z",
+                        "outcomes": [
+                            {
+                                "name": "Indiana Pacers",
+                                "price": 180
+                            },
+                            {
+                                "name": "Washington Wizards",
+                                "price": -215
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "statsGameId": 11899,
+        "home": {
+            "id": 1,
+            "name": "Atlanta Hawks",
+            "nickname": "Hawks",
+            "code": "ATL",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png",
+            "standings": {
+                "conference": {
+                    "name": "east",
+                    "rank": 8,
+                    "win": 28,
+                    "loss": 28
+                },
+                "division": {
+                    "name": "southeast",
+                    "rank": 2,
+                    "win": 28,
+                    "loss": 28,
+                    "gamesBehind": "3"
+                },
+                "win": {
+                    "home": 14,
+                    "away": 14,
+                    "total": 28,
+                    "percentage": "0.500",
+                    "lastTen": 4
+                },
+                "loss": {
+                    "home": 11,
+                    "away": 17,
+                    "total": 28,
+                    "percentage": "0.500",
+                    "lastTen": 6
+                },
+                "gamesBack": "3",
+                "streak": 1,
+                "winStreak": true
+            }
+        },
+        "away": {
+            "id": 31,
+            "name": "San Antonio Spurs",
+            "nickname": "Spurs",
+            "code": "SAS",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/0/0e/San_Antonio_Spurs_2018.png",
+            "standings": {
+                "conference": {
+                    "name": "west",
+                    "rank": 14,
+                    "win": 14,
+                    "loss": 42
+                },
+                "division": {
+                    "name": "southwest",
+                    "rank": 4,
+                    "win": 14,
+                    "loss": 42,
+                    "gamesBehind": "20.5"
+                },
+                "win": {
+                    "home": 9,
+                    "away": 5,
+                    "total": 14,
+                    "percentage": "0.250",
+                    "lastTen": 0
+                },
+                "loss": {
+                    "home": 21,
+                    "away": 21,
+                    "total": 42,
+                    "percentage": "0.750",
+                    "lastTen": 10
+                },
+                "gamesBack": "20.5",
+                "streak": 11,
+                "winStreak": false
+            }
+        },
+        "oddsEventId": "929a55688863077e4785eb8bf8f4a140",
+        "bookmakers": [
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2023-02-11T16:22:24Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-11T16:22:24Z",
+                        "outcomes": [
+                            {
+                                "name": "Atlanta Hawks",
+                                "price": -975
+                            },
+                            {
+                                "name": "San Antonio Spurs",
+                                "price": 675
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2023-02-11T16:22:23Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-11T16:22:23Z",
+                        "outcomes": [
+                            {
+                                "name": "Atlanta Hawks",
+                                "price": -1000
+                            },
+                            {
+                                "name": "San Antonio Spurs",
+                                "price": 660
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "statsGameId": 11900,
+        "home": {
+            "id": 24,
+            "name": "New York Knicks",
+            "nickname": "Knicks",
+            "code": "NYK",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/3/34/Knicks_de_NY.png",
+            "standings": {
+                "conference": {
+                    "name": "east",
+                    "rank": 7,
+                    "win": 30,
+                    "loss": 27
+                },
+                "division": {
+                    "name": "atlantic",
+                    "rank": 4,
+                    "win": 30,
+                    "loss": 27,
+                    "gamesBehind": "10.5"
+                },
+                "win": {
+                    "home": 14,
+                    "away": 16,
+                    "total": 30,
+                    "percentage": "0.526",
+                    "lastTen": 5
+                },
+                "loss": {
+                    "home": 15,
+                    "away": 12,
+                    "total": 27,
+                    "percentage": "0.474",
+                    "lastTen": 5
+                },
+                "gamesBack": "10.5",
+                "streak": 1,
+                "winStreak": false
+            }
+        },
+        "away": {
+            "id": 40,
+            "name": "Utah Jazz",
+            "nickname": "Jazz",
+            "code": "UTA",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/3/3b/Jazz_de_l%27Utah_logo.png",
+            "standings": {
+                "conference": {
+                    "name": "west",
+                    "rank": 11,
+                    "win": 28,
+                    "loss": 29
+                },
+                "division": {
+                    "name": "northwest",
+                    "rank": 4,
+                    "win": 28,
+                    "loss": 29,
+                    "gamesBehind": "10.5"
+                },
+                "win": {
+                    "home": 18,
+                    "away": 10,
+                    "total": 28,
+                    "percentage": "0.491",
+                    "lastTen": 5
+                },
+                "loss": {
+                    "home": 12,
+                    "away": 17,
+                    "total": 29,
+                    "percentage": "0.509",
+                    "lastTen": 5
+                },
+                "gamesBack": "10.5",
+                "streak": 1,
+                "winStreak": true
+            }
+        },
+        "oddsEventId": "aa489f30b7dbe20d28c3357f4172886f",
+        "bookmakers": [
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2023-02-11T16:22:24Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-11T16:22:24Z",
+                        "outcomes": [
+                            {
+                                "name": "New York Knicks",
+                                "price": -225
+                            },
+                            {
+                                "name": "Utah Jazz",
+                                "price": 190
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2023-02-11T16:22:23Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-11T16:22:23Z",
+                        "outcomes": [
+                            {
+                                "name": "New York Knicks",
+                                "price": -240
+                            },
+                            {
+                                "name": "Utah Jazz",
+                                "price": 198
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "statsGameId": 11901,
+        "home": {
+            "id": 7,
+            "name": "Cleveland Cavaliers",
+            "nickname": "Cavaliers",
+            "code": "CLE",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/0/06/Cavs_de_Cleveland_logo_2017.png/150px-Cavs_de_Cleveland_logo_2017.png",
+            "standings": {
+                "conference": {
+                    "name": "east",
+                    "rank": 4,
+                    "win": 36,
+                    "loss": 22
+                },
+                "division": {
+                    "name": "central",
+                    "rank": 2,
+                    "win": 36,
+                    "loss": 22,
+                    "gamesBehind": "4"
+                },
+                "win": {
+                    "home": 23,
+                    "away": 13,
+                    "total": 36,
+                    "percentage": "0.621",
+                    "lastTen": 7
+                },
+                "loss": {
+                    "home": 6,
+                    "away": 16,
+                    "total": 22,
+                    "percentage": "0.379",
+                    "lastTen": 3
+                },
+                "gamesBack": "4",
+                "streak": 5,
+                "winStreak": true
+            }
+        },
+        "away": {
+            "id": 6,
+            "name": "Chicago Bulls",
+            "nickname": "Bulls",
+            "code": "CHI",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/d/d1/Bulls_de_Chicago_logo.svg/1200px-Bulls_de_Chicago_logo.svg.png",
+            "standings": {
+                "conference": {
+                    "name": "east",
+                    "rank": 9,
+                    "win": 26,
+                    "loss": 29
+                },
+                "division": {
+                    "name": "central",
+                    "rank": 3,
+                    "win": 26,
+                    "loss": 29,
+                    "gamesBehind": "12.5"
+                },
+                "win": {
+                    "home": 16,
+                    "away": 10,
+                    "total": 26,
+                    "percentage": "0.473",
+                    "lastTen": 5
+                },
+                "loss": {
+                    "home": 11,
+                    "away": 18,
+                    "total": 29,
+                    "percentage": "0.527",
+                    "lastTen": 5
+                },
+                "gamesBack": "12.5",
+                "streak": 2,
+                "winStreak": false
+            }
+        },
+        "oddsEventId": "0c27d073642274b97341456bd738b4bd",
+        "bookmakers": [
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2023-02-11T16:22:24Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-11T16:22:24Z",
+                        "outcomes": [
+                            {
+                                "name": "Chicago Bulls",
+                                "price": 170
+                            },
+                            {
+                                "name": "Cleveland Cavaliers",
+                                "price": -200
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2023-02-11T16:22:23Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-11T16:22:23Z",
+                        "outcomes": [
+                            {
+                                "name": "Chicago Bulls",
+                                "price": 164
+                            },
+                            {
+                                "name": "Cleveland Cavaliers",
+                                "price": -196
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "statsGameId": 11902,
+        "home": {
+            "id": 11,
+            "name": "Golden State Warriors",
+            "nickname": "Warriors",
+            "code": "GSW",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/d/de/Warriors_de_Golden_State_logo.svg/1200px-Warriors_de_Golden_State_logo.svg.png",
+            "standings": {
+                "conference": {
+                    "name": "west",
+                    "rank": 8,
+                    "win": 28,
+                    "loss": 27
+                },
+                "division": {
+                    "name": "pacific",
+                    "rank": 4,
+                    "win": 28,
+                    "loss": 27,
+                    "gamesBehind": "3"
+                },
+                "win": {
+                    "home": 21,
+                    "away": 7,
+                    "total": 28,
+                    "percentage": "0.509",
+                    "lastTen": 6
+                },
+                "loss": {
+                    "home": 6,
+                    "away": 21,
+                    "total": 27,
+                    "percentage": "0.491",
+                    "lastTen": 4
+                },
+                "gamesBack": "3",
+                "streak": 1,
+                "winStreak": false
+            }
+        },
+        "away": {
+            "id": 17,
+            "name": "Los Angeles Lakers",
+            "nickname": "Lakers",
+            "code": "LAL",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Los_Angeles_Lakers_logo.svg/220px-Los_Angeles_Lakers_logo.svg.png",
+            "standings": {
+                "conference": {
+                    "name": "west",
+                    "rank": 13,
+                    "win": 25,
+                    "loss": 31
+                },
+                "division": {
+                    "name": "pacific",
+                    "rank": 5,
+                    "win": 25,
+                    "loss": 31,
+                    "gamesBehind": "6.5"
+                },
+                "win": {
+                    "home": 13,
+                    "away": 12,
+                    "total": 25,
+                    "percentage": "0.446",
+                    "lastTen": 4
+                },
+                "loss": {
+                    "home": 14,
+                    "away": 17,
+                    "total": 31,
+                    "percentage": "0.554",
+                    "lastTen": 6
+                },
+                "gamesBack": "6.5",
+                "streak": 3,
+                "winStreak": false
+            }
+        },
+        "oddsEventId": "6a13e3b7b4698bcacebac8421f4ecc8b",
+        "bookmakers": [
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2023-02-11T16:22:24Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-11T16:22:24Z",
+                        "outcomes": [
+                            {
+                                "name": "Golden State Warriors",
+                                "price": -135
+                            },
+                            {
+                                "name": "Los Angeles Lakers",
+                                "price": 115
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2023-02-11T16:22:23Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-11T16:22:23Z",
+                        "outcomes": [
+                            {
+                                "name": "Golden State Warriors",
+                                "price": -130
+                            },
+                            {
+                                "name": "Los Angeles Lakers",
+                                "price": 110
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "statsGameId": 11903,
+        "home": {
+            "id": 30,
+            "name": "Sacramento Kings",
+            "nickname": "Kings",
+            "code": "SAC",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/9/95/Kings_de_Sacramento_logo.svg/1200px-Kings_de_Sacramento_logo.svg.png",
+            "standings": {
+                "conference": {
+                    "name": "west",
+                    "rank": 3,
+                    "win": 31,
+                    "loss": 24
+                },
+                "division": {
+                    "name": "pacific",
+                    "rank": 1,
+                    "win": 31,
+                    "loss": 24,
+                    "gamesBehind": null
+                },
+                "win": {
+                    "home": 16,
+                    "away": 15,
+                    "total": 31,
+                    "percentage": "0.564",
+                    "lastTen": 5
+                },
+                "loss": {
+                    "home": 12,
+                    "away": 12,
+                    "total": 24,
+                    "percentage": "0.436",
+                    "lastTen": 5
+                },
+                "gamesBack": null,
+                "streak": 1,
+                "winStreak": false
+            }
+        },
+        "away": {
+            "id": 8,
+            "name": "Dallas Mavericks",
+            "nickname": "Mavericks",
+            "code": "DAL",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/b/b8/Mavericks_de_Dallas_logo.svg/150px-Mavericks_de_Dallas_logo.svg.png",
+            "standings": {
+                "conference": {
+                    "name": "west",
+                    "rank": 4,
+                    "win": 31,
+                    "loss": 26
+                },
+                "division": {
+                    "name": "southwest",
+                    "rank": 2,
+                    "win": 31,
+                    "loss": 26,
+                    "gamesBehind": "4"
+                },
+                "win": {
+                    "home": 19,
+                    "away": 12,
+                    "total": 31,
+                    "percentage": "0.544",
+                    "lastTen": 6
+                },
+                "loss": {
+                    "home": 9,
+                    "away": 17,
+                    "total": 26,
+                    "percentage": "0.456",
+                    "lastTen": 4
+                },
+                "gamesBack": "4",
+                "streak": 3,
+                "winStreak": true
+            }
+        },
+        "oddsEventId": "69e0afa7c9d8233902e274984cb01384",
+        "bookmakers": [
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2023-02-11T16:22:24Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-11T16:22:24Z",
+                        "outcomes": [
+                            {
+                                "name": "Dallas Mavericks",
+                                "price": -105
+                            },
+                            {
+                                "name": "Sacramento Kings",
+                                "price": -115
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2023-02-11T16:22:23Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2023-02-11T16:22:23Z",
+                        "outcomes": [
+                            {
+                                "name": "Dallas Mavericks",
+                                "price": -102
+                            },
+                            {
+                                "name": "Sacramento Kings",
+                                "price": -118
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "statsGameId": 11904,
+        "home": {
+            "id": 2,
+            "name": "Boston Celtics",
+            "nickname": "Celtics",
+            "code": "BOS",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/6/65/Celtics_de_Boston_logo.svg/1024px-Celtics_de_Boston_logo.svg.png",
+            "standings": {
+                "conference": {
+                    "name": "east",
+                    "rank": 1,
+                    "win": 40,
+                    "loss": 16
+                },
+                "division": {
+                    "name": "atlantic",
+                    "rank": 1,
+                    "win": 40,
+                    "loss": 16,
+                    "gamesBehind": null
+                },
+                "win": {
+                    "home": 22,
+                    "away": 18,
+                    "total": 40,
+                    "percentage": "0.714",
+                    "lastTen": 6
+                },
+                "loss": {
+                    "home": 7,
+                    "away": 9,
+                    "total": 16,
+                    "percentage": "0.286",
+                    "lastTen": 4
+                },
+                "gamesBack": null,
+                "streak": 3,
+                "winStreak": true
+            }
+        },
+        "away": {
+            "id": 19,
+            "name": "Memphis Grizzlies",
+            "nickname": "Grizzlies",
+            "code": "MEM",
+            "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/Memphis_Grizzlies.svg/1200px-Memphis_Grizzlies.svg.png",
+            "standings": {
+                "conference": {
+                    "name": "west",
+                    "rank": 2,
+                    "win": 34,
+                    "loss": 21
+                },
+                "division": {
+                    "name": "southwest",
+                    "rank": 1,
+                    "win": 34,
+                    "loss": 21,
+                    "gamesBehind": null
+                },
+                "win": {
+                    "home": 23,
+                    "away": 11,
+                    "total": 34,
+                    "percentage": "0.618",
+                    "lastTen": 3
+                },
+                "loss": {
+                    "home": 5,
+                    "away": 16,
+                    "total": 21,
+                    "percentage": "0.382",
+                    "lastTen": 7
+                },
+                "gamesBack": null,
+                "streak": 2,
+                "winStreak": true
+            }
+        }
+    },
+    {
+        "statsGameId": 11905,
+        "home": {
+            "id": 38,
+            "name": "Toronto Raptors",
+            "nickname": "Raptors",
+            "code": "TOR",
+            "logo": "https://upload.wikimedia.org/wikipedia/fr/8/89/Raptors2015.png",
+            "standings": {
+                "conference": {
+                    "name": "east",
+                    "rank": 11,
+                    "win": 26,
+                    "loss": 31
+                },
+                "division": {
+                    "name": "atlantic",
+                    "rank": 5,
+                    "win": 26,
+                    "loss": 31,
+                    "gamesBehind": "14.5"
+                },
+                "win": {
+                    "home": 16,
+                    "away": 10,
+                    "total": 26,
+                    "percentage": "0.456",
+                    "lastTen": 6
+                },
+                "loss": {
+                    "home": 13,
+                    "away": 18,
+                    "total": 31,
+                    "percentage": "0.544",
+                    "lastTen": 4
+                },
+                "gamesBack": "14.5",
+                "streak": 1,
+                "winStreak": false
+            }
+        },
+        "away": {
+            "id": 10,
+            "name": "Detroit Pistons",
+            "nickname": "Pistons",
+            "code": "DET",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Detroit_Pistons_primary_logo_2017.png/150px-Detroit_Pistons_primary_logo_2017.png",
+            "standings": {
+                "conference": {
+                    "name": "east",
+                    "rank": 15,
+                    "win": 15,
+                    "loss": 42
+                },
+                "division": {
+                    "name": "central",
+                    "rank": 5,
+                    "win": 15,
+                    "loss": 42,
+                    "gamesBehind": "24.5"
+                },
+                "win": {
+                    "home": 8,
+                    "away": 7,
+                    "total": 15,
+                    "percentage": "0.263",
+                    "lastTen": 3
+                },
+                "loss": {
+                    "home": 21,
+                    "away": 21,
+                    "total": 42,
+                    "percentage": "0.737",
+                    "lastTen": 7
+                },
+                "gamesBack": "24.5",
+                "streak": 1,
+                "winStreak": true
+            }
+        }
+    }
+]
