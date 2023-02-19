@@ -33,7 +33,6 @@ struct TeamDataListView: View {
                     VStack {
                         AwayTeamDetailHeaderView(team: away)
                     }
-//                    .padding()
                 }
                 HStack {
                     HomeTeamTrendsView(team: home)
@@ -47,14 +46,15 @@ struct TeamDataListView: View {
           print("home \(home)")
           print("away \(away)")
         }
+        .navigationBarTitle(Text(""), displayMode: .inline)
     }
 }
 
-//struct TeamDataListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TeamDataListView(home: SampleData.home, away: SampleData.away, venue: "TD Garden")
-//    }
-//}
+struct TeamDataListView_Previews: PreviewProvider {
+    static var previews: some View {
+        TeamDataListView(home: SampleData.home, away: SampleData.away, venue: "TD Garden")
+    }
+}
 
 struct AwayTeamTrendsView: View {
     let team: Away
@@ -123,9 +123,6 @@ struct HomeTeamTrendsView: View {
         .font(.caption)
         .padding(.leading, 10.0)
         .padding(.trailing, 3.0)
-        .onAppear() {
-//            getLast10Data(team.splits, type: .last10)
-        }
     }
     
     
@@ -165,8 +162,6 @@ struct HomeTeamTrendsView: View {
         }
         return injuriesLocal
     }
-    
-//    func getLast10Averages(
 }
 
 
@@ -174,7 +169,7 @@ struct HomeTeamTrendsView: View {
 struct HomeTeamDetailHeaderView: View {
     let team: Home
     var body: some View {
-        Image(uiImage: team.logo!)
+        Image(team.alias)
             .resizable()
             .scaledToFill()
             .frame(width: 44, height: 44)
@@ -190,7 +185,7 @@ struct HomeTeamDetailHeaderView: View {
 struct AwayTeamDetailHeaderView: View {
     let team: Away
     var body: some View {
-        Image(uiImage: team.logo!)
+        Image(team.alias)
             .resizable()
             .scaledToFill()
             .frame(width: 44, height: 44)

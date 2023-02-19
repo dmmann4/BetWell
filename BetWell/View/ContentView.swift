@@ -37,6 +37,7 @@ struct ContentView: View {
                 .buttonStyle(PlainButtonStyle())
                 .frame(maxWidth: .infinity)
             }
+            .buttonStyle(PlainButtonStyle())
             .frame(maxWidth: .infinity)
             .navigationBarTitle("BetWell", displayMode: .large)
         }
@@ -147,7 +148,7 @@ struct PlayingTodayView: View {
                     .lineLimit(2)
                     .scaledToFit()
                     .minimumScaleFactor(0.4)
-                Image(uiImage: (game.home.logo ?? UIImage(systemName: "pencil"))!)
+                Image(game.home.alias)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 50, height: 50)
@@ -164,7 +165,7 @@ struct PlayingTodayView: View {
                     .lineLimit(2)
                     .scaledToFit()
                     .minimumScaleFactor(0.4)
-                Image(uiImage: (game.away.logo ?? UIImage(systemName: "pencil"))!)
+                Image(game.away.alias)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 50, height: 50)

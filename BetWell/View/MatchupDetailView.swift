@@ -10,7 +10,7 @@ import SwiftUI
 struct MatchupDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var segmentationSelection: MatchupDataSelection = .h2h
-    @State var segmentationSelection2: MatchupDataSelection = .h2h
+    
     var home: Home
     var away: Away
     @State var havePlayed: Bool = true
@@ -25,37 +25,7 @@ struct MatchupDetailView: View {
             .padding()
             if segmentationSelection == .h2h {
                 ForEach(TeamBets.allCases, id: \.self) { bet in
-                    VStack {
-                        HStack {
-                            Text(bet.rawValue)
-                            Spacer()
-                            VStack {
-                                Picker("", selection: $segmentationSelection2) {
-                                    ForEach(MatchupDataSelection.allCases, id: \.self) { option in
-                                        Text(option.rawValue)
-                                    }
-                                }
-                                .pickerStyle(SegmentedPickerStyle())
-                                .frame(width: 200)
-                                if segmentationSelection == .h2h {
-                                    Text("Last 10 games results")
-                                } else {
-                                    Text("Season results")
-                                }
-                            }
-                            
-                        }
-                        HStack {
-                           Text("Home")
-                           Text("-100")
-                        }
-                        HStack {
-                           Text("Away")
-                           Text("-100")
-                        }
-                    }
-                   
-                    
+                    CardView(home: home, away: away, bet: bet)
                 }
             } else {
                 VersusMatchupView()
@@ -72,11 +42,11 @@ enum TeamBets: String, CaseIterable {
 }
 
 
-//struct MatchupDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MatchupDetailView(game: UpcomingGame(statsGameID: 11900, home: BetWell.Team(id: 24, name: "New York Knicks", nickname: "Knicks", code: "NYK", logo: "https://upload.wikimedia.org/wikipedia/fr/3/34/Knicks_de_NY.png", standings: BetWell.Standings(conference: BetWell.Conference(name: "east", rank: 7, win: 30, loss: 27, gamesBehind: nil), division: BetWell.Conference(name: "atlantic", rank: 4, win: 30, loss: 27, gamesBehind: Optional("10.5")), win: BetWell.Record(home: 14, away: 16, total: 30, percentage: "0.526", lastTen: 5), loss: BetWell.Record(home: 15, away: 12, total: 27, percentage: "0.474", lastTen: 5), gamesBack: Optional("10.5"), streak: 1, winStreak: false)), away: BetWell.Team(id: 40, name: "Utah Jazz", nickname: "Jazz", code: "UTA", logo: "https://upload.wikimedia.org/wikipedia/fr/3/3b/Jazz_de_l%27Utah_logo.png", standings: BetWell.Standings(conference: BetWell.Conference(name: "west", rank: 11, win: 28, loss: 29, gamesBehind: nil), division: BetWell.Conference(name: "northwest", rank: 4, win: 28, loss: 29, gamesBehind: Optional("10.5")), win: BetWell.Record(home: 18, away: 10, total: 28, percentage: "0.491", lastTen: 5), loss: BetWell.Record(home: 12, away: 17, total: 29, percentage: "0.509", lastTen: 5), gamesBack: Optional("10.5"), streak: 1, winStreak: true)), oddsEventID: Optional("aa489f30b7dbe20d28c3357f4172886f"), bookmakers: Optional([BetWell.Bookmaker(key: BetWell.BookmakerKey.draftkings, title: BetWell.Title.draftKings, lastUpdate: "2023-02-11T16:22:24Z", markets: [BetWell.Market(key: BetWell.MarketKey.h2H, lastUpdate: "2023-02-11T16:22:24Z", outcomes: [BetWell.Outcome(name: "New York Knicks", price: -225), BetWell.Outcome(name: "Utah Jazz", price: 190)])]), BetWell.Bookmaker(key: BetWell.BookmakerKey.fanduel, title: BetWell.Title.fanDuel, lastUpdate: "2023-02-11T16:22:23Z", markets: [BetWell.Market(key: BetWell.MarketKey.h2H, lastUpdate: "2023-02-11T16:22:23Z", outcomes: [BetWell.Outcome(name: "New York Knicks", price: -240), BetWell.Outcome(name: "Utah Jazz", price: 198)])])])))
-//    }
-//}
+struct MatchupDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        MatchupDetailView(home: SampleData.home, away: SampleData.away)
+    }
+}
 
 struct PreviousMatchups: View {
     let game: NewUpcomingGames
@@ -93,37 +63,86 @@ struct PreviousMatchups: View {
 }
 
 struct CardView: View {
-    let game: NewUpcomingGames
+    var home: Home
+    var away: Away
+    let bet: TeamBets
+    @State var segmentationSelection2: MatchupDataSelection = .h2h
+    @State var showDeepDiveView = false
     var body: some View {
-        HStack {
-            
+        VStack {
+            HStack {
+                VStack {
+                    Text(bet.rawValue)
+                        .font(.system(size: 20, weight: .bold, design: .default))
+                        .padding()
+                    HStack {
+                        Text("Home")
+                        Text("-100")
+                    }
+                    .font(.system(size: 16, weight: .bold, design: .default))
+                    HStack {
+                        Text("Away")
+                        Text("-100")
+                    }
+                    .font(.system(size: 16, weight: .bold, design: .default))
+                }
+                .foregroundColor(.white)
+                Spacer()
+                VStack {
+                    Picker("", selection: $segmentationSelection2) {
+                        ForEach(MatchupDataSelection.allCases, id: \.self) { option in
+                            Text(option.rawValue)
+                                .font(.system(size: 26, weight: .bold, design: .default))
+                                .foregroundColor(.white)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .frame(width: 175)
+                    if segmentationSelection2 == .h2h {
+                        Text("Last 10 games results")
+                            .font(.system(size: 16, weight: .bold, design: .default))
+                            .foregroundColor(.white)
+                            .padding(.top, 8)
+                    } else {
+                        Text("Season results")
+                            .font(.system(size: 16, weight: .bold, design: .default))
+                            .foregroundColor(.white)
+                            .padding(.top, 8)
+                    }
+                    Spacer()
+                    VStack {
+                        Button {
+                            showDeepDiveView.toggle()
+                        } label: {
+                            Text("More Details")
+                        }
+                        NavigationLink("", destination:  MatchupDeepDiveView(), isActive: $showDeepDiveView)
+                    }
+                }
+            }
+            .padding(.trailing, 20)
+            Spacer()
         }
+        .frame(maxWidth: .infinity, alignment: .center)
+        .background(Color(red: 32/255, green: 36/255, blue: 38/255))
+        .modifier(CardModifier())
+        .padding(.all, 10)
     }
-//    func getBooks(_ book: UpcomingGame) -> [String: [(String, [String: String])]] {
-//        var returnVal: [String: [(String, [String: String])]] = [:]
-//        book.bookmakers?.forEach({ book in
-//            returnVal[book.title.rawValue] = parseMarketValues(book.markets)
-//        })
-//        return returnVal
-//    }
-//    
-//    func parseMarketValues(_ markets: [Market]) -> [(String, [String: String])] {
-//        var array: [(String, [String: String])] = []
-//        markets.forEach { market in
-//            let title = market.key.rawValue
-//            let odds = parseBookValues(market)
-//            array.append((title, odds))
-//        }
-//        return array
-//    }
-//    
-//    func parseBookValues(_ markets: Market) -> [String: String] {
-//        var odds: [String: String] = [:]
-//        markets.outcomes.forEach { outcome in
-//            odds[outcome.name] = "\(outcome.price)"
-//        }
-//        return odds
-//    }
+}
+
+struct MatchupDeepDiveView: View {
+    var body: some View {
+        Text("here we can show some really detailed numbers about the teams/matchups")
+    }
+}
+
+struct CardModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .cornerRadius(20)
+            .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
+    }
+    
 }
 
 struct BooksCardView: View {
@@ -135,9 +154,6 @@ struct BooksCardView: View {
     var body: some View {
         let keys = books.map{$0.key}
         let values = books.map {$0.value}
-//        print(values)
-//        let newVal = values[0]
-//        print(newVal)
         return Picker("", selection: $segmentationSelection) {
             ForEach(keys, id: \.self) { key in
                 Text(key)

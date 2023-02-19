@@ -29,7 +29,7 @@ struct Away: Codable {
     let splits: [Split]
     let injuries: [AwayInjury]?
     let standings: AwayStandings
-    let logo: UIImage?
+//    let logo: UIImage?
 
     enum CodingKeys: String, CodingKey {
         case name, alias, id
@@ -37,18 +37,18 @@ struct Away: Codable {
         case reference, splits, injuries, standings
     }
     
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.name = try container.decode(String.self, forKey: .name)
-        self.alias = try container.decode(String.self, forKey: .alias)
-        self.id = try container.decode(String.self, forKey: .id)
-        self.srID = try container.decode(String.self, forKey: .srID)
-        self.reference = try container.decode(String.self, forKey: .reference)
-        self.splits = try container.decode([Split].self, forKey: .splits)
-        self.injuries = try container.decodeIfPresent([AwayInjury].self, forKey: .injuries)
-        self.standings = try container.decode(AwayStandings.self, forKey: .standings)
-        self.logo = UIImage(named: self.alias)
-    }
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        self.name = try container.decode(String.self, forKey: .name)
+//        self.alias = try container.decode(String.self, forKey: .alias)
+//        self.id = try container.decode(String.self, forKey: .id)
+//        self.srID = try container.decode(String.self, forKey: .srID)
+//        self.reference = try container.decode(String.self, forKey: .reference)
+//        self.splits = try container.decode([Split].self, forKey: .splits)
+//        self.injuries = try container.decodeIfPresent([AwayInjury].self, forKey: .injuries)
+//        self.standings = try container.decode(AwayStandings.self, forKey: .standings)
+//        self.logo = UIImage(named: self.alias)
+//    }
 }
 
 // MARK: - AwayInjury
@@ -198,25 +198,25 @@ struct Home: Codable {
     let splits: [Split]
     let injuries: [AwayInjury]
     let standings: HomeStandings
-    let logo: UIImage?
+//    let logo: UIImage?
 
     enum CodingKeys: String, CodingKey {
         case name, alias, id
         case srID = "sr_id"
         case reference, splits, injuries, standings
     }
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.name = try container.decode(String.self, forKey: .name)
-        self.alias = try container.decode(String.self, forKey: .alias)
-        self.id = try container.decode(String.self, forKey: .id)
-        self.srID = try container.decode(String.self, forKey: .srID)
-        self.reference = try container.decode(String.self, forKey: .reference)
-        self.splits = try container.decode([Split].self, forKey: .splits)
-        self.injuries = try container.decode([AwayInjury].self, forKey: .injuries)
-        self.standings = try container.decode(HomeStandings.self, forKey: .standings)
-        self.logo = UIImage(named: self.alias)
-    }
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        self.name = try container.decode(String.self, forKey: .name)
+//        self.alias = try container.decode(String.self, forKey: .alias)
+//        self.id = try container.decode(String.self, forKey: .id)
+//        self.srID = try container.decode(String.self, forKey: .srID)
+//        self.reference = try container.decode(String.self, forKey: .reference)
+//        self.splits = try container.decode([Split].self, forKey: .splits)
+//        self.injuries = try container.decode([AwayInjury].self, forKey: .injuries)
+//        self.standings = try container.decode(HomeStandings.self, forKey: .standings)
+//        self.logo = UIImage(named: self.alias)
+//    }
 }
 
 // MARK: - HomeStandings
