@@ -23,43 +23,29 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     @State private var  networking = Networking()
-    @State var todaysGamesLocal: [UpcomingGame] = []
-    @State var todaysGames: [UpcomingGame] = []
+    @State var todaysGamesLocal: [NewUpcomingGames] = []
+    @State var todaysGames: [NewUpcomingGames] = []
     @State private var searchText = ""
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(alignment: .leading) {
-                    ForEach($todaysGames, id: \.statsGameID) { game in
-                        NavigationLink {
-                            TeamDataListView(teams: game.wrappedValue)
-                        } label: {
-                            PlayingTodayView(game: game.wrappedValue)
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                        .frame(maxWidth: .infinity)
-                    }
-                    .frame(maxWidth: .infinity)
+            List($todaysGames, id: \.statsGameID) { game in
+                NavigationLink {
+                    TeamDataListView(home: game.home.wrappedValue, away: game.away.wrappedValue, venue: game.venue.wrappedValue)
+                } label: {
+                    PlayingTodayView(game: game.wrappedValue)
                 }
-                .edgesIgnoringSafeArea(.all)
-                .navigationBarTitle("BetWell", displayMode: .large)
-                .onAppear() {
-                    searchText = ""
-                    todaysGamesLocal = loadData() ?? []
-                    todaysGames = todaysGamesLocal
-//                    networking.fetchTodaysGames { games in
-//                        switch games {
-//                            case .success(let count):
-//                            todaysGamesLocal = count
-//                            todaysGames =  todaysGamesLocal
-//                            case .failure(let error):
-//                                print(error.localizedDescription)
-//                            }
-//                    }
-                }
+                .buttonStyle(PlainButtonStyle())
+                .frame(maxWidth: .infinity)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(maxWidth: .infinity)
+            .navigationBarTitle("BetWell", displayMode: .large)
         }
+        .onAppear() {
+            searchText = ""
+            todaysGamesLocal = loadData() ?? []
+            todaysGames = todaysGamesLocal
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .searchable(text: $searchText, prompt: "Who is playing tonight?")
         .onChange(of: searchText) { index in
             if !index.isEmpty {
@@ -68,15 +54,16 @@ struct ContentView: View {
                 todaysGames = todaysGamesLocal
             }
         }
+        .edgesIgnoringSafeArea(.all)
     }
     
-    var searchResults: [UpcomingGame] {
-            if searchText.isEmpty {
-                return todaysGames
-            } else {
-                return todaysGames.filter { $0.away.name.contains(searchText) ||  $0.home.name.contains(searchText)}
-            }
+    var searchResults: [NewUpcomingGames] {
+        if searchText.isEmpty {
+            return todaysGames
+        } else {
+            return todaysGames.filter { $0.away.name.contains(searchText) ||  $0.home.name.contains(searchText)}
         }
+    }
     
     private func addItem() {
         withAnimation {
@@ -94,17 +81,31 @@ struct ContentView: View {
         }
     }
     
-    func loadData() -> [UpcomingGame]? {
-        guard let url = Bundle.main.url(forResource: "UpcomingGames", withExtension: "json")
-            else {
-                print("Json file not found")
+    func loadData() -> [NewUpcomingGames]? {
+        guard let url = Bundle.main.url(forResource: "NewGamesSeed", withExtension: "json")
+        else {
+            print("Json file not found")
+            return []
+        }
+        var data: Data?
+        do {
+            data = try Data(contentsOf: url)
+        } catch (let error) {
+            print("cannot get data from url - \(error)")
+            return []
+        }
+        if let data {
+            do {
+                let games = try JSONDecoder().decode([NewUpcomingGames].self, from: data)
+                //                print("games: \(games)")
+                return games
+            } catch (let error) {
+                print("cannot decode - \(error)")
                 return []
             }
-        
-        let data = try? Data(contentsOf: url)
-        let users = try? JSONDecoder().decode([UpcomingGame].self, from: data!)
-        return users
-        
+        } else {
+            return []
+        }
     }
     
     private func deleteItems(offsets: IndexSet) {
@@ -137,22 +138,18 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct PlayingTodayView: View {
-    var game: UpcomingGame
+    let game: NewUpcomingGames
     var body: some View {
         HStack(spacing: 15.0) {
             VStack(alignment: .center) {
-                Text(parseName(game.home.nickname))
+                Text(game.home.alias)
                     .allowsTightening(true)
                     .lineLimit(2)
                     .scaledToFit()
                     .minimumScaleFactor(0.4)
-                AsyncImage(url: URL(string: game.home.logo)) { image in
-                        image
-                            .resizable()
-                            .scaledToFill()
-                    } placeholder: {
-                        ProgressView()
-                    }
+                Image(uiImage: (game.home.logo ?? UIImage(systemName: "pencil"))!)
+                    .resizable()
+                    .scaledToFill()
                     .frame(width: 50, height: 50)
                     .background(Color.gray)
                     .clipShape(Circle())
@@ -162,24 +159,20 @@ struct PlayingTodayView: View {
             Text("vs")
             Spacer()
             VStack(alignment: .center) {
-                Text(parseName(game.away.nickname))
+                Text(game.away.alias)
                     .allowsTightening(true)
                     .lineLimit(2)
                     .scaledToFit()
                     .minimumScaleFactor(0.4)
-                AsyncImage(url: URL(string: game.away.logo)) { image in
-                        image
-                            .resizable()
-                            .scaledToFill()
-                    } placeholder: {
-                        ProgressView()
-                    }
+                Image(uiImage: (game.away.logo ?? UIImage(systemName: "pencil"))!)
+                    .resizable()
+                    .scaledToFill()
                     .frame(width: 50, height: 50)
                     .background(Color.gray)
                     .clipShape(Circle())
             }
             Spacer()
-            Text(game.oddsEventID ?? "No Odds")
+            Text(game.time.description)
                 .lineLimit(2)
                 .scaledToFit()
                 .minimumScaleFactor(0.4)

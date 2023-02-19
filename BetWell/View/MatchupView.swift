@@ -13,35 +13,36 @@ enum MatchupDataSelection : String, CaseIterable {
 }
 
 struct MatchupView: View {
-    var game: UpcomingGame
-    @State var playerProps: [PlayerPropOdds] = []
+    var home: Home
+    var away: Away
+//    @State var playerProps: [PlayerPropOdds] = []
     let networking = Networking()
     var body: some View {
         VStack {
             HStack {
                 Spacer()
-                TeamHeaderView(game: game.home, whichTeam: .home)
+                HomeHeaderView(game: home)
                 Spacer()
                 VStack {
                     Text("Last 5 VS")
                     Text("4-1")
                 }
                 Spacer()
-                TeamHeaderView(game: game.away, whichTeam: .visitor)
+                AwayHeaderView(game: away)
                 Spacer()
             }
 //            MatchupDetailView(odds: playerProps)
 //                .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height)
             Button {
-                networking.fetchPlayerPropsGames(game.oddsEventID!) { result in
-                    switch result {
-                    case .success(let success):
-                        playerProps = success
-                        print("got player props - \(success)")
-                    case .failure(let failure):
-                        print("error getting player propbs - \(failure)")
-                    }
-                }
+//                networking.fetchPlayerPropsGames(game.oddsEventID!) { result in
+//                    switch result {
+//                    case .success(let success):
+//                        playerProps = success
+//                        print("got player props - \(success)")
+//                    case .failure(let failure):
+//                        print("error getting player propbs - \(failure)")
+//                    }
+//                }
             } label: {
                 Text("Press for player props")
             }
@@ -52,11 +53,11 @@ struct MatchupView: View {
     }
 }
 
-struct MatchupView_Previews: PreviewProvider {
-    static var previews: some View {
-        MatchupView(game: UpcomingGame(statsGameID: 1432, home: Team(id: 13, name: "San Antonio Spurs", nickname: "Spurs", code: "SAS", logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1c/Miami_Heat_-_Logo.svg/1200px-Miami_Heat_-_Logo.svg.png", standings: Standings(conference: Conference(name: "West", rank: 3, win: 4, loss: 6, gamesBehind: "none"), division: Conference(name: "Central", rank: 3, win: 2, loss: 5, gamesBehind: "Second"), win: Record(home: 9, away: 2, total: 11, percentage: "34%", lastTen: 20), loss: Record(home: 9, away: 2, total: 11, percentage: "34%", lastTen: 20), gamesBack: "none", streak: 3, winStreak: true)), away: Team(id: 13, name: "San Antonio Spurs", nickname: "Spurs", code: "SAS", logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1c/Miami_Heat_-_Logo.svg/1200px-Miami_Heat_-_Logo.svg.png", standings:  Standings(conference: Conference(name: "West", rank: 3, win: 4, loss: 6, gamesBehind: "none"), division: Conference(name: "Central", rank: 3, win: 2, loss: 5, gamesBehind: "Second"), win: Record(home: 9, away: 2, total: 11, percentage: "34%", lastTen: 20), loss: Record(home: 9, away: 2, total: 11, percentage: "34%", lastTen: 20), gamesBack: "none", streak: 3, winStreak: true)), oddsEventID: nil, bookmakers: nil))
-    }
-}
+//struct MatchupView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MatchupView(home: SampleData.home, away: SampleData.away)
+//    }
+//}
 
 struct LastFiveGames {
     let date: String
@@ -90,14 +91,13 @@ enum LastViewType {
     case result
 }
 
-struct TeamHeaderView: View {
+struct AwayHeaderView: View {
     
-    let game: Team
-    let whichTeam: WhichTeam
+    let game: Away
 
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: game.logo)) { image in
+            AsyncImage(url: URL(string: game.srID)) { image in
                     image
                         .resizable()
                         .scaledToFill()
@@ -107,7 +107,7 @@ struct TeamHeaderView: View {
                 .frame(width: 44, height: 44)
                 .background(Color.gray)
                 .clipShape(Circle())
-            Text(whichTeam == .home ? game.name : game.name)
+            Text(game.name)
                 .fixedSize(horizontal: false, vertical: true)
                 .scaledToFit()
                 .minimumScaleFactor(0.4)
@@ -117,6 +117,34 @@ struct TeamHeaderView: View {
     }
     
 }
+
+struct HomeHeaderView: View {
+    
+    let game: Home
+
+    var body: some View {
+        VStack {
+            AsyncImage(url: URL(string: game.srID)) { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(width: 44, height: 44)
+                .background(Color.gray)
+                .clipShape(Circle())
+            Text(game.name)
+                .fixedSize(horizontal: false, vertical: true)
+                .scaledToFit()
+                .minimumScaleFactor(0.4)
+                .frame(maxWidth: 120)
+        }
+        .padding()
+    }
+    
+}
+
 
 enum WhichTeam {
     case home

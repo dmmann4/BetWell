@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E55D53829A1439A00618996 /* NewUpcomingGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55D53729A1439900618996 /* NewUpcomingGames.swift */; };
+		1E55D53C29A144DC00618996 /* NewGamesSeed.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E55D53B29A144DC00618996 /* NewGamesSeed.json */; };
+		1E55D53E29A1B26700618996 /* StaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55D53D29A1B26700618996 /* StaticData.swift */; };
+		1E55D54029A1B62B00618996 /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55D53F29A1B62B00618996 /* RecordType.swift */; };
 		1E8290B22997050800C48A14 /* TeamDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8290B12997050800C48A14 /* TeamDataListView.swift */; };
 		1E8290B42997F65600C48A14 /* MatchupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8290B32997F65600C48A14 /* MatchupDetailView.swift */; };
 		1E8290B62997F69E00C48A14 /* Last5View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8290B52997F69E00C48A14 /* Last5View.swift */; };
@@ -46,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E55D53729A1439900618996 /* NewUpcomingGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUpcomingGames.swift; sourceTree = "<group>"; };
+		1E55D53B29A144DC00618996 /* NewGamesSeed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewGamesSeed.json; sourceTree = "<group>"; };
+		1E55D53D29A1B26700618996 /* StaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticData.swift; sourceTree = "<group>"; };
+		1E55D53F29A1B62B00618996 /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
 		1E8290B12997050800C48A14 /* TeamDataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDataListView.swift; sourceTree = "<group>"; };
 		1E8290B32997F65600C48A14 /* MatchupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchupDetailView.swift; sourceTree = "<group>"; };
 		1E8290B52997F69E00C48A14 /* Last5View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Last5View.swift; sourceTree = "<group>"; };
@@ -121,6 +129,9 @@
 				1EFC4577298DCF9100AD5C44 /* Games.swift */,
 				1EFC4575298DCC0C00AD5C44 /* Networking.swift */,
 				1E8C55A82974BAB20061498C /* Persistence.swift */,
+				1E55D53729A1439900618996 /* NewUpcomingGames.swift */,
+				1E55D53D29A1B26700618996 /* StaticData.swift */,
+				1E55D53F29A1B62B00618996 /* RecordType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,6 +210,7 @@
 				1E96920E29933B970085AF0E /* SampleData.json */,
 				1E9692112993466C0085AF0E /* SamplePlayerOdds.json */,
 				1E8290B72997FA1D00C48A14 /* UpcomingGames.json */,
+				1E55D53B29A144DC00618996 /* NewGamesSeed.json */,
 			);
 			path = SampleJSON;
 			sourceTree = "<group>";
@@ -312,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E8C55A72974BAB20061498C /* Preview Assets.xcassets in Resources */,
+				1E55D53C29A144DC00618996 /* NewGamesSeed.json in Resources */,
 				1E8290B82997FA1D00C48A14 /* UpcomingGames.json in Resources */,
 				1E96920F29933B970085AF0E /* SampleData.json in Resources */,
 				1E9692122993466C0085AF0E /* SamplePlayerOdds.json in Resources */,
@@ -341,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E8C55A92974BAB20061498C /* Persistence.swift in Sources */,
+				1E55D54029A1B62B00618996 /* RecordType.swift in Sources */,
 				1E8C55A22974BAAE0061498C /* ContentView.swift in Sources */,
 				1E8290B42997F65600C48A14 /* MatchupDetailView.swift in Sources */,
 				1E8C55A02974BAAE0061498C /* BetWellApp.swift in Sources */,
@@ -350,6 +364,8 @@
 				1E8290B22997050800C48A14 /* TeamDataListView.swift in Sources */,
 				1E8C55CF297635870061498C /* DetailView.swift in Sources */,
 				1E8C55AC2974BAB20061498C /* BetWell.xcdatamodeld in Sources */,
+				1E55D53829A1439A00618996 /* NewUpcomingGames.swift in Sources */,
+				1E55D53E29A1B26700618996 /* StaticData.swift in Sources */,
 				1EFC4576298DCC0C00AD5C44 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
