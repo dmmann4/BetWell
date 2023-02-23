@@ -29,17 +29,20 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List($todaysGames, id: \.statsGameID) { game in
-                NavigationLink {
-                    TeamDataListView(home: game.home.wrappedValue, away: game.away.wrappedValue, venue: game.venue.wrappedValue)
-                } label: {
+//                NavigationLink {
+                    
+                    
+//                } label: {
                     PlayingTodayView(game: game.wrappedValue)
-                }
-                .buttonStyle(PlainButtonStyle())
-                .frame(maxWidth: .infinity)
+                    .background( NavigationLink("", destination: TeamDataListView(home: game.home.wrappedValue, away: game.away.wrappedValue, venue: game.venue.wrappedValue)).opacity(0) )
+                
+//                }
+//                .buttonStyle(PlainButtonStyle())
+//                .frame(maxWidth: .infinity)
             }
-            .buttonStyle(PlainButtonStyle())
             .frame(maxWidth: .infinity)
             .navigationBarTitle("BetWell", displayMode: .large)
+            
         }
         .onAppear() {
             searchText = ""
@@ -141,24 +144,7 @@ struct ContentView_Previews: PreviewProvider {
 struct PlayingTodayView: View {
     let game: NewUpcomingGames
     var body: some View {
-        HStack(spacing: 15.0) {
-            VStack(alignment: .center) {
-                Text(game.home.alias)
-                    .allowsTightening(true)
-                    .lineLimit(2)
-                    .scaledToFit()
-                    .minimumScaleFactor(0.4)
-                Image(game.home.alias)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 50, height: 50)
-                    .background(Color.gray)
-                    .clipShape(Circle())
-            }
-            .padding(.leading, 10)
-            Spacer()
-            Text("vs")
-            Spacer()
+        HStack(spacing: 0.5) {
             VStack(alignment: .center) {
                 Text(game.away.alias)
                     .allowsTightening(true)
@@ -172,16 +158,34 @@ struct PlayingTodayView: View {
                     .background(Color.gray)
                     .clipShape(Circle())
             }
+            .padding(.leading, 10)
             Spacer()
-            Text(game.time.description)
-                .lineLimit(2)
-                .scaledToFit()
+            Text("@")
+            Spacer()
+            VStack(alignment: .center) {
+                Text(game.home.alias)
+                    .allowsTightening(true)
+                    .lineLimit(2)
+                    .scaledToFit()
+                    .minimumScaleFactor(0.4)
+                Image(game.home.alias)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 50, height: 50)
+                    .background(Color.gray)
+                    .clipShape(Circle())
+            }
+            Spacer()
+            Text(game.venue)
+                .font(.subheadline)
+                .multilineTextAlignment(.trailing)
+                .lineLimit(nil)
                 .minimumScaleFactor(0.4)
             Spacer()
         }
         .padding(10)
         .frame(maxWidth: .infinity, minHeight: 70)
-        .background(Color.init(uiColor: .systemGray5))
+        .background(.clear)
     }
     
     func parseName(_ string: String) -> String {

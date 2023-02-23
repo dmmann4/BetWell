@@ -117,7 +117,7 @@ struct HomeTeamTrendsView: View {
             Text("Home: \(getRecordType(team.standings.records, type: .home)!.wins)-\(getRecordType(team.standings.records, type: .home)!.losses)")
             Text("Away: \(getRecordType(team.standings.records, type: .road)!.wins)-\(getRecordType(team.standings.records, type: .road)!.losses)")
             Text("Last 10: \(getRecordType(team.standings.records, type: .last10)!.wins)-\(getRecordType(team.standings.records, type: .home)!.losses)")
-            Text("Last 10 Avg: Pts: \(team.standings.avgPoints) | Ast: \(getLast10Data(team.splits, type: .last10, stat: .assists)) | Reb: \(getLast10Data(team.splits, type: .last10, stat: .rebounds)) | Team 3's: \(getLast10Data(team.splits, type: .last10, stat: .threesMade))")
+            Text("Last 10 Avg: Pts: \(round(team.standings.avgPoints * 10) / 10.0) | Ast: \(getLast10Data(team.splits, type: .last10, stat: .assists)) | Reb: \(getLast10Data(team.splits, type: .last10, stat: .rebounds)) | Team 3's: \(getLast10Data(team.splits, type: .last10, stat: .threesMade))")
             Text("Out: \(getInjuries(team.injuries))")
         }
         .font(.caption)
@@ -168,13 +168,22 @@ struct HomeTeamTrendsView: View {
 
 struct HomeTeamDetailHeaderView: View {
     let team: Home
+    @State var goToDeepDive = false
     var body: some View {
-        Image(team.alias)
-            .resizable()
-            .scaledToFill()
-            .frame(width: 44, height: 44)
-            .background(Color.gray)
-            .clipShape(Circle())
+        ZStack {
+            Button {
+                goToDeepDive.toggle()
+                print("away team logo button pressed")
+            } label: {
+                Image(team.alias)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 44, height: 44)
+                    .background(Color.gray)
+                    .clipShape(Circle())
+            }
+            NavigationLink("", destination:  TeamDeepDiveView(), isActive: $goToDeepDive)
+        }
         Text(team.alias)
             .fontWeight(.bold)
         Text("\(team.standings.record)-\(team.standings.winPct)(\(team.standings.rank.confRank)th in \(team.standings.rank.divRank))")
@@ -183,17 +192,35 @@ struct HomeTeamDetailHeaderView: View {
 }
 
 struct AwayTeamDetailHeaderView: View {
+    @State var goToDeepDive = false
     let team: Away
     var body: some View {
-        Image(team.alias)
-            .resizable()
-            .scaledToFill()
-            .frame(width: 44, height: 44)
-            .background(Color.gray)
-            .clipShape(Circle())
+        ZStack {
+            Button {
+                goToDeepDive.toggle()
+                print("away team logo button pressed")
+               
+            } label: {
+                Image(team.alias)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 44, height: 44)
+                    .background(Color.gray)
+                    .clipShape(Circle())
+            }
+            NavigationLink("", destination:  TeamDeepDiveView(), isActive: $goToDeepDive)
+        }
+        
         Text(team.alias)
             .fontWeight(.bold)
         Text("\(team.standings.record)-\(team.standings.winPct)(\(team.standings.rank.confRank)th in \(team.standings.rank.divRank))")
             .font(.caption2)
+    }
+}
+
+struct TeamDeepDiveView: View {
+    
+    var body: some View {
+        Text("plsyer deep dive view")
     }
 }
