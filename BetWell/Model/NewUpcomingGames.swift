@@ -196,7 +196,7 @@ struct Home: Codable {
     let name, alias, id, srID: String
     let reference: String
     let splits: [Split]
-    let injuries: [AwayInjury]
+    let injuries: [AwayInjury]?
     let standings: HomeStandings
 //    let logo: UIImage?
 
