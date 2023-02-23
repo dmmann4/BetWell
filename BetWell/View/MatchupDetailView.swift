@@ -7,10 +7,25 @@
 
 import SwiftUI
 
-enum TeamBets: String, CaseIterable {
+protocol Bets {}
+
+enum TeamBets: String, CaseIterable, Bets {
     case moneyLine = "Moneyline"
     case spread = "Spread"
     case totalPoints = "Total Points"
+}
+
+enum PlayerBets: String, CaseIterable, Bets {
+    case playerPoints = "Points O/U"
+    case playerRebounds = "Rebounds O/U"
+    case playerAssists = "Assists O/U"
+    case playerThrres = "Three's made O/U"
+    case playerBlocks = "Blocks O/U"
+    case totalPoints10 = "To score 10+"
+    case totalPoints15 = "To score 15+"
+    case totalPoints20 = "To score 20+"
+    case totalPoints25 = "To score 25+"
+    case totalPoints30 = "To score 30+"
 }
 
 struct MatchupDetailView: View {
@@ -31,10 +46,12 @@ struct MatchupDetailView: View {
             .padding()
             if segmentationSelection == .h2h {
                 ForEach(TeamBets.allCases, id: \.self) { bet in
-                    CardView(home: home, away: away, bet: bet)
+                    CardView(home: home, away: away, teambet: bet, playerBet: nil)
                 }
             } else {
-                VersusMatchupView()
+                ForEach(PlayerBets.allCases, id: \.self) { bet in
+                    CardView(home: home, away: away, teambet: nil, playerBet: bet)
+                }
             }
         }
         .padding()

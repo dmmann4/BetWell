@@ -10,18 +10,29 @@ import SwiftUI
 struct CardView: View {
     var home: Home
     var away: Away
-    let bet: TeamBets
+    let teambet: TeamBets?
+    let playerBet: PlayerBets?
     @State var segmentationSelection2: MatchupDataSelection = .h2h
     @State var showDeepDiveView = false
     var body: some View {
         VStack(alignment: .center) {
             HStack(alignment: .top) {
                 VStack {
-                    Text(bet.rawValue)
-                        .font(.system(size: 20, weight: .bold, design: .default))
-                        .padding([.top, .bottom], 10)
+                    if let teambet {
+                        Text(teambet.rawValue)
+                            .font(.system(size: 20, weight: .bold, design: .default))
+                            .padding([.top, .bottom], 10)
+                    } else {
+                        Text(playerBet?.rawValue ?? "N/A")
+                            .font(.system(size: 20, weight: .bold, design: .default))
+                            .padding([.top, .bottom], 10)
+                    }
                     Spacer()
-                    TeamBetOddsMatchupView(bet: bet)
+                    if let teambet {
+                        TeamBetOddsMatchupView(bet: teambet)
+                    } else {
+                        PlayerBetOddsView(bet: playerBet!)
+                    }
                     Spacer()
                 }
                 .foregroundColor(.white)
@@ -64,7 +75,7 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(home: SampleData.home, away: SampleData.away, bet: .moneyLine)
+        CardView(home: SampleData.home, away: SampleData.away, teambet: .moneyLine, playerBet: .playerPoints)
     }
 }
 
