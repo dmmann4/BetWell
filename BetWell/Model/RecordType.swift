@@ -7,15 +7,15 @@
 
 import Foundation
 
-enum RecordType: String, CaseIterable {
-    case below500 = "below_500"
-    case home = "home"
-    case last10 = "last_10"
-    case last10Home = "last_10_home"
-    case last10Road = "last_10_road"
-    case over500 = "over_500"
-    case road = "road"
-}
+//enum RecordType: String, CaseIterable {
+//    case below500 = "below_500"
+//    case home = "home"
+//    case last10 = "last_10"
+//    case last10Home = "last_10_home"
+//    case last10Road = "last_10_road"
+//    case over500 = "over_500"
+//    case road = "road"
+//}
 
 enum SplitType: String, CaseIterable {
     case over500 = "over_500"

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlayingTodayView: View {
-    let game: NewUpcomingGames
+    let game: NewUpcomingGame
     var body: some View {
         HStack(spacing: 0.5) {
             VStack(alignment: .center) {
@@ -66,8 +66,8 @@ struct PlayingTodayView: View {
     }
 }
 
-struct PlayingTodayView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayingTodayView(game: NewUpcomingGames(statsGameID: "210941", time: "7:30 ET", venue: "TD Garden", home: SampleData.home, away: SampleData.away))
-    }
-}
+//struct PlayingTodayView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlayingTodayView(game: NewUpcomingGame(statsGameID: "210941", time: "7:30 ET", venue: "TD Garden", home: SampleData.home, away: SampleData.away, oddsEventID: "Stringhere", bookmakers: [Bookmaker(key: <#T##BookmakerKey#>, title: <#T##Title#>, lastUpdate: <#T##Date#>, markets: <#T##[Market]#>)]))
+//    }
+//}

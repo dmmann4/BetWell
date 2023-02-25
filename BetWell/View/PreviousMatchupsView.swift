@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PreviousMatchupsView: View {
-    let game: NewUpcomingGames
+    let game: NewUpcomingGame
     var body: some View {
         VStack(alignment: .leading) {
             Text("Previous Matchup")
@@ -21,8 +21,8 @@ struct PreviousMatchupsView: View {
     }
 }
 
-struct PreviousMatchupsView_Previews: PreviewProvider {
-    static var previews: some View {
-        PreviousMatchupsView(game: NewUpcomingGames(statsGameID: "210941", time: "7:30 ET", venue: "TD Garden", home: SampleData.home, away: SampleData.away))
-    }
-}
+//struct PreviousMatchupsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PreviousMatchupsView(game: NewUpcomingGames(statsGameID: "210941", time: "7:30 ET", venue: "TD Garden", home: SampleData.home, away: SampleData.away))
+//    }
+//}

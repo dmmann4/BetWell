@@ -58,11 +58,11 @@ struct MatchupView: View {
     }
 }
 
-struct MatchupView_Previews: PreviewProvider {
-    static var previews: some View {
-        MatchupView(home: SampleData.home, away: SampleData.away)
-    }
-}
+//struct MatchupView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MatchupView(home: SampleData.home, away: SampleData.away)
+//    }
+//}
 
 struct LastFiveGames {
     let date: String

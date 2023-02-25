@@ -15,7 +15,7 @@ struct HomeTeamTrendsView: View {
             VStack {
                 Text("**Streak**")
                     .underline()
-                Text("\(team.standings.streak.length) \(team.standings.streak.kind)")
+                Text("\(team.standings.streak.length) \(team.standings.streak.kind.rawValue)")
             }
             HStack {
                 VStack {
@@ -98,23 +98,23 @@ struct HomeTeamTrendsView: View {
     func getLast10Data(_ stats: [Split], type: SplitType, stat: TeamStatType) -> String {
         var string: Double = 0.0
         for i in stats {
-            if i.category == type.rawValue {
-                for j in i.opponents.average {
-                    if j.key == stat.rawValue {
-                        string = j.value
-                    }
-                }
-            }
+//            if i.category == type.rawValue {
+//                for j in i.opponents.average {
+//                    if j.key == stat.rawValue {
+//                        string = j.value
+//                    }
+//                }
+//            }
         }
         return String(format: "%.1f", string)
     }
     
     func getRecordType(_ records: [Record], type: RecordType) -> Record? {
         for i in records {
-            let rec = RecordType(rawValue: i.recordType)
-            if rec == type {
-                return i
-            }
+//            let rec = RecordType(rawValue: i.recordType)
+//            if rec == type {
+//                return i
+//            }
         }
         return nil
     }
@@ -136,8 +136,8 @@ struct HomeTeamTrendsView: View {
 }
 
 
-struct HomeTeamTrendsView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeTeamTrendsView(team: SampleData.home)
-    }
-}
+//struct HomeTeamTrendsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeTeamTrendsView(team: SampleData.home)
+//    }
+//}

@@ -1,0 +1,389 @@
+[
+    {
+        "sportsbook": "DraftKings",
+        "players": [
+            {
+                "name": "Bojan Bogdanovic",
+                "assists": {
+                    "line": 2.5,
+                    "over": 120,
+                    "under": -150
+                },
+                "points": {
+                    "line": 20.5,
+                    "over": -120,
+                    "under": -110
+                },
+                "rebounds": {
+                    "line": 3.5,
+                    "over": -135,
+                    "under": 105
+                }
+            },
+            {
+                "name": "Gary Trent Jr.",
+                "assists": {
+                    "line": 2.5,
+                    "over": 145,
+                    "under": -180
+                },
+                "points": {
+                    "line": 19.5,
+                    "over": -135,
+                    "under": 105
+                },
+                "rebounds": {
+                    "line": 2.5,
+                    "over": -125,
+                    "under": -105
+                }
+            },
+            {
+                "name": "Jaden Ivey",
+                "assists": {
+                    "line": 4.5,
+                    "over": -155,
+                    "under": 125
+                },
+                "points": {
+                    "line": 15.5,
+                    "over": -125,
+                    "under": -105
+                },
+                "rebounds": {
+                    "line": 3.5,
+                    "over": -115,
+                    "under": -115
+                }
+            },
+            {
+                "name": "Jakob Poeltl",
+                "assists": {
+                    "line": 2.5,
+                    "over": -165,
+                    "under": 135
+                },
+                "points": {
+                    "line": 13.5,
+                    "over": -130,
+                    "under": 100
+                },
+                "rebounds": {
+                    "line": 9.5,
+                    "over": -120,
+                    "under": -110
+                }
+            },
+            {
+                "name": "Killian Hayes",
+                "assists": {
+                    "line": 6.5,
+                    "over": -115,
+                    "under": -115
+                },
+                "points": {
+                    "line": 11.5,
+                    "over": 105,
+                    "under": -135
+                },
+                "rebounds": {
+                    "line": 2.5,
+                    "over": -140,
+                    "under": 110
+                }
+            },
+            {
+                "name": "OG Anunoby",
+                "assists": {
+                    "line": 2.5,
+                    "over": 150,
+                    "under": -185
+                },
+                "points": {
+                    "line": 14.5,
+                    "over": -105,
+                    "under": -125
+                },
+                "rebounds": {
+                    "line": 4.5,
+                    "over": 100,
+                    "under": -130
+                }
+            },
+            {
+                "name": "Pascal Siakam",
+                "assists": {
+                    "line": 6.5,
+                    "over": 100,
+                    "under": -130
+                },
+                "points": {
+                    "line": 26.5,
+                    "over": -105,
+                    "under": -125
+                },
+                "rebounds": {
+                    "line": 6.5,
+                    "over": -130,
+                    "under": 100
+                }
+            },
+            {
+                "name": "Scottie Barnes",
+                "assists": {
+                    "line": 5.5,
+                    "over": -105,
+                    "under": -125
+                },
+                "points": {
+                    "line": 16.5,
+                    "over": -105,
+                    "under": -125
+                },
+                "rebounds": {
+                    "line": 6.5,
+                    "over": -115,
+                    "under": -115
+                }
+            },
+            {
+                "name": "Alec Burks",
+                "points": {
+                    "line": 9.5,
+                    "over": -120,
+                    "under": -110
+                },
+                "rebounds": {
+                    "line": 2.5,
+                    "over": -145,
+                    "under": 115
+                }
+            },
+            {
+                "name": "Chris Boucher",
+                "points": {
+                    "line": 9.5,
+                    "over": -110,
+                    "under": -120
+                },
+                "rebounds": {
+                    "line": 5.5,
+                    "over": -145,
+                    "under": 115
+                }
+            },
+            {
+                "name": "Hamidou Diallo",
+                "points": {
+                    "line": 9.5,
+                    "over": -115,
+                    "under": -115
+                },
+                "rebounds": {
+                    "line": 3.5,
+                    "over": -115,
+                    "under": -115
+                }
+            },
+            {
+                "name": "Isaiah Stewart",
+                "points": {
+                    "line": 11.5,
+                    "over": -110,
+                    "under": -120
+                },
+                "rebounds": {
+                    "line": 8.5,
+                    "over": 110,
+                    "under": -140
+                }
+            },
+            {
+                "name": "James Wiseman",
+                "points": {
+                    "line": 12.5,
+                    "over": 100,
+                    "under": -130
+                },
+                "rebounds": {
+                    "line": 7.5,
+                    "over": -125,
+                    "under": -105
+                }
+            },
+            {
+                "name": "Marvin Bagley",
+                "points": {
+                    "line": 7.5,
+                    "over": -120,
+                    "under": -110
+                },
+                "rebounds": {
+                    "line": 4.5,
+                    "over": -130,
+                    "under": 100
+                }
+            },
+            {
+                "name": "Precious Achiuwa",
+                "points": {
+                    "line": 9.5,
+                    "over": 100,
+                    "under": -130
+                },
+                "rebounds": {
+                    "line": 5.5,
+                    "over": -120,
+                    "under": -110
+                }
+            },
+            {
+                "name": "Isaiah Livers",
+                "rebounds": {
+                    "line": 2.5,
+                    "over": 105,
+                    "under": -135
+                }
+            }
+        ]
+    },
+    {
+        "sportsbook": "FanDuel",
+        "players": [
+            {
+                "name": "Scottie Barnes",
+                "assists": {
+                    "line": 5.5,
+                    "over": 106,
+                    "under": -130
+                },
+                "points": {
+                    "line": 16.5,
+                    "over": -104,
+                    "under": -118
+                },
+                "rebounds": {
+                    "line": 6.5,
+                    "over": -106,
+                    "under": -114
+                }
+            },
+            {
+                "name": "Pascal Siakam",
+                "assists": {
+                    "line": 6.5,
+                    "over": 108,
+                    "under": -132
+                },
+                "points": {
+                    "line": 26.5,
+                    "over": -108,
+                    "under": -112
+                },
+                "rebounds": {
+                    "line": 6.5,
+                    "over": -108,
+                    "under": -112
+                }
+            },
+            {
+                "name": "Killian Hayes",
+                "assists": {
+                    "line": 6.5,
+                    "over": -104,
+                    "under": -118
+                },
+                "points": {
+                    "line": 10.5,
+                    "over": -122,
+                    "under": 100
+                },
+                "rebounds": {
+                    "line": 2.5,
+                    "over": -134,
+                    "under": 110
+                }
+            },
+            {
+                "name": "Jakob Poeltl",
+                "assists": {
+                    "line": 2.5,
+                    "over": -144,
+                    "under": 118
+                },
+                "points": {
+                    "line": 14.5,
+                    "over": -102,
+                    "under": -120
+                },
+                "rebounds": {
+                    "line": 9.5,
+                    "over": -122,
+                    "under": 100
+                }
+            },
+            {
+                "name": "Jaden Ivey",
+                "assists": {
+                    "line": 5.5,
+                    "over": 110,
+                    "under": -134
+                },
+                "points": {
+                    "line": 15.5,
+                    "over": -106,
+                    "under": -114
+                },
+                "rebounds": {
+                    "line": 3.5,
+                    "over": -108,
+                    "under": -112
+                }
+            },
+            {
+                "name": "Bojan Bogdanovic",
+                "assists": {
+                    "line": 2.5,
+                    "over": 110,
+                    "under": -134
+                },
+                "points": {
+                    "line": 20.5,
+                    "over": -110,
+                    "under": -110
+                },
+                "rebounds": {
+                    "line": 3.5,
+                    "over": -130,
+                    "under": 106
+                }
+            },
+            {
+                "name": "Isaiah Stewart",
+                "points": {
+                    "line": 11.5,
+                    "over": 104,
+                    "under": -128
+                },
+                "rebounds": {
+                    "line": 7.5,
+                    "over": -120,
+                    "under": -102
+                }
+            },
+            {
+                "name": "Gary Trent Jr.",
+                "points": {
+                    "line": 19.5,
+                    "over": -122,
+                    "under": 100
+                },
+                "rebounds": {
+                    "line": 2.5,
+                    "over": -118,
+                    "under": -104
+                }
+            }
+        ]
+    }
+]

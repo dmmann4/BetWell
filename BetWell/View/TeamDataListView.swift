@@ -48,8 +48,8 @@ struct TeamDataListView: View {
     }
 }
 
-struct TeamDataListView_Previews: PreviewProvider {
-    static var previews: some View {
-        TeamDataListView(home: SampleData.home, away: SampleData.away, venue: "TD Garden")
-    }
-}
+//struct TeamDataListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TeamDataListView(home: SampleData.home, away: SampleData.away, venue: "TD Garden")
+//    }
+//}

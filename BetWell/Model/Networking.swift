@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class Networking {
-    func fetchTodaysGames(completion: @escaping (Result<[NewUpcomingGames], NetworkError>) -> Void) {
+    func fetchTodaysGames(completion: @escaping (Result<[NewUpcomingGame], NetworkError>) -> Void) {
         var request = URLRequest(url: URL(string: "https://betwellapi.onrender.com/api/upcoming-games")!)
         let username = "dmmanntula4"
         let password = "D4822T201484!em%"
@@ -37,9 +37,17 @@ class Networking {
                 return
             }
             let str = String(decoding: data, as: UTF8.self)
-            print("got data - \(str)")
+//            print("got data - \(str)")
             do {
-                let games = try JSONDecoder().decode([NewUpcomingGames].self, from: data)
+                let games = try JSONDecoder().decode([NewUpcomingGame].self, from: data)
+//                print("upcomingGames = \(games)")
+                
+                print("home - \(games[0].home)")
+                
+                print("away - \(games[0].away)")
+                
+                print("books - \(games[0].bookmakers)")
+                
                 completion(.success(games))
             } catch(let error) {
                 print("decoding error - \(error)")
@@ -48,9 +56,9 @@ class Networking {
         }.resume()
     }
     
-    func fetchPlayerPropsGames(_ gameId: String, completion: @escaping (Result<[NewUpcomingGames], NetworkError>) -> Void) {
+    func fetchPlayerPropsGames(_ gameId: String, completion: @escaping (Result<[NewUpcomingGame], NetworkError>) -> Void) {
         print("game id - \(gameId)")
-        var request = URLRequest(url: URL(string: "https://betwellapi.onrender.com/api/player-props/\(gameId)")!)
+        var request = URLRequest(url: URL(string: "https://betwellapi.onrender.com/api/player-props/\(SampleData.oddsID)")!)
         let username = "dmmanntula4"
         let password = "D4822T201484!em%"
         let loginString = "\(username):\(password)"
@@ -77,9 +85,10 @@ class Networking {
                 return
             }
             let str = String(decoding: data, as: UTF8.self)
-            print("got data player props - \(str)")
+//            print("got data player props - \(str)")
             do {
-                let games = try JSONDecoder().decode([NewUpcomingGames].self, from: data)
+                let games = try JSONDecoder().decode([NewUpcomingGame].self, from: data)
+                print("player props - \(games)")
                 completion(.success(games))
             } catch(let error) {
                 print("decoding error - \(error)")

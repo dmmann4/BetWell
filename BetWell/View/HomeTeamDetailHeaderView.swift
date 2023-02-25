@@ -35,8 +35,8 @@ struct HomeTeamDetailHeaderView: View {
     }
 }
 
-struct HomeTeamDetailHeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeTeamDetailHeaderView(team: SampleData.home)
-    }
-}
+//struct HomeTeamDetailHeaderView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeTeamDetailHeaderView(team: SampleData.home)
+//    }
+//}

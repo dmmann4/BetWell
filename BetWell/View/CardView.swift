@@ -79,11 +79,11 @@ struct CardView: View {
     }
 }
 
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView(home: SampleData.home, away: SampleData.away, teambet: .moneyLine, playerBet: .playerPoints, playerORMatchup: .h2h)
-    }
-}
+//struct CardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardView(home: SampleData.home, away: SampleData.away, teambet: .moneyLine, playerBet: .playerPoints, playerORMatchup: .h2h)
+//    }
+//}
 
 struct CardModifier: ViewModifier {
     func body(content: Content) -> some View {

@@ -43,6 +43,9 @@
 		1EF9CC4C29A9752F004943A9 /* PlayerDeepDiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9CC4B29A9752E004943A9 /* PlayerDeepDiveView.swift */; };
 		1EF9CC4E29A97FC6004943A9 /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9CC4D29A97FC6004943A9 /* BannerAdView.swift */; };
 		1EF9CC5629A98130004943A9 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 1EF9CC5529A98130004943A9 /* GoogleMobileAds */; };
+		1EF9CC5A29AA761B004943A9 /* NewGamesSeedWithBets.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EF9CC5929AA761B004943A9 /* NewGamesSeedWithBets.json */; };
+		1EF9CC5C29AA78D0004943A9 /* NewPlayerPropOddsSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EF9CC5B29AA78D0004943A9 /* NewPlayerPropOddsSampleData.json */; };
+		1EF9CC5E29AA7906004943A9 /* PlayerPropsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9CC5D29AA7906004943A9 /* PlayerPropsModel.swift */; };
 		1EFC4576298DCC0C00AD5C44 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4575298DCC0C00AD5C44 /* Networking.swift */; };
 		1EFC4578298DCF9100AD5C44 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4577298DCF9100AD5C44 /* Games.swift */; };
 /* End PBXBuildFile section */
@@ -104,6 +107,9 @@
 		1EF9CC4B29A9752E004943A9 /* PlayerDeepDiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDeepDiveView.swift; sourceTree = "<group>"; };
 		1EF9CC4D29A97FC6004943A9 /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
 		1EF9CC5029A980D1004943A9 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../../Downloads/GoogleMobileAdsSdkiOS-10.1.0/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework"; sourceTree = "<group>"; };
+		1EF9CC5929AA761B004943A9 /* NewGamesSeedWithBets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewGamesSeedWithBets.json; sourceTree = "<group>"; };
+		1EF9CC5B29AA78D0004943A9 /* NewPlayerPropOddsSampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewPlayerPropOddsSampleData.json; sourceTree = "<group>"; };
+		1EF9CC5D29AA7906004943A9 /* PlayerPropsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPropsModel.swift; sourceTree = "<group>"; };
 		1EFC4575298DCC0C00AD5C44 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		1EFC4577298DCF9100AD5C44 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +183,7 @@
 				1E55D53729A1439900618996 /* NewUpcomingGames.swift */,
 				1E55D53D29A1B26700618996 /* StaticData.swift */,
 				1E55D53F29A1B62B00618996 /* RecordType.swift */,
+				1EF9CC5D29AA7906004943A9 /* PlayerPropsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,6 +264,8 @@
 				1E9692112993466C0085AF0E /* SamplePlayerOdds.json */,
 				1E8290B72997FA1D00C48A14 /* UpcomingGames.json */,
 				1E55D53B29A144DC00618996 /* NewGamesSeed.json */,
+				1EF9CC5929AA761B004943A9 /* NewGamesSeedWithBets.json */,
+				1EF9CC5B29AA78D0004943A9 /* NewPlayerPropOddsSampleData.json */,
 			);
 			path = SampleJSON;
 			sourceTree = "<group>";
@@ -383,6 +392,8 @@
 				1E55D53C29A144DC00618996 /* NewGamesSeed.json in Resources */,
 				1E8290B82997FA1D00C48A14 /* UpcomingGames.json in Resources */,
 				1E96920F29933B970085AF0E /* SampleData.json in Resources */,
+				1EF9CC5C29AA78D0004943A9 /* NewPlayerPropOddsSampleData.json in Resources */,
+				1EF9CC5A29AA761B004943A9 /* NewGamesSeedWithBets.json in Resources */,
 				1E9692122993466C0085AF0E /* SamplePlayerOdds.json in Resources */,
 				1E8C55A42974BAB20061498C /* Assets.xcassets in Resources */,
 			);
@@ -435,6 +446,7 @@
 				1E55D53E29A1B26700618996 /* StaticData.swift in Sources */,
 				1E55D54A29A70D8000618996 /* TeamDeepDiveView.swift in Sources */,
 				1E55D54429A70D1E00618996 /* HomeTeamTrendsView.swift in Sources */,
+				1EF9CC5E29AA7906004943A9 /* PlayerPropsModel.swift in Sources */,
 				1EFC4576298DCC0C00AD5C44 /* Networking.swift in Sources */,
 				1E55D54829A70D6600618996 /* AwayTeamDetailHeaderView.swift in Sources */,
 			);

@@ -68,8 +68,8 @@ struct MatchupDetailView: View {
     }
 }
 
-struct MatchupDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        MatchupDetailView(home: SampleData.home, away: SampleData.away)
-    }
-}
+//struct MatchupDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MatchupDetailView(home: SampleData.home, away: SampleData.away)
+//    }
+//}

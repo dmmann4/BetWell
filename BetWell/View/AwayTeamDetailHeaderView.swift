@@ -39,8 +39,8 @@ struct AwayTeamDetailHeaderView: View {
     }
 }
 
-struct AwayTeamDetailHeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        AwayTeamDetailHeaderView(team: SampleData.away)
-    }
-}
+//struct AwayTeamDetailHeaderView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AwayTeamDetailHeaderView(team: SampleData.away)
+//    }
+//}

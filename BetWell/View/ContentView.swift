@@ -23,8 +23,8 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     @State private var  networking = Networking()
-    @State var todaysGamesLocal: [NewUpcomingGames] = []
-    @State var todaysGames: [NewUpcomingGames] = []
+    @State var todaysGamesLocal: [NewUpcomingGame] = []
+    @State var todaysGames: [NewUpcomingGame] = []
     @State private var searchText = ""
     var body: some View {
         NavigationView {
@@ -39,6 +39,22 @@ struct ContentView: View {
             searchText = ""
             todaysGamesLocal = loadData() ?? []
             todaysGames = todaysGamesLocal
+            networking.fetchTodaysGames { results in
+                switch results {
+                case .success(let success):
+                    print("success")
+                case .failure(let failure):
+                    print("failure")
+                }
+            }
+            networking.fetchPlayerPropsGames("") { result in
+                switch result {
+                case .success(let success):
+                    print("success")
+                case .failure(let failure):
+                    print("failure")
+                }
+            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .searchable(text: $searchText, prompt: "Who is playing tonight?")
@@ -52,7 +68,7 @@ struct ContentView: View {
         .edgesIgnoringSafeArea(.all)
     }
     
-    var searchResults: [NewUpcomingGames] {
+    var searchResults: [NewUpcomingGame] {
         if searchText.isEmpty {
             return todaysGames
         } else {
@@ -76,8 +92,8 @@ struct ContentView: View {
         }
     }
     
-    func loadData() -> [NewUpcomingGames]? {
-        guard let url = Bundle.main.url(forResource: "NewGamesSeed", withExtension: "json")
+    func loadData() -> [NewUpcomingGame]? {
+        guard let url = Bundle.main.url(forResource: "NewGamesSeedWithBets", withExtension: "json")
         else {
             print("Json file not found")
             return []
@@ -91,7 +107,7 @@ struct ContentView: View {
         }
         if let data {
             do {
-                let games = try JSONDecoder().decode([NewUpcomingGames].self, from: data)
+                let games = try JSONDecoder().decode([NewUpcomingGame].self, from: data)
                 //                print("games: \(games)")
                 return games
             } catch (let error) {
