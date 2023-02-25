@@ -30,27 +30,37 @@ enum PlayerBets: String, CaseIterable, Bets {
 
 struct MatchupDetailView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State var segmentationSelection: MatchupDataSelection = .h2h
-    
+    @State var betDataType: MatchupDataSelection = .h2h
+    @State var bookSelected = ""
+    var bookType: [String] = ["FanDuel", "DraftKings"]
     var home: Home
     var away: Away
     @State var havePlayed: Bool = true
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
-            Picker("", selection: $segmentationSelection) {
+            VStack {
+               Picker("Select a paint color", selection: $bookSelected) {
+                   ForEach(bookType, id: \.self) {
+                       Text($0)
+                   }
+               }
+               .pickerStyle(.menu)
+//               Text("Selected color: \(selection)")
+            }
+            Picker("", selection: $betDataType) {
                 ForEach(MatchupDataSelection.allCases, id: \.self) { option in
                     Text(option.rawValue)
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
             .padding()
-            if segmentationSelection == .h2h {
+            if betDataType == .h2h {
                 ForEach(TeamBets.allCases, id: \.self) { bet in
-                    CardView(home: home, away: away, teambet: bet, playerBet: nil)
+                    CardView(home: home, away: away, teambet: bet, playerBet: nil, playerORMatchup: betDataType)
                 }
             } else {
                 ForEach(PlayerBets.allCases, id: \.self) { bet in
-                    CardView(home: home, away: away, teambet: nil, playerBet: bet)
+                    CardView(home: home, away: away, teambet: nil, playerBet: bet, playerORMatchup: betDataType)
                 }
             }
         }

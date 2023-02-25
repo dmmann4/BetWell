@@ -10,7 +10,7 @@ import SwiftUI
 struct TeamDeepDiveView: View {
     
     var body: some View {
-        Text("plsyer deep dive view")
+        Text("Team deep dive view")
     }
 }
 

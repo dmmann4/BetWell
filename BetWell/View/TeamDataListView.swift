@@ -17,27 +17,25 @@ struct TeamDataListView: View {
     var body: some View {
         ScrollView {
             VStack {
-                HStack {
+                HStack(alignment: .top) {
                     VStack {
                         HomeTeamDetailHeaderView(team: home)
+                        HomeTeamTrendsView(team: home)
                     }
-                    .padding()
-                    VStack(alignment: .center) {
-                       Text(venue)
-                            .font(.caption)
-                       Text("Officials:")
-                            .font(.caption)
-                       Text("G. Brady, H. Smith, L. Jones")
-                            .font(.caption)
-                    }
+//                    VStack(alignment: .center) {
+//                       Text(venue)
+//                            .font(.caption2)
+//                       Text("Officials:")
+//                            .font(.caption2)
+//                       Text("G. Brady, H. Smith, L. Jones")
+//                            .font(.caption2)
+//                    }
+//                    .frame(width: 50)
                     VStack {
                         AwayTeamDetailHeaderView(team: away)
+                        AwayTeamTrendsView(team: away)
                     }
-                }
-                HStack {
-                    HomeTeamTrendsView(team: home)
-                    Spacer()
-                    AwayTeamTrendsView(team: away)
+                   
                 }
                 MatchupDetailView(home: home, away: away)
                 Spacer()
@@ -46,7 +44,6 @@ struct TeamDataListView: View {
           print("home \(home)")
           print("away \(away)")
         }
-        .background(Color.init(red: 75, green: 68, blue: 83))
         .navigationBarTitle(Text(""), displayMode: .inline)
     }
 }

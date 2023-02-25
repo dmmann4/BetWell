@@ -12,6 +12,11 @@ enum MatchupDataSelection : String, CaseIterable {
     case playerProps = "Player Props"
 }
 
+enum DataVolumeType: String, CaseIterable {
+    case last10 = "Last 10"
+    case season = "Season"
+}
+
 struct MatchupView: View {
     var home: Home
     var away: Away

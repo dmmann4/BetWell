@@ -40,6 +40,9 @@
 		1E8C55D1297636460061498C /* MatchupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C55D0297636460061498C /* MatchupView.swift */; };
 		1E96920F29933B970085AF0E /* SampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E96920E29933B970085AF0E /* SampleData.json */; };
 		1E9692122993466C0085AF0E /* SamplePlayerOdds.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E9692112993466C0085AF0E /* SamplePlayerOdds.json */; };
+		1EF9CC4C29A9752F004943A9 /* PlayerDeepDiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9CC4B29A9752E004943A9 /* PlayerDeepDiveView.swift */; };
+		1EF9CC4E29A97FC6004943A9 /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9CC4D29A97FC6004943A9 /* BannerAdView.swift */; };
+		1EF9CC5629A98130004943A9 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 1EF9CC5529A98130004943A9 /* GoogleMobileAds */; };
 		1EFC4576298DCC0C00AD5C44 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4575298DCC0C00AD5C44 /* Networking.swift */; };
 		1EFC4578298DCF9100AD5C44 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4577298DCF9100AD5C44 /* Games.swift */; };
 /* End PBXBuildFile section */
@@ -98,6 +101,9 @@
 		1E8C55D0297636460061498C /* MatchupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchupView.swift; sourceTree = "<group>"; };
 		1E96920E29933B970085AF0E /* SampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleData.json; sourceTree = "<group>"; };
 		1E9692112993466C0085AF0E /* SamplePlayerOdds.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SamplePlayerOdds.json; sourceTree = "<group>"; };
+		1EF9CC4B29A9752E004943A9 /* PlayerDeepDiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDeepDiveView.swift; sourceTree = "<group>"; };
+		1EF9CC4D29A97FC6004943A9 /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
+		1EF9CC5029A980D1004943A9 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../../Downloads/GoogleMobileAdsSdkiOS-10.1.0/GoogleMobileAds.xcframework/ios-arm64_armv7/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		1EFC4575298DCC0C00AD5C44 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		1EFC4577298DCF9100AD5C44 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EF9CC5629A98130004943A9 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +155,8 @@
 				1E55D55329A70E6C00618996 /* PreviousMatchupsView.swift */,
 				1E55D55729A70E9900618996 /* CardView.swift */,
 				1E55D55929A7127000618996 /* PlayerBetOddsView.swift */,
+				1EF9CC4B29A9752E004943A9 /* PlayerDeepDiveView.swift */,
+				1EF9CC4D29A97FC6004943A9 /* BannerAdView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,6 +196,7 @@
 				1E8C55B42974BAB20061498C /* BetWellTests */,
 				1E8C55BE2974BAB20061498C /* BetWellUITests */,
 				1E8C559D2974BAAE0061498C /* Products */,
+				1EF9CC4F29A980CF004943A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -251,6 +261,14 @@
 			path = SampleJSON;
 			sourceTree = "<group>";
 		};
+		1EF9CC4F29A980CF004943A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1EF9CC5029A980D1004943A9 /* GoogleMobileAds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -268,6 +286,7 @@
 			);
 			name = BetWell;
 			packageProductDependencies = (
+				1EF9CC5529A98130004943A9 /* GoogleMobileAds */,
 			);
 			productName = BetWell;
 			productReference = 1E8C559C2974BAAE0061498C /* BetWell.app */;
@@ -342,6 +361,7 @@
 			);
 			mainGroup = 1E8C55932974BAAE0061498C;
 			packageReferences = (
+				1EF9CC5429A98130004943A9 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 1E8C559D2974BAAE0061498C /* Products */;
 			projectDirPath = "";
@@ -392,12 +412,14 @@
 				1E8C55A92974BAB20061498C /* Persistence.swift in Sources */,
 				1E55D54029A1B62B00618996 /* RecordType.swift in Sources */,
 				1E55D54229A70CE700618996 /* AwayTeamTrendsView.swift in Sources */,
+				1EF9CC4E29A97FC6004943A9 /* BannerAdView.swift in Sources */,
 				1E55D55229A70E3900618996 /* TeamBetOddsMatchupView.swift in Sources */,
 				1E8C55A22974BAAE0061498C /* ContentView.swift in Sources */,
 				1E55D55029A70E2100618996 /* HeadToHeadOrSeasonDetailView.swift in Sources */,
 				1E8290B42997F65600C48A14 /* MatchupDetailView.swift in Sources */,
 				1E55D54E29A70E0800618996 /* MatchupDeepDiveView.swift in Sources */,
 				1E55D54629A70D3F00618996 /* HomeTeamDetailHeaderView.swift in Sources */,
+				1EF9CC4C29A9752F004943A9 /* PlayerDeepDiveView.swift in Sources */,
 				1E8C55A02974BAAE0061498C /* BetWellApp.swift in Sources */,
 				1E8290B62997F69E00C48A14 /* Last5View.swift in Sources */,
 				1EFC4578298DCF9100AD5C44 /* Games.swift in Sources */,
@@ -741,6 +763,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1EF9CC5429A98130004943A9 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1EF9CC5529A98130004943A9 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EF9CC5429A98130004943A9 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		1E8C55AA2974BAB20061498C /* BetWell.xcdatamodeld */ = {

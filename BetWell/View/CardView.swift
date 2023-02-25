@@ -12,7 +12,8 @@ struct CardView: View {
     var away: Away
     let teambet: TeamBets?
     let playerBet: PlayerBets?
-    @State var segmentationSelection2: MatchupDataSelection = .h2h
+    @State var playerORMatchup: MatchupDataSelection
+    @State var dataVolumeType: DataVolumeType = .last10
     @State var showDeepDiveView = false
     var body: some View {
         VStack(alignment: .center) {
@@ -39,8 +40,8 @@ struct CardView: View {
                 .padding(.leading, 15)
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Picker("", selection: $segmentationSelection2) {
-                        ForEach(MatchupDataSelection.allCases, id: \.self) { option in
+                    Picker("", selection: $dataVolumeType) {
+                        ForEach(DataVolumeType.allCases, id: \.self) { option in
                             Text(option.rawValue)
                                 .font(.system(size: 26, weight: .bold, design: .default))
                                 .foregroundColor(.white)
@@ -49,7 +50,7 @@ struct CardView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .frame(width: 175)
                     .padding(.top, 10)
-                    HeadToHeadOrSeasonDetailView(state: segmentationSelection2)
+                    HeadToHeadOrSeasonDetailView(state: dataVolumeType)
                     Spacer()
                     VStack {
                         Button {
@@ -59,7 +60,7 @@ struct CardView: View {
                                 .frame(width: 75, height: 30)
                                 .font(.caption)
                         }
-                        NavigationLink("", destination:  MatchupDeepDiveView(), isActive: $showDeepDiveView)
+                        NavigationLink("", destination: destinationView, isActive: $showDeepDiveView)
                     }
                 }
             }
@@ -71,11 +72,16 @@ struct CardView: View {
         .modifier(CardModifier())
         .padding(.all, 10)
     }
+    
+    @ViewBuilder
+    var destinationView: some View {
+        playerORMatchup == .h2h ?  AnyView(MatchupDeepDiveView()) : AnyView(PlayerDeepDiveView())
+    }
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(home: SampleData.home, away: SampleData.away, teambet: .moneyLine, playerBet: .playerPoints)
+        CardView(home: SampleData.home, away: SampleData.away, teambet: .moneyLine, playerBet: .playerPoints, playerORMatchup: .h2h)
     }
 }
 

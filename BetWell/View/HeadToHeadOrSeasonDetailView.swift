@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct HeadToHeadOrSeasonDetailView: View {
-    var state: MatchupDataSelection
+    var state: DataVolumeType
     var body: some View {
-        Text(state == .h2h ? "Last 10 games results" : "Season results")
+        Text(state == .last10 ? " 'Last 10 games results' " : " 'Season results' ")
             .font(.system(size: 16, weight: .bold, design: .default))
             .foregroundColor(.white)
             .padding(.top, 8)
@@ -19,6 +19,6 @@ struct HeadToHeadOrSeasonDetailView: View {
 
 struct HeadToHeadOrSeasonDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        HeadToHeadOrSeasonDetailView(state: .h2h)
+        HeadToHeadOrSeasonDetailView(state: .last10)
     }
 }
