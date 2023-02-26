@@ -21,8 +21,8 @@ struct PlayerPropsCardView: View {
                     .font(.system(size: 20, weight: .bold, design: .default))
                     .padding([.top, .bottom], 10)
                     Spacer()
-                    ForEach(bets.arrayOfLines, id: \.self) { line in
-                        PlayerBetOddsView(bet: line)
+                    ForEach(bets.arrayOfLines.keys.enumerated(), id: \.element) { key, line in
+                        PlayerBetOddsView(bet: (key, line))
                     }
                     Spacer()
                 }
@@ -64,8 +64,8 @@ struct PlayerPropsCardView: View {
     }
 }
 
-//struct PlayerPropsCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PlayerPropsCardView(home: SampleData.home, away: SampleData.away, playerBet: .playerPoints, bets: Player(name: "Bojan Bogdanovic", assists: Optional(BetWell.Lines(line: 2.5, over: 120, under: -150)), points: Optional(BetWell.Lines(line: 20.5, over: -120, under: -110)), rebounds: BetWell.Lines(line: 3.5, over: -135, under: 105)))
-//    }
-//}
+struct PlayerPropsCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        PlayerPropsCardView(home: SampleData.home, away: SampleData.away, bets: SampleData.playerProps[0].players[0], dataVolumeType: .last10, showDeepDiveView: false)
+    }
+}

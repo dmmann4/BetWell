@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct PlayerBetOddsView: View {
-    @State var bet: Assists
+    @State var bet: (PlayerBets, Assists)
     @State var betStrings: (String, String) = ("","")
     var body: some View {
         HStack {
-            Text("")
-            Text("\(bet.over)")
+            Text(bet.0.rawValue)
+            Text("\(bet.1.over)")
         }
         .font(.system(size: 16, weight: .bold, design: .default))
         .padding(.bottom, 20)
         HStack {
             Text("Away")
-            Text("\(bet.under)")
+            Text("\(bet.1.under)")
         }
         .font(.system(size: 16, weight: .bold, design: .default))
         .onAppear() {
@@ -56,6 +56,6 @@ struct PlayerBetOddsView: View {
 
 struct PlayerBetOddsView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerBetOddsView(bet: Assists(line: 15.5, over: -125, under: -105))
+        PlayerBetOddsView(bet: (PlayerBets.playerAssists, Assists(line: 15.5, over: -125, under: -105)))
     }
 }
