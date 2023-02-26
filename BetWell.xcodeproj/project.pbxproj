@@ -47,6 +47,7 @@
 		1EF9CC5C29AA78D0004943A9 /* NewPlayerPropOddsSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EF9CC5B29AA78D0004943A9 /* NewPlayerPropOddsSampleData.json */; };
 		1EF9CC5E29AA7906004943A9 /* PlayerPropsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9CC5D29AA7906004943A9 /* PlayerPropsModel.swift */; };
 		1EF9CC6029AA91E6004943A9 /* PlayerPropsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9CC5F29AA91E6004943A9 /* PlayerPropsCardView.swift */; };
+		1EF9CC6229ABEAA7004943A9 /* NBATeamNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9CC6129ABEAA6004943A9 /* NBATeamNames.swift */; };
 		1EFC4576298DCC0C00AD5C44 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4575298DCC0C00AD5C44 /* Networking.swift */; };
 		1EFC4578298DCF9100AD5C44 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4577298DCF9100AD5C44 /* Games.swift */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 		1EF9CC5B29AA78D0004943A9 /* NewPlayerPropOddsSampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewPlayerPropOddsSampleData.json; sourceTree = "<group>"; };
 		1EF9CC5D29AA7906004943A9 /* PlayerPropsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPropsModel.swift; sourceTree = "<group>"; };
 		1EF9CC5F29AA91E6004943A9 /* PlayerPropsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPropsCardView.swift; sourceTree = "<group>"; };
+		1EF9CC6129ABEAA6004943A9 /* NBATeamNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBATeamNames.swift; sourceTree = "<group>"; };
 		1EFC4575298DCC0C00AD5C44 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		1EFC4577298DCF9100AD5C44 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +189,7 @@
 				1E55D53D29A1B26700618996 /* StaticData.swift */,
 				1E55D53F29A1B62B00618996 /* RecordType.swift */,
 				1EF9CC5D29AA7906004943A9 /* PlayerPropsModel.swift */,
+				1EF9CC6129ABEAA6004943A9 /* NBATeamNames.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				1E55D55029A70E2100618996 /* HeadToHeadOrSeasonDetailView.swift in Sources */,
 				1E8290B42997F65600C48A14 /* MatchupDetailView.swift in Sources */,
 				1E55D54E29A70E0800618996 /* MatchupDeepDiveView.swift in Sources */,
+				1EF9CC6229ABEAA7004943A9 /* NBATeamNames.swift in Sources */,
 				1E55D54629A70D3F00618996 /* HomeTeamDetailHeaderView.swift in Sources */,
 				1EF9CC4C29A9752F004943A9 /* PlayerDeepDiveView.swift in Sources */,
 				1E8C55A02974BAAE0061498C /* BetWellApp.swift in Sources */,

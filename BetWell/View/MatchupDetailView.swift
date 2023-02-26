@@ -24,7 +24,7 @@ struct MatchupDetailView: View {
     @State var playerProps: [String: NewPlayerPropOdds] = [:]
     var home: Home
     var away: Away
-    @State var havePlayed: Bool = true
+    @State var teamBooks: [Bookmaker]
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
             VStack {
@@ -34,7 +34,6 @@ struct MatchupDetailView: View {
                    }
                }
                .pickerStyle(.menu)
-//               Text("Selected color: \(selection)")
             }
             Picker("", selection: $betDataType) {
                 ForEach(MatchupDataSelection.allCases, id: \.self) { option in
@@ -44,7 +43,7 @@ struct MatchupDetailView: View {
             .pickerStyle(SegmentedPickerStyle())
             .padding()
             if betDataType == .h2h {
-                ForEach(TeamBets.allCases, id: \.self) { bet in
+                ForEach(teamBooks[0].markets, id: \.key) { bet in
                     CardView(home: home, away: away, teambet: bet, playerORMatchup: betDataType)
                 }
             } else {
@@ -61,6 +60,7 @@ struct MatchupDetailView: View {
                 bookType.append(key!)
                 playerProps[key!.rawValue] = i
             }
+            print(playerProps[bookSelected.rawValue]!.players[0].arrayOfLines)
             /// netowrking to get the player props with the odds ID
         }
     }
@@ -68,6 +68,6 @@ struct MatchupDetailView: View {
 
 struct MatchupDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchupDetailView(oddBetID: SampleData.oddsID, home: SampleData.home, away: SampleData.away)
+        MatchupDetailView(oddBetID: SampleData.oddsID, home: SampleData.home, away: SampleData.away, teamBooks: SampleData.bookmaker)
     }
 }

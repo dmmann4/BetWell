@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct TeamDataListView: View {
-    
+    var teamBooks: [Bookmaker]
     var home: Home
     var away: Away
     var venue: String
@@ -38,7 +38,7 @@ struct TeamDataListView: View {
                     }
                    
                 }
-                MatchupDetailView(oddBetID: SampleData.oddsID, home: home, away: away)
+                MatchupDetailView(oddBetID: SampleData.oddsID, home: home, away: away, teamBooks: teamBooks)
                 Spacer()
             }
         }.onAppear() {
@@ -50,6 +50,6 @@ struct TeamDataListView: View {
 
 struct TeamDataListView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamDataListView(home: SampleData.home, away: SampleData.away, venue: "TD Garden")
+        TeamDataListView(teamBooks: SampleData.bookmaker, home: SampleData.home, away: SampleData.away, venue: "TD Garden")
     }
 }

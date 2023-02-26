@@ -30,7 +30,7 @@ struct ContentView: View {
         NavigationView {
             List($todaysGames, id: \.statsGameId) { game in
                 PlayingTodayView(game: game.wrappedValue)
-                .background( NavigationLink("", destination: TeamDataListView(home: game.home.wrappedValue, away: game.away.wrappedValue, venue: game.venue.wrappedValue)).opacity(0) )
+                    .background( NavigationLink("", destination: TeamDataListView(teamBooks: game.bookmakers.wrappedValue, home: game.home.wrappedValue, away: game.away.wrappedValue, venue: game.venue.wrappedValue)).opacity(0) )
             }
             .frame(maxWidth: .infinity)
             .navigationBarTitle("BetWell", displayMode: .large)

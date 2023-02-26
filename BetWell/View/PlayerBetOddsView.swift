@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct PlayerBetOddsView: View {
-    @State var bet: (PlayerBets, Assists)
-    @State var betStrings: (String, String) = ("","")
+    @State var bet: PropObject
     var body: some View {
         HStack {
-            Text(bet.0.rawValue)
-            Text("\(bet.1.over)")
+            VStack {
+                Text("**\(bet.propType.rawValue)**")
+                    .underline()
+                Text("\(String(format: "%.1f", bet.lines.line))")
+                HStack {
+                    Text("Over:")
+                    Text("\(bet.lines.over)")
+                }
+                HStack {
+                    Text("Under:")
+                    Text("\(bet.lines.under)")
+                }
+            }
         }
-        .font(.system(size: 16, weight: .bold, design: .default))
-        .padding(.bottom, 20)
-        HStack {
-            Text("Away")
-            Text("\(bet.1.under)")
-        }
-        .font(.system(size: 16, weight: .bold, design: .default))
-        .onAppear() {
-//            betStrings = typeOfBet(bet)
-        }
+        .padding()
     }
     
     func typeOfBet(_ bet: PlayerBets) -> (String, String) {
@@ -56,6 +57,6 @@ struct PlayerBetOddsView: View {
 
 struct PlayerBetOddsView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerBetOddsView(bet: (PlayerBets.playerAssists, Assists(line: 15.5, over: -125, under: -105)))
+        PlayerBetOddsView(bet: PropObject(propType: PlayerBets.playerAssists, lines: Assists(line: 15.5, over: -125, under: -105)))
     }
 }

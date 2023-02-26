@@ -10,28 +10,18 @@ import SwiftUI
 struct CardView: View {
     var home: Home
     var away: Away
-    let teambet: TeamBets?
+    let teambet: Market
     @State var playerORMatchup: MatchupDataSelection
     @State var dataVolumeType: DataVolumeType = .last10
     @State var showDeepDiveView = false
     var body: some View {
         VStack(alignment: .center) {
-            HStack(alignment: .top) {
-                VStack {
-                    if let teambet {
-                        Text(teambet.rawValue)
-                            .font(.system(size: 20, weight: .bold, design: .default))
-                            .padding([.top, .bottom], 10)
-                        Spacer()
-                        TeamBetOddsMatchupView(bet: teambet)
-                        Spacer()
-                    }
-                    
-                }
-                .foregroundColor(.white)
-                .padding(.leading, 15)
-                Spacer()
-                VStack(alignment: .trailing) {
+            VStack {
+                HStack(alignment: .top) {
+                    Text(teambet.key.rawValue)
+                        .font(.system(size: 20, weight: .bold, design: .default))
+                        .padding([.top, .bottom], 10)
+                    Spacer()
                     Picker("", selection: $dataVolumeType) {
                         ForEach(DataVolumeType.allCases, id: \.self) { option in
                             Text(option.rawValue)
@@ -42,19 +32,30 @@ struct CardView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .frame(width: 175)
                     .padding(.top, 10)
-                    HeadToHeadOrSeasonDetailView(state: dataVolumeType)
-                    Spacer()
-                    VStack {
-                        Button {
-                            showDeepDiveView.toggle()
-                        } label: {
-                            Text("More Details")
-                                .frame(width: 75, height: 30)
-                                .font(.caption)
+                }
+                Spacer()
+                ForEach(teambet.outcomes, id: \.name) { key in
+                    HStack {
+                        HStack {
+                            TeamBetOddsMatchupView(bet: key)
+                            Spacer()
+                            HeadToHeadOrSeasonDetailView(state: dataVolumeType)
                         }
-                        NavigationLink("", destination: destinationView, isActive: $showDeepDiveView)
                     }
                 }
+                Spacer()
+            }
+            .foregroundColor(.white)
+            .padding(.leading, 15)
+            VStack {
+                Button {
+                    showDeepDiveView.toggle()
+                } label: {
+                    Text("More Details")
+                        .frame(width: 75, height: 30)
+                        .font(.caption)
+                }
+                NavigationLink("", destination: MatchupDeepDiveView(), isActive: $showDeepDiveView)
             }
             .padding(.trailing, 20)
             Spacer()
@@ -64,16 +65,11 @@ struct CardView: View {
         .modifier(CardModifier())
         .padding(.all, 10)
     }
-    
-    @ViewBuilder
-    var destinationView: some View {
-        playerORMatchup == .h2h ?  AnyView(MatchupDeepDiveView()) : AnyView(PlayerDeepDiveView())
-    }
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(home: SampleData.home, away: SampleData.away, teambet: .moneyLine, playerORMatchup: .h2h)
+        CardView(home: SampleData.home, away: SampleData.away, teambet: SampleData.bookmaker[0].markets[0], playerORMatchup: .h2h)
     }
 }
 

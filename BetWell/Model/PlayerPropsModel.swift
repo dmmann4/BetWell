@@ -20,10 +20,15 @@ struct NewPlayerPropOdds: Decodable {
 
 // MARK: - Player
 struct Player: Decodable, Hashable {
+   
+    static func == (lhs: Player, rhs: Player) -> Bool {
+        return lhs.name == rhs.name
+    }
+    let id = UUID()
     let name: String
     let assists, points: Assists?
     let rebounds: Assists?
-    var arrayOfLines: [PlayerBets: Assists]?
+    var arrayOfLines: [PropObject] = []
     
     enum CodingKeys: CodingKey {
         case name, assists, points, rebounds
@@ -34,15 +39,20 @@ struct Player: Decodable, Hashable {
         self.assists = assists
         self.points = points
         self.rebounds = rebounds
+        print("Decoding player props***")
+        print(self.rebounds)
+        print(self.assists)
+        print(self.points)
         if let assists = self.assists {
-            arrayOfLines?[PlayerBets.playerAssists] = assists
+            arrayOfLines.append(PropObject(propType: PlayerBets.playerAssists, lines: assists))
         }
         if let points = self.points {
-            arrayOfLines?[PlayerBets.playerRebounds] = points
+            arrayOfLines.append(PropObject(propType: PlayerBets.playerPoints, lines: points))
         }
         if let rebounds = self.rebounds {
-            arrayOfLines?[PlayerBets.playerRebounds] = rebounds
+            arrayOfLines.append(PropObject(propType: PlayerBets.playerRebounds, lines: rebounds))
         }
+        print(arrayOfLines)
     }
     
     init(from decoder: Decoder) throws {
@@ -52,17 +62,20 @@ struct Player: Decodable, Hashable {
         self.points = try container.decodeIfPresent(Assists.self, forKey: .points)
         self.rebounds = try container.decode(Assists.self, forKey: .rebounds)
         if let assists = self.assists {
-            arrayOfLines?[PlayerBets.playerAssists] = assists
+            arrayOfLines.append(PropObject(propType: PlayerBets.playerAssists, lines: assists))
         }
         if let points = self.points {
-            arrayOfLines?[PlayerBets.playerRebounds] = points
+            arrayOfLines.append(PropObject(propType: PlayerBets.playerPoints, lines: points))
         }
         if let rebounds = self.rebounds {
-            arrayOfLines?[PlayerBets.playerRebounds] = rebounds
+            arrayOfLines.append(PropObject(propType: PlayerBets.playerRebounds, lines: rebounds))
         }
     }
-    
-    
+}
+
+struct PropObject: Hashable {
+    let propType: PlayerBets
+    let lines: Assists
 }
 
 enum PlayerBets: String, CaseIterable, Bets {

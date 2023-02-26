@@ -15,7 +15,7 @@ struct NewUpcomingGame: Codable {
     var home: Home
     var away: Away
     let oddsEventID: String
-    let bookmakers: [Bookmaker]
+    var bookmakers: [Bookmaker]
 
     enum CodingKeys: String, CodingKey {
         case statsGameId = "statsGameId"
@@ -267,7 +267,7 @@ struct Market: Codable {
     }
 }
 
-enum MarketKey: String, Codable {
+enum MarketKey: String, Codable, CaseIterable {
     case h2H = "h2h"
     case spreads = "spreads"
     case totals = "totals"

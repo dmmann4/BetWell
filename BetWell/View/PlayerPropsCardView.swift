@@ -15,21 +15,12 @@ struct PlayerPropsCardView: View {
     @State var showDeepDiveView = false
     var body: some View {
         VStack(alignment: .center) {
-            HStack(alignment: .top) {
-                VStack {
+            VStack {
+                HStack {
                     Text(bets.name)
-                    .font(.system(size: 20, weight: .bold, design: .default))
-                    .padding([.top, .bottom], 10)
+                        .font(.system(size: 20, weight: .bold, design: .default))
+                        .padding([.top, .bottom], 10)
                     Spacer()
-                    ForEach(bets.arrayOfLines.keys.enumerated(), id: \.element) { key, line in
-                        PlayerBetOddsView(bet: (key, line))
-                    }
-                    Spacer()
-                }
-                .foregroundColor(.white)
-                .padding(.leading, 15)
-                Spacer()
-                VStack(alignment: .trailing) {
                     Picker("", selection: $dataVolumeType) {
                         ForEach(DataVolumeType.allCases, id: \.self) { option in
                             Text(option.rawValue)
@@ -40,22 +31,34 @@ struct PlayerPropsCardView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .frame(width: 175)
                     .padding(.top, 10)
-                    HeadToHeadOrSeasonDetailView(state: dataVolumeType)
-                    Spacer()
-                    VStack {
-                        Button {
-                            showDeepDiveView.toggle()
-                        } label: {
-                            Text("More Details")
-                                .frame(width: 75, height: 30)
-                                .font(.caption)
-                        }
-                        NavigationLink("", destination: PlayerDeepDiveView(), isActive: $showDeepDiveView)
+                }
+                Spacer()
+                ForEach(bets.arrayOfLines, id: \.self) { key in
+                    HStack {
+                        PlayerBetOddsView(bet: key)
+                        Spacer()
+                        HeadToHeadOrSeasonDetailView(state: dataVolumeType)
                     }
+                    
+                }
+                Spacer()
+            }
+            .foregroundColor(.white)
+            .padding(.leading, 15)
+            Spacer()
+            VStack(alignment: .trailing) {
+                Spacer()
+                VStack {
+                    Button {
+                        showDeepDiveView.toggle()
+                    } label: {
+                        Text("More Details")
+                            .frame(width: 75, height: 30)
+                            .font(.caption)
+                    }
+                    NavigationLink("", destination: PlayerDeepDiveView(), isActive: $showDeepDiveView)
                 }
             }
-            .padding(.trailing, 20)
-            Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .center)
         .background(Color(red: 32/255, green: 36/255, blue: 38/255))

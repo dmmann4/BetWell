@@ -100,5 +100,101 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "02490093-139B-40AB-BF78-1FF4550A6352"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetWell/Model/PlayerPropsModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "init(name:assists:points:rebounds:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "455A2FDF-E6F8-4F1E-8A1D-2355003229B1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetWell/Model/PlayerPropsModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "init(name:assists:points:rebounds:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C1D0EDA-8249-45EC-80C4-2165EC7EFB16"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetWell/Model/PlayerPropsModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "init(name:assists:points:rebounds:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1D68599E-FB3D-481D-9143-3D8B8C046638"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetWell/Model/PlayerPropsModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "init(name:assists:points:rebounds:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1D68599E-FB3D-481D-9143-3D8B8C046638 - fafd035d0ffc13df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BetWell.Player.init(name: Swift.String, assists: Swift.Optional&lt;BetWell.Assists&gt;, points: Swift.Optional&lt;BetWell.Assists&gt;, rebounds: Swift.Optional&lt;BetWell.Assists&gt;) -&gt; BetWell.Player"
+                  moduleName = "BetWell"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidmann/Desktop/BetWell/BetWell/Model/PlayerPropsModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "2300">
+               </Location>
+               <Location
+                  uuid = "1D68599E-FB3D-481D-9143-3D8B8C046638 - fafd035d0ffc13df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BetWell.Player.init(name: Swift.String, assists: Swift.Optional&lt;BetWell.Assists&gt;, points: Swift.Optional&lt;BetWell.Assists&gt;, rebounds: Swift.Optional&lt;BetWell.Assists&gt;) -&gt; BetWell.Player"
+                  moduleName = "BetWell"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidmann/Desktop/BetWell/BetWell/Model/PlayerPropsModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "2407">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
