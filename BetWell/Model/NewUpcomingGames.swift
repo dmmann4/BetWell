@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - NewUpcomingGame
 struct NewUpcomingGame: Codable {
-    let statsGameID: String
+    let statsGameId: String?
     let time: String
     var venue: String
     var home: Home
@@ -18,7 +18,7 @@ struct NewUpcomingGame: Codable {
     let bookmakers: [Bookmaker]
 
     enum CodingKeys: String, CodingKey {
-        case statsGameID = "statsGameId"
+        case statsGameId = "statsGameId"
         case time, venue, home, away
         case oddsEventID = "oddsEventId"
         case bookmakers
@@ -109,7 +109,7 @@ struct Split: Codable {
     }
 }
 
-enum Category: String, Codable {
+enum Category: String, Codable, CaseIterable {
     case dayOfWeek = "day_of_week"
     case home = "home"
     case last10 = "last_10"

@@ -21,8 +21,8 @@ struct PreviousMatchupsView: View {
     }
 }
 
-//struct PreviousMatchupsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PreviousMatchupsView(game: NewUpcomingGames(statsGameID: "210941", time: "7:30 ET", venue: "TD Garden", home: SampleData.home, away: SampleData.away))
-//    }
-//}
+struct PreviousMatchupsView_Previews: PreviewProvider {
+    static var previews: some View {
+        PreviousMatchupsView(game: NewUpcomingGame(statsGameId: "210941", time: "7:30 ET", venue: "TD Garden", home: SampleData.home, away: SampleData.away, oddsEventID: "Stringhere", bookmakers: SampleData.bookmaker))
+    }
+}

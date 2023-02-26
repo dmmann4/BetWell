@@ -46,6 +46,7 @@
 		1EF9CC5A29AA761B004943A9 /* NewGamesSeedWithBets.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EF9CC5929AA761B004943A9 /* NewGamesSeedWithBets.json */; };
 		1EF9CC5C29AA78D0004943A9 /* NewPlayerPropOddsSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EF9CC5B29AA78D0004943A9 /* NewPlayerPropOddsSampleData.json */; };
 		1EF9CC5E29AA7906004943A9 /* PlayerPropsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9CC5D29AA7906004943A9 /* PlayerPropsModel.swift */; };
+		1EF9CC6029AA91E6004943A9 /* PlayerPropsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9CC5F29AA91E6004943A9 /* PlayerPropsCardView.swift */; };
 		1EFC4576298DCC0C00AD5C44 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4575298DCC0C00AD5C44 /* Networking.swift */; };
 		1EFC4578298DCF9100AD5C44 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4577298DCF9100AD5C44 /* Games.swift */; };
 /* End PBXBuildFile section */
@@ -110,6 +111,7 @@
 		1EF9CC5929AA761B004943A9 /* NewGamesSeedWithBets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewGamesSeedWithBets.json; sourceTree = "<group>"; };
 		1EF9CC5B29AA78D0004943A9 /* NewPlayerPropOddsSampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewPlayerPropOddsSampleData.json; sourceTree = "<group>"; };
 		1EF9CC5D29AA7906004943A9 /* PlayerPropsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPropsModel.swift; sourceTree = "<group>"; };
+		1EF9CC5F29AA91E6004943A9 /* PlayerPropsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPropsCardView.swift; sourceTree = "<group>"; };
 		1EFC4575298DCC0C00AD5C44 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		1EFC4577298DCF9100AD5C44 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +165,7 @@
 				1E55D55929A7127000618996 /* PlayerBetOddsView.swift */,
 				1EF9CC4B29A9752E004943A9 /* PlayerDeepDiveView.swift */,
 				1EF9CC4D29A97FC6004943A9 /* BannerAdView.swift */,
+				1EF9CC5F29AA91E6004943A9 /* PlayerPropsCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				1E55D55829A70E9900618996 /* CardView.swift in Sources */,
 				1E8290B22997050800C48A14 /* TeamDataListView.swift in Sources */,
 				1E8C55CF297635870061498C /* DetailView.swift in Sources */,
+				1EF9CC6029AA91E6004943A9 /* PlayerPropsCardView.swift in Sources */,
 				1E8C55AC2974BAB20061498C /* BetWell.xcdatamodeld in Sources */,
 				1E55D53829A1439A00618996 /* NewUpcomingGames.swift in Sources */,
 				1E55D55429A70E6C00618996 /* PreviousMatchupsView.swift in Sources */,

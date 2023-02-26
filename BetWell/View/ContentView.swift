@@ -28,7 +28,7 @@ struct ContentView: View {
     @State private var searchText = ""
     var body: some View {
         NavigationView {
-            List($todaysGames, id: \.statsGameID) { game in
+            List($todaysGames, id: \.statsGameId) { game in
                 PlayingTodayView(game: game.wrappedValue)
                 .background( NavigationLink("", destination: TeamDataListView(home: game.home.wrappedValue, away: game.away.wrappedValue, venue: game.venue.wrappedValue)).opacity(0) )
             }
@@ -39,22 +39,23 @@ struct ContentView: View {
             searchText = ""
             todaysGamesLocal = loadData() ?? []
             todaysGames = todaysGamesLocal
-            networking.fetchTodaysGames { results in
-                switch results {
-                case .success(let success):
-                    print("success")
-                case .failure(let failure):
-                    print("failure")
-                }
-            }
-            networking.fetchPlayerPropsGames("") { result in
-                switch result {
-                case .success(let success):
-                    print("success")
-                case .failure(let failure):
-                    print("failure")
-                }
-            }
+            loadPlayerProps()
+//            networking.fetchTodaysGames { results in
+//                switch results {
+//                case .success(let success):
+//                    print("success")
+//                case .failure(let failure):
+//                    print("failure")
+//                }
+//            }
+//            networking.fetchPlayerPropsGames("") { result in
+//                switch result {
+//                case .success(let success):
+//                    print("success")
+//                case .failure(let failure):
+//                    print("failure")
+//                }
+//            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .searchable(text: $searchText, prompt: "Who is playing tonight?")
@@ -108,7 +109,41 @@ struct ContentView: View {
         if let data {
             do {
                 let games = try JSONDecoder().decode([NewUpcomingGame].self, from: data)
-                //                print("games: \(games)")
+//                print("games home: \(games[0].home)")
+//                print("**********************************")
+//                print("games away: \(games[0].away)")
+//                print("**********************************")
+//                print("games home: \(games[0].bookmakers)")
+//                print("**********************************")
+//                print("games home: \(games[0].home)")
+                return games
+            } catch (let error) {
+                print("cannot decode - \(error)")
+                return []
+            }
+        } else {
+            return []
+        }
+    }
+    
+    func loadPlayerProps() -> [NewPlayerPropOdds]{
+        guard let url = Bundle.main.url(forResource: "NewPlayerPropOddsSampleData", withExtension: "json")
+        else {
+            print("Json file not found")
+            return []
+        }
+        var data: Data?
+        do {
+            data = try Data(contentsOf: url)
+        } catch (let error) {
+            print("cannot get data from url - \(error)")
+            return []
+        }
+        if let data {
+            do {
+                let games = try JSONDecoder().decode([NewPlayerPropOdds].self, from: data)
+//                print(games)
+//                print("games home: \(games[0].home)")
                 return games
             } catch (let error) {
                 print("cannot decode - \(error)")

@@ -95,23 +95,23 @@ struct AwayTeamTrendsView: View {
     func getLast10Data(_ stats: [Split], type: SplitType, stat: TeamStatType) -> String {
         var string: Double = 0.0
         for i in stats {
-//            if i.category == type {
-//                for j in i.opponents.average {
-//                    if j.key == stat.rawValue {
-//                        string = j.value
-//                    }
-//                }
-//            }
+            if i.category.rawValue == type.rawValue {
+                for j in i.opponents.average {
+                    if j.key == stat.rawValue {
+                        string = j.value
+                    }
+                }
+            }
         }
         return String(format: "%.1f", string)
     }
     
     func getRecordType(_ records: [Record], type: RecordType) -> Record? {
         for i in records {
-//            let rec = RecordType(rawValue: i.recordType)
-//            if rec == type {
-//                return i
-//            }
+            let rec = RecordType(rawValue: i.recordType.rawValue)
+            if rec == type {
+                return i
+            }
         }
         return nil
     }
@@ -129,8 +129,8 @@ struct AwayTeamTrendsView: View {
     }
 }
 
-//struct AwayTeamTrendsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AwayTeamTrendsView(team: SampleData.away)
-//    }
-//}
+struct AwayTeamTrendsView_Previews: PreviewProvider {
+    static var previews: some View {
+        AwayTeamTrendsView(team: SampleData.away)
+    }
+}

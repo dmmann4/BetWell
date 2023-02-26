@@ -42,11 +42,11 @@ class Networking {
                 let games = try JSONDecoder().decode([NewUpcomingGame].self, from: data)
 //                print("upcomingGames = \(games)")
                 
-                print("home - \(games[0].home)")
-                
-                print("away - \(games[0].away)")
-                
-                print("books - \(games[0].bookmakers)")
+//                print("home - \(games[0].home)")
+//
+//                print("away - \(games[0].away)")
+//
+//                print("books - \(games[0].bookmakers)")
                 
                 completion(.success(games))
             } catch(let error) {
@@ -57,7 +57,7 @@ class Networking {
     }
     
     func fetchPlayerPropsGames(_ gameId: String, completion: @escaping (Result<[NewUpcomingGame], NetworkError>) -> Void) {
-        print("game id - \(gameId)")
+//        print("game id - \(gameId)")
         var request = URLRequest(url: URL(string: "https://betwellapi.onrender.com/api/player-props/\(SampleData.oddsID)")!)
         let username = "dmmanntula4"
         let password = "D4822T201484!em%"

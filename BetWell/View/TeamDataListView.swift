@@ -13,6 +13,7 @@ struct TeamDataListView: View {
     var home: Home
     var away: Away
     var venue: String
+    @State var books: [String] = []
 
     var body: some View {
         ScrollView {
@@ -37,19 +38,18 @@ struct TeamDataListView: View {
                     }
                    
                 }
-                MatchupDetailView(home: home, away: away)
+                MatchupDetailView(oddBetID: SampleData.oddsID, home: home, away: away)
                 Spacer()
             }
         }.onAppear() {
-          print("home \(home)")
-          print("away \(away)")
+            
         }
         .navigationBarTitle(Text(""), displayMode: .inline)
     }
 }
 
-//struct TeamDataListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TeamDataListView(home: SampleData.home, away: SampleData.away, venue: "TD Garden")
-//    }
-//}
+struct TeamDataListView_Previews: PreviewProvider {
+    static var previews: some View {
+        TeamDataListView(home: SampleData.home, away: SampleData.away, venue: "TD Garden")
+    }
+}
