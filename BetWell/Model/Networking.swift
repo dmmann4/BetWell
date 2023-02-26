@@ -36,7 +36,7 @@ class Networking {
                 completion(.failure(.noData))
                 return
             }
-            let str = String(decoding: data, as: UTF8.self)
+//            let str = String(decoding: data, as: UTF8.self)
 //            print("got data - \(str)")
             do {
                 let games = try JSONDecoder().decode([NewUpcomingGame].self, from: data)
@@ -84,7 +84,7 @@ class Networking {
                 completion(.failure(.noData))
                 return
             }
-            let str = String(decoding: data, as: UTF8.self)
+//            let str = String(decoding: data, as: UTF8.self)
 //            print("got data player props - \(str)")
             do {
                 let games = try JSONDecoder().decode([NewUpcomingGame].self, from: data)

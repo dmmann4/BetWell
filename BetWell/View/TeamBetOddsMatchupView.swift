@@ -12,19 +12,22 @@ struct TeamBetOddsMatchupView: View {
     var body: some View {
         VStack {
             HStack {
-                Text(teamAcronymName(bet.name))
+                if bet.name != "Over" || bet.name != "Under" {
+                    Text(teamAcronymName(bet.name))
+                } else {
+                    Text(bet.name)
+                }
                 if let point = bet.point {
-                    Text("\(point)")
+                    Text("\(String(format: "%.1f", point))")
                 }
                 Text("\(bet.price)")
             }
-//            HStack {
-//                Text(teamAcronymName(bet.name))
-//                Text("\(bet.price)")
-//            }
         }
         .font(.system(size: 16, weight: .bold, design: .default))
-        .padding(.bottom, 20)
+        .padding()
+        .onAppear() {
+            print(bet.name)
+        }
     }
     
     func typeOfBet(_ bet: TeamBets) -> (String, String) {
@@ -102,7 +105,7 @@ struct TeamBetOddsMatchupView: View {
         case .was:
             return "WAS"
         case .none:
-            return ""
+            return "O/U"
         }
     }
     
@@ -110,6 +113,6 @@ struct TeamBetOddsMatchupView: View {
 
 struct TeamBetOddsMatchupView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamBetOddsMatchupView(bet: SampleData.bookmaker[0].markets[0].outcomes[0])
+        TeamBetOddsMatchupView(bet: SampleData.bookmaker[0].markets[0].outcomes[1])
     }
 }

@@ -30,7 +30,7 @@ struct PlayerPropsCardView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .frame(width: 175)
-                    .padding(.top, 10)
+                    .padding([.top, .trailing], 10)
                 }
                 Spacer()
                 ForEach(bets.arrayOfLines, id: \.self) { key in

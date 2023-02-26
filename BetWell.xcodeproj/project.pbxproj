@@ -49,7 +49,6 @@
 		1EF9CC6029AA91E6004943A9 /* PlayerPropsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9CC5F29AA91E6004943A9 /* PlayerPropsCardView.swift */; };
 		1EF9CC6229ABEAA7004943A9 /* NBATeamNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9CC6129ABEAA6004943A9 /* NBATeamNames.swift */; };
 		1EFC4576298DCC0C00AD5C44 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4575298DCC0C00AD5C44 /* Networking.swift */; };
-		1EFC4578298DCF9100AD5C44 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC4577298DCF9100AD5C44 /* Games.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,7 +114,6 @@
 		1EF9CC5F29AA91E6004943A9 /* PlayerPropsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPropsCardView.swift; sourceTree = "<group>"; };
 		1EF9CC6129ABEAA6004943A9 /* NBATeamNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBATeamNames.swift; sourceTree = "<group>"; };
 		1EFC4575298DCC0C00AD5C44 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		1EFC4577298DCF9100AD5C44 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +180,6 @@
 		1E8290BB2997FC6B00C48A14 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1EFC4577298DCF9100AD5C44 /* Games.swift */,
 				1EFC4575298DCC0C00AD5C44 /* Networking.swift */,
 				1E8C55A82974BAB20061498C /* Persistence.swift */,
 				1E55D53729A1439900618996 /* NewUpcomingGames.swift */,
@@ -440,7 +437,6 @@
 				1EF9CC4C29A9752F004943A9 /* PlayerDeepDiveView.swift in Sources */,
 				1E8C55A02974BAAE0061498C /* BetWellApp.swift in Sources */,
 				1E8290B62997F69E00C48A14 /* Last5View.swift in Sources */,
-				1EFC4578298DCF9100AD5C44 /* Games.swift in Sources */,
 				1E55D54C29A70DAE00618996 /* PlayingTodayView.swift in Sources */,
 				1E55D55A29A7127000618996 /* PlayerBetOddsView.swift in Sources */,
 				1E8C55D1297636460061498C /* MatchupView.swift in Sources */,

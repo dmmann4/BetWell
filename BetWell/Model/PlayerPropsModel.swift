@@ -39,10 +39,6 @@ struct Player: Decodable, Hashable {
         self.assists = assists
         self.points = points
         self.rebounds = rebounds
-        print("Decoding player props***")
-        print(self.rebounds)
-        print(self.assists)
-        print(self.points)
         if let assists = self.assists {
             arrayOfLines.append(PropObject(propType: PlayerBets.playerAssists, lines: assists))
         }
@@ -52,7 +48,6 @@ struct Player: Decodable, Hashable {
         if let rebounds = self.rebounds {
             arrayOfLines.append(PropObject(propType: PlayerBets.playerRebounds, lines: rebounds))
         }
-        print(arrayOfLines)
     }
     
     init(from decoder: Decoder) throws {

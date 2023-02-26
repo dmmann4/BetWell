@@ -15,10 +15,10 @@ struct CardView: View {
     @State var dataVolumeType: DataVolumeType = .last10
     @State var showDeepDiveView = false
     var body: some View {
-        VStack(alignment: .center) {
+        VStack(alignment: .leading) {
             VStack {
                 HStack(alignment: .top) {
-                    Text(teambet.key.rawValue)
+                    Text(convertTeamKeyVal(teambet.key))
                         .font(.system(size: 20, weight: .bold, design: .default))
                         .padding([.top, .bottom], 10)
                     Spacer()
@@ -31,7 +31,7 @@ struct CardView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .frame(width: 175)
-                    .padding(.top, 10)
+                    .padding([.top, .trailing], 10)
                 }
                 Spacer()
                 ForEach(teambet.outcomes, id: \.name) { key in
@@ -48,14 +48,25 @@ struct CardView: View {
             .foregroundColor(.white)
             .padding(.leading, 15)
             VStack {
-                Button {
-                    showDeepDiveView.toggle()
-                } label: {
-                    Text("More Details")
-                        .frame(width: 75, height: 30)
-                        .font(.caption)
+                HStack {
+                    VStack {
+                        Text("Last Updated")
+                        Text(parseDate(teambet.lastUpdate))
+                    }
+                    .foregroundColor(Color.gray)
+                    .font(.system(size: 10, weight: .light, design: .default))
+                    .padding(.leading, 10)
+                    Spacer()
+                    Button {
+                        showDeepDiveView.toggle()
+                    } label: {
+                        Text("More Details")
+                            .frame(width: 75, height: 30)
+                            .font(.system(size: 12, weight: .regular, design: .default))
+                    }
+                    NavigationLink("", destination: MatchupDeepDiveView(), isActive: $showDeepDiveView)
                 }
-                NavigationLink("", destination: MatchupDeepDiveView(), isActive: $showDeepDiveView)
+                
             }
             .padding(.trailing, 20)
             Spacer()
@@ -65,6 +76,25 @@ struct CardView: View {
         .modifier(CardModifier())
         .padding(.all, 10)
     }
+    
+    func convertTeamKeyVal(_ key: MarketKey) -> String {
+        switch key {
+        case .h2H:
+            return "Moneyline"
+        case .spreads:
+            return "Spread"
+        case .totals:
+            return "Total Points"
+        }
+    }
+    
+    func parseDate(_ date: String) -> String {
+        let localDate = date.components(separatedBy: "T")
+        let date = localDate[0]
+        let time = localDate[1].components(separatedBy: "Z")
+        return "\(date) \(time[0])"
+    }
+    
 }
 
 struct CardView_Previews: PreviewProvider {

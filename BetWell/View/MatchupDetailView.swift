@@ -22,18 +22,19 @@ struct MatchupDetailView: View {
     var oddBetID: String
     @State var bookType: [BookmakerKey] = []
     @State var playerProps: [String: NewPlayerPropOdds] = [:]
+    @State var teamProps: [String: Bookmaker] = [:]
     var home: Home
     var away: Away
     @State var teamBooks: [Bookmaker]
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
             VStack {
-               Picker("Select a paint color", selection: $bookSelected) {
-                   ForEach(bookType, id: \.self) {
-                       Text($0.rawValue)
-                   }
-               }
-               .pickerStyle(.menu)
+                Picker("Select a paint color", selection: $bookSelected) {
+                    ForEach(bookType, id: \.self) {
+                        Text($0.rawValue)
+                    }
+                }
+                .pickerStyle(.menu)
             }
             Picker("", selection: $betDataType) {
                 ForEach(MatchupDataSelection.allCases, id: \.self) { option in
@@ -43,7 +44,7 @@ struct MatchupDetailView: View {
             .pickerStyle(SegmentedPickerStyle())
             .padding()
             if betDataType == .h2h {
-                ForEach(teamBooks[0].markets, id: \.key) { bet in
+                ForEach(teamProps[bookSelected.rawValue]?.markets ?? [], id: \.key) { bet in
                     CardView(home: home, away: away, teambet: bet, playerORMatchup: betDataType)
                 }
             } else {
@@ -60,7 +61,10 @@ struct MatchupDetailView: View {
                 bookType.append(key!)
                 playerProps[key!.rawValue] = i
             }
-            print(playerProps[bookSelected.rawValue]!.players[0].arrayOfLines)
+            for i in teamBooks {
+                teamProps[i.key.rawValue] = i
+            }
+            print(teamProps)
             /// netowrking to get the player props with the odds ID
         }
     }

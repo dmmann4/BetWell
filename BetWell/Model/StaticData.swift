@@ -29,7 +29,17 @@ enum SampleData {
                 BetWell.Outcome(name: "Over", price: -110, point: Optional(228.0)),
                 BetWell.Outcome(name: "Under", price: -110, point: Optional(228.0))])
         ]),
-        BetWell.Bookmaker(key: BetWell.BookmakerKey.fanduel, title: BetWell.Title.fanDuel, lastUpdate: "2023-02-25T15:57:43Z", markets: [BetWell.Market(key: BetWell.MarketKey.h2H, lastUpdate: "2023-02-25T15:57:43Z", outcomes: [BetWell.Outcome(name: "Detroit Pistons", price: 245, point: nil), BetWell.Outcome(name: "Toronto Raptors", price: -300, point: nil)]), BetWell.Market(key: BetWell.MarketKey.spreads, lastUpdate: "2023-02-25T15:57:43Z", outcomes: [BetWell.Outcome(name: "Detroit Pistons", price: -110, point: Optional(7.5)), BetWell.Outcome(name: "Toronto Raptors", price: -110, point: Optional(-7.5))]), BetWell.Market(key: BetWell.MarketKey.totals, lastUpdate: "2023-02-25T15:57:43Z", outcomes: [BetWell.Outcome(name: "Over", price: -110, point: Optional(227.5)), BetWell.Outcome(name: "Under", price: -110, point: Optional(227.5))])])]
+        BetWell.Bookmaker(key: BetWell.BookmakerKey.fanduel, title: BetWell.Title.fanDuel, lastUpdate: "2023-02-25T15:57:43Z", markets:[
+            BetWell.Market(key: BetWell.MarketKey.h2H, lastUpdate: "2023-02-25T15:57:43Z", outcomes: [
+                BetWell.Outcome(name: "Detroit Pistons", price: 245, point: nil),
+                BetWell.Outcome(name: "Toronto Raptors", price: -300, point: nil)]),
+            BetWell.Market(key: BetWell.MarketKey.spreads, lastUpdate: "2023-02-25T15:57:43Z", outcomes: [
+                BetWell.Outcome(name: "Detroit Pistons", price: -110, point: Optional(7.5)),
+                BetWell.Outcome(name: "Toronto Raptors", price: -110, point: Optional(-7.5))]),
+            BetWell.Market(key: BetWell.MarketKey.totals, lastUpdate: "2023-02-25T15:57:43Z", outcomes: [
+                BetWell.Outcome(name: "Over", price: -110, point: Optional(227.5)),
+                BetWell.Outcome(name: "Under", price: -110, point: Optional(227.5))])
+        ])]
 
     
 }

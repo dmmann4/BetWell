@@ -39,7 +39,7 @@ struct ContentView: View {
             searchText = ""
             todaysGamesLocal = loadData() ?? []
             todaysGames = todaysGamesLocal
-            loadPlayerProps()
+            let _ = loadPlayerProps()
 //            networking.fetchTodaysGames { results in
 //                switch results {
 //                case .success(let success):
@@ -108,7 +108,9 @@ struct ContentView: View {
         }
         if let data {
             do {
-                let games = try JSONDecoder().decode([NewUpcomingGame].self, from: data)
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
+                let games = try decoder.decode([NewUpcomingGame].self, from: data)
 //                print("games home: \(games[0].home)")
 //                print("**********************************")
 //                print("games away: \(games[0].away)")
@@ -181,4 +183,15 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
+}
+
+extension DateFormatter {
+  static let iso8601Full: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+    formatter.calendar = Calendar(identifier: .iso8601)
+    formatter.timeZone = TimeZone(secondsFromGMT: 0)
+    formatter.locale = Locale(identifier: "en_US_POSIX")
+    return formatter
+  }()
 }
