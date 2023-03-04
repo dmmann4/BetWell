@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct HomeTeamTrendsView: View {
-    let team: Home
+struct TeamTrendsView: View {
+    let team: Team
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         VStack(alignment: .center) {
@@ -119,7 +119,7 @@ struct HomeTeamTrendsView: View {
         return nil
     }
     
-    func getInjuries(_ injuries: [AwayInjury]) -> String {
+    func getInjuries(_ injuries: [Injury]) -> String {
         var injuriesLocal = ""
         for i in injuries {
             for j in i.injuries {
@@ -136,8 +136,8 @@ struct HomeTeamTrendsView: View {
 }
 
 
-struct HomeTeamTrendsView_Previews: PreviewProvider {
+struct TeamTrendsView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeTeamTrendsView(team: SampleData.home)
+        TeamTrendsView(team: SampleData.home)
     }
 }

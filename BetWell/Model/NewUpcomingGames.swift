@@ -12,8 +12,8 @@ struct NewUpcomingGame: Codable {
     let statsGameId: String?
     let time: String
     var venue: String
-    var home: Home
-    var away: Away
+    var home: Team
+    var away: Team
     let oddsEventID: String
     var bookmakers: [Bookmaker]
 
@@ -30,8 +30,8 @@ struct Away: Codable {
     let name, alias, id, srID: String
     let reference: String
     let splits: [Split]
-    let injuries: [AwayInjury]?
-    let standings: AwayStandings
+    let injuries: [Injury]?
+    let standings: Standings
 
     enum CodingKeys: String, CodingKey {
         case name, alias, id
@@ -41,7 +41,7 @@ struct Away: Codable {
 }
 
 // MARK: - AwayInjury
-struct AwayInjury: Codable {
+struct Injury: Codable {
     let id, fullName, firstName, lastName: String
     let position: String
     let primaryPosition: PrimaryPosition
@@ -286,12 +286,12 @@ enum Title: String, Codable {
 }
 
 // MARK: - Home
-struct Home: Codable {
+struct Team: Codable {
     let name, alias, id, srID: String
     let reference: String
     let splits: [Split]
-    let injuries: [AwayInjury]?
-    let standings: HomeStandings
+    let injuries: [Injury]?
+    let standings: Standings
 
     enum CodingKeys: String, CodingKey {
         case name, alias, id
@@ -301,7 +301,7 @@ struct Home: Codable {
 }
 
 // MARK: - HomeStandings
-struct HomeStandings: Codable {
+struct Standings: Codable {
     let id, name, record: String
     let winPct, avgPoints, avgPointsAgainst: Double
     let gamesBehind: GamesBehind

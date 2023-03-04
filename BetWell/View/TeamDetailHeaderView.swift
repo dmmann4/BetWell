@@ -1,5 +1,5 @@
 //
-//  AwayTeamDetailHeaderView.swift
+//  HomeTeamDetailHeaderView.swift
 //  BetWell
 //
 //  Created by David Mann on 2/22/23.
@@ -7,17 +7,16 @@
 
 import SwiftUI
 
-struct AwayTeamDetailHeaderView: View {
+struct TeamDetailHeaderView: View {
+    let team: Team
     @State var goToDeepDive = false
-    @Environment(\.colorScheme) var colorScheme
-    let team: Away
     var body: some View {
         VStack {
             ZStack {
                 Button {
                     goToDeepDive.toggle()
                     print("away team logo button pressed")
-                   
+
                 } label: {
                     Image(team.alias)
                         .resizable()
@@ -26,21 +25,18 @@ struct AwayTeamDetailHeaderView: View {
                         .background(Color.gray)
                         .clipShape(Circle())
                 }
-                NavigationLink("", destination:  TeamDeepDiveView(), isActive: $goToDeepDive)
+                NavigationLink("", destination:  TeamDeepDiveView(teamName: team.name, teamLogo: team.alias), isActive: $goToDeepDive)
             }
-            
             Text(team.alias)
                 .fontWeight(.bold)
-                .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
             Text("\(team.standings.record)(\(team.standings.rank.confRank)th)")
                 .font(.caption2)
-                .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
         }
     }
 }
 
-struct AwayTeamDetailHeaderView_Previews: PreviewProvider {
+struct TeamDetailHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        AwayTeamDetailHeaderView(team: SampleData.away)
+        TeamDetailHeaderView(team: SampleData.home)
     }
 }

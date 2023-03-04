@@ -11,10 +11,8 @@
 		1E55D53C29A144DC00618996 /* NewGamesSeed.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E55D53B29A144DC00618996 /* NewGamesSeed.json */; };
 		1E55D53E29A1B26700618996 /* StaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55D53D29A1B26700618996 /* StaticData.swift */; };
 		1E55D54029A1B62B00618996 /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55D53F29A1B62B00618996 /* RecordType.swift */; };
-		1E55D54229A70CE700618996 /* AwayTeamTrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55D54129A70CE700618996 /* AwayTeamTrendsView.swift */; };
-		1E55D54429A70D1E00618996 /* HomeTeamTrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55D54329A70D1E00618996 /* HomeTeamTrendsView.swift */; };
-		1E55D54629A70D3F00618996 /* HomeTeamDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55D54529A70D3F00618996 /* HomeTeamDetailHeaderView.swift */; };
-		1E55D54829A70D6600618996 /* AwayTeamDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55D54729A70D6600618996 /* AwayTeamDetailHeaderView.swift */; };
+		1E55D54429A70D1E00618996 /* TeamTrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55D54329A70D1E00618996 /* TeamTrendsView.swift */; };
+		1E55D54629A70D3F00618996 /* TeamDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55D54529A70D3F00618996 /* TeamDetailHeaderView.swift */; };
 		1E55D54A29A70D8000618996 /* TeamDeepDiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55D54929A70D8000618996 /* TeamDeepDiveView.swift */; };
 		1E55D54C29A70DAE00618996 /* PlayingTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55D54B29A70DAE00618996 /* PlayingTodayView.swift */; };
 		1E55D54E29A70E0800618996 /* MatchupDeepDiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55D54D29A70E0800618996 /* MatchupDeepDiveView.swift */; };
@@ -73,10 +71,8 @@
 		1E55D53B29A144DC00618996 /* NewGamesSeed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewGamesSeed.json; sourceTree = "<group>"; };
 		1E55D53D29A1B26700618996 /* StaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticData.swift; sourceTree = "<group>"; };
 		1E55D53F29A1B62B00618996 /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
-		1E55D54129A70CE700618996 /* AwayTeamTrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayTeamTrendsView.swift; sourceTree = "<group>"; };
-		1E55D54329A70D1E00618996 /* HomeTeamTrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTeamTrendsView.swift; sourceTree = "<group>"; };
-		1E55D54529A70D3F00618996 /* HomeTeamDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTeamDetailHeaderView.swift; sourceTree = "<group>"; };
-		1E55D54729A70D6600618996 /* AwayTeamDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwayTeamDetailHeaderView.swift; sourceTree = "<group>"; };
+		1E55D54329A70D1E00618996 /* TeamTrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTrendsView.swift; sourceTree = "<group>"; };
+		1E55D54529A70D3F00618996 /* TeamDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailHeaderView.swift; sourceTree = "<group>"; };
 		1E55D54929A70D8000618996 /* TeamDeepDiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDeepDiveView.swift; sourceTree = "<group>"; };
 		1E55D54B29A70DAE00618996 /* PlayingTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingTodayView.swift; sourceTree = "<group>"; };
 		1E55D54D29A70E0800618996 /* MatchupDeepDiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchupDeepDiveView.swift; sourceTree = "<group>"; };
@@ -151,10 +147,8 @@
 				1E8C55A12974BAAE0061498C /* ContentView.swift */,
 				1E8290B52997F69E00C48A14 /* Last5View.swift */,
 				1E8290B12997050800C48A14 /* TeamDataListView.swift */,
-				1E55D54129A70CE700618996 /* AwayTeamTrendsView.swift */,
-				1E55D54329A70D1E00618996 /* HomeTeamTrendsView.swift */,
-				1E55D54529A70D3F00618996 /* HomeTeamDetailHeaderView.swift */,
-				1E55D54729A70D6600618996 /* AwayTeamDetailHeaderView.swift */,
+				1E55D54329A70D1E00618996 /* TeamTrendsView.swift */,
+				1E55D54529A70D3F00618996 /* TeamDetailHeaderView.swift */,
 				1E55D54929A70D8000618996 /* TeamDeepDiveView.swift */,
 				1E55D54B29A70DAE00618996 /* PlayingTodayView.swift */,
 				1E55D54D29A70E0800618996 /* MatchupDeepDiveView.swift */,
@@ -425,7 +419,6 @@
 			files = (
 				1E8C55A92974BAB20061498C /* Persistence.swift in Sources */,
 				1E55D54029A1B62B00618996 /* RecordType.swift in Sources */,
-				1E55D54229A70CE700618996 /* AwayTeamTrendsView.swift in Sources */,
 				1EF9CC4E29A97FC6004943A9 /* BannerAdView.swift in Sources */,
 				1E55D55229A70E3900618996 /* TeamBetOddsMatchupView.swift in Sources */,
 				1E8C55A22974BAAE0061498C /* ContentView.swift in Sources */,
@@ -433,7 +426,7 @@
 				1E8290B42997F65600C48A14 /* MatchupDetailView.swift in Sources */,
 				1E55D54E29A70E0800618996 /* MatchupDeepDiveView.swift in Sources */,
 				1EF9CC6229ABEAA7004943A9 /* NBATeamNames.swift in Sources */,
-				1E55D54629A70D3F00618996 /* HomeTeamDetailHeaderView.swift in Sources */,
+				1E55D54629A70D3F00618996 /* TeamDetailHeaderView.swift in Sources */,
 				1EF9CC4C29A9752F004943A9 /* PlayerDeepDiveView.swift in Sources */,
 				1E8C55A02974BAAE0061498C /* BetWellApp.swift in Sources */,
 				1E8290B62997F69E00C48A14 /* Last5View.swift in Sources */,
@@ -449,10 +442,9 @@
 				1E55D55429A70E6C00618996 /* PreviousMatchupsView.swift in Sources */,
 				1E55D53E29A1B26700618996 /* StaticData.swift in Sources */,
 				1E55D54A29A70D8000618996 /* TeamDeepDiveView.swift in Sources */,
-				1E55D54429A70D1E00618996 /* HomeTeamTrendsView.swift in Sources */,
+				1E55D54429A70D1E00618996 /* TeamTrendsView.swift in Sources */,
 				1EF9CC5E29AA7906004943A9 /* PlayerPropsModel.swift in Sources */,
 				1EFC4576298DCC0C00AD5C44 /* Networking.swift in Sources */,
-				1E55D54829A70D6600618996 /* AwayTeamDetailHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

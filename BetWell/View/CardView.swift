@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CardView: View {
-    var home: Home
-    var away: Away
+    var home: Team
+    var away: Team
     let teambet: Market
     @State var playerORMatchup: MatchupDataSelection
     @State var dataVolumeType: DataVolumeType = .last10

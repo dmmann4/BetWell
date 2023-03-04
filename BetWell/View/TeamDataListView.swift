@@ -10,8 +10,8 @@ import SwiftUI
 
 struct TeamDataListView: View {
     var teamBooks: [Bookmaker]
-    var home: Home
-    var away: Away
+    var home: Team
+    var away: Team
     var venue: String
     @State var books: [String] = []
 
@@ -20,8 +20,8 @@ struct TeamDataListView: View {
             VStack {
                 HStack(alignment: .top) {
                     VStack {
-                        HomeTeamDetailHeaderView(team: home)
-                        HomeTeamTrendsView(team: home)
+                        TeamDetailHeaderView(team: home)
+                        TeamTrendsView(team: home)
                     }
 //                    VStack(alignment: .center) {
 //                       Text(venue)
@@ -33,8 +33,8 @@ struct TeamDataListView: View {
 //                    }
 //                    .frame(width: 50)
                     VStack {
-                        AwayTeamDetailHeaderView(team: away)
-                        AwayTeamTrendsView(team: away)
+                        TeamDetailHeaderView(team: away)
+                        TeamTrendsView(team: away)
                     }
                    
                 }

@@ -23,8 +23,8 @@ struct MatchupDetailView: View {
     @State var bookType: [BookmakerKey] = []
     @State var playerProps: [String: NewPlayerPropOdds] = [:]
     @State var teamProps: [String: Bookmaker] = [:]
-    var home: Home
-    var away: Away
+    var home: Team
+    var away: Team
     @State var teamBooks: [Bookmaker]
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {

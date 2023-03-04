@@ -18,22 +18,22 @@ enum DataVolumeType: String, CaseIterable {
 }
 
 struct MatchupView: View {
-    var home: Home
-    var away: Away
+    var home: Team
+    var away: Team
 //    @State var playerProps: [PlayerPropOdds] = []
     let networking = Networking()
     var body: some View {
         VStack {
             HStack {
                 Spacer()
-                HomeHeaderView(game: home)
+                HeaderView(game: home)
                 Spacer()
                 VStack {
                     Text("Last 5 VS")
                     Text("4-1")
                 }
                 Spacer()
-                AwayHeaderView(game: away)
+                HeaderView(game: away)
                 Spacer()
             }
 //            MatchupDetailView(odds: playerProps)
@@ -123,9 +123,9 @@ struct AwayHeaderView: View {
     
 }
 
-struct HomeHeaderView: View {
+struct HeaderView: View {
     
-    let game: Home
+    let game: Team
 
     var body: some View {
         VStack {

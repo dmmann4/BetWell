@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct PlayerPropsCardView: View {
-    var home: Home
-    var away: Away
+    var home: Team
+    var away: Team
     @State var bets: Player
     @State var dataVolumeType: DataVolumeType = .last10
     @State var showDeepDiveView = false
