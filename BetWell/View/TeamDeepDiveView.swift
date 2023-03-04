@@ -12,11 +12,31 @@ enum DataDeepDive: String, CaseIterable {
     case rawData = "Raw Data"
 }
 
+struct RawDataModel {
+    let id = UUID()
+    let pts = 135.6
+    let rebs = 55.2
+    let assists = 23.1
+    let threes = 15.8
+}
 
 
 struct TeamDeepDiveView: View {
     var teamName: String
     var teamLogo: String
+    let sampleData = [
+        RawDataModel(),
+        RawDataModel(),
+        RawDataModel(),
+        RawDataModel(),
+        RawDataModel(),
+        RawDataModel(),
+        RawDataModel(),
+        RawDataModel(),
+        RawDataModel(),
+        RawDataModel(),
+        RawDataModel()
+    ]
     @State var typeOfDataShown: DataDeepDive = .overview
     @State var symbols = ["keyboard", "hifispeaker.fill", "printer.fill", "tv.fill", "desktopcomputer", "headphones", "tv.music.note", "mic", "plus.bubble", "video"]
     var colors: [Color] = [.yellow, .purple, .green]
@@ -53,10 +73,8 @@ struct TeamDeepDiveView: View {
                         }
                     }
                 } else {
-                    List {
-                        ForEach(symbols, id: \.self) { i in
-                            Text("here")
-                        }
+                    ForEach(sampleData, id: \.id) { i in
+                        Text("Avg: pts-\(String(format: "%.1f", i.pts)) | rebs-\(String(format: "%.1f", i.rebs)) | ast-\(String(format: "%.1f", i.assists)) | 3's-\(String(format: "%.1f", i.threes))")
                     }
                 }
             }
